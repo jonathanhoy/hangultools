@@ -1,52 +1,30 @@
-import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 
-const StyledHeader = styled.header`
-  background: #5e3399;
-  div {
-    margin: 0 auto;
-    max-width: 960px;
-    padding: 1.45rem 1.0875rem;
-    text-align: center;
-  }
-  h1 {
-    margin: 0;
-    color: white;
-  }
-  @media (max-width: 599px) {
-    div {
-      padding: 10px 15px;
-    }
-    .mobileBlock {
-      display: block;
-    }
-    .mobileHide {
-      display: none;
-    }
-  }
-`;
+import variables from '../styles/variables';
+import { Wrapper } from '../styles/Wrapper';
 
 class Header extends React.Component {
   render() {
     return (
       <StyledHeader>
-      <div>
-        <h1>
-          <span className="mobileBlock">{this.props.viewCalculator && 'Hangul Calculator'}{this.props.viewClock && 'Hangul Clock'}</span> <span className="mobileHide">-</span> <span className="mobileBlock">{this.props.viewCalculator && '한글 계산기'}{this.props.viewClock && '한글 시계'}</span>
-        </h1>
-      </div>
-    </StyledHeader>
+        <Wrapper>
+          <h1>Hangul Tools</h1>
+        </Wrapper>
+      </StyledHeader>
     )
   }
-}
+};
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+const StyledHeader = styled.header`
+  background: ${variables.primary};
+  box-shadow: ${variables.boxshadow};
+  h1 {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 2.5rem;
+    color: ${variables.white};
+  }
+`;
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+export default Header;

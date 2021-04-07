@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Calculator = styled.section`
+const CalculatorContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -119,4 +119,4 @@ const MultipleChoice = styled.div`
   }
 `;
 
-export { Calculator, Mathfield, MultipleChoice };
+export { CalculatorContainer, Mathfield, MultipleChoice };

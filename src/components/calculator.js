@@ -3,11 +3,11 @@ import numToWordsMap from './util/mapping';
 import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
-import Wrapper from '../styles/Wrapper';
+import { ComponentWrapper } from '../styles/Wrapper';
 import { ListContainer, CalculatorList } from '../styles/List';
-import { Calculator, Mathfield, MultipleChoice } from '../styles/calculator';
+import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
  
-class CalculatorComponent extends React.Component {
+class Calculator extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -139,26 +139,26 @@ class CalculatorComponent extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Calculator>
-          <Wrapper>
+        <CalculatorContainer>
+          <ComponentWrapper>
             <Mathfield>
               <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
               <span className="operation">&#x2b;</span>
               <span className="numberY">{this.convertNumToWord(this.state.y, this.state.system)} </span>
             </Mathfield>
-          </Wrapper>
+          </ComponentWrapper>
           <form action="" onSubmit={this.validate}>
             {
               this.state.multipleChoiceToggle === false &&
               (
-                <Wrapper>
+                <ComponentWrapper>
                   <label htmlFor="input">Answer</label>
                   <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
                   {this.state.response === '' && <p>&nbsp;</p>}
                   {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
                   {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                   <Button type="submit" theme="purple">Check</Button>
-                </Wrapper>
+                </ComponentWrapper>
               )
             }
             {
@@ -178,19 +178,19 @@ class CalculatorComponent extends React.Component {
                     })
                   }
                 </div>
-                <Wrapper margin="auto">
+                <ComponentWrapper margin="auto">
                   {this.state.response === '' && <p>&nbsp;</p>}
                   {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
                   {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                   <Button type="submit" theme="purple">Check</Button>
-                </Wrapper>
+                </ComponentWrapper>
               </MultipleChoice>
             }
           </form>
-          <Wrapper>
+          <ComponentWrapper>
             <Button onClick={this.generateProblem}>Next</Button>
-          </Wrapper>
-        </Calculator>
+          </ComponentWrapper>
+        </CalculatorContainer>
         <Settings
           simpleNumbersToggle={this.state.simpleNumbersToggle}
           multipleChoiceToggle={this.state.multipleChoiceToggle}
@@ -306,4 +306,4 @@ class CalculatorComponent extends React.Component {
   }
 };
 
-export default CalculatorComponent;
+export default Calculator;
