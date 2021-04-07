@@ -11,16 +11,18 @@ const Settings = styled.section`
     font-style: italic;
     font-size: 0.75rem;
     color: ${variables.darkgrey};
+    margin: 0.5rem 0;
   }
   .settings-list {
     margin: 0;
     .settings-item {
       text-align: center;
       .settings-button {
+        width: 100%;
         padding: 0.5rem;
         font-size: 1rem;
-        margin: 0.25rem 0;
-        background: none;
+        margin: 0.5rem 0 0 0;
+        background: ${variables.lightgrey};
         border: none;
         font-weight: 700;
         border-radius: 0.25rem;
@@ -30,6 +32,21 @@ const Settings = styled.section`
           color: ${variables.white};
         }
       }
+      &:last-of-type {
+        .settings-button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  div:first-of-type {
+    .settings-heading {
+      margin-top: 0;
+    }
+  }
+  div:last-of-type {
+    .settings-heading {
+      margin-top: 1rem;
     }
   }
 `;
