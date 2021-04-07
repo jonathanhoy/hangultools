@@ -8,7 +8,7 @@ const Wrapper = styled.div`
 
 const ComponentWrapper = styled.div`
   width: 200px;
-  margin: ${props => (props.margin === 'auto' ? '0 auto' : '0')}
+  margin: ${props => (props.margin === 'auto' ? '0 auto' : '0')};
 `;
 
 export { Wrapper, ComponentWrapper };

@@ -3,6 +3,7 @@ const variables = {
   // COLORS
   primary: '#5e3399',
   grey: '#dcdcdc',
+  darkgrey: '#696969',
   black: '#181818',
   white: '#f8f8f8',
 

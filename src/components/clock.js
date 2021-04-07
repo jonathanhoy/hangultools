@@ -131,8 +131,8 @@ class ClockComponent extends React.Component {
           sinoToggle={this.state.sinoToggle}
           pureToggle={this.state.pureToggle}
         >
-          <ul className="options-list">
-            <li className="options-list-item number">
+          <ul className="settings-list">
+            <li className="settings-item number">
               <label htmlFor="sinoToggle">
                 <p className="sino">Sino<span className="mobileHide">-Korean</span></p>
                 <Checkbox
@@ -144,7 +144,7 @@ class ClockComponent extends React.Component {
                 />
               </label>
             </li>
-            <li className="options-list-item number">
+            <li className="settings-item number">
               <label htmlFor="pureToggle">
                 <p className="pure">Pure <span className="mobileHide">Korean</span></p>
                 <Checkbox

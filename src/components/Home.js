@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
+import variables from '../styles/variables';
 
 class Home extends React.Component {
   constructor() {
@@ -52,7 +53,7 @@ const TileList = styled.ul`
 `;
 
 const TileItem = styled.li`
-  background: salmon;
+  background: ${variables.primary};
   margin: 0 2rem 2rem 0;
   div {
     display: flex;
@@ -63,6 +64,8 @@ const TileItem = styled.li`
     align-items: flex-end;
     width: 300px;
     height: 350px;
+    color: ${variables.white};
+    text-decoration: none;
   }
 `;
 

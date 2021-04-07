@@ -3,7 +3,8 @@ import numToWordsMap from './util/mapping';
 import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
-import { ComponentWrapper } from '../styles/Wrapper';
+import ComponentContainer from '../styles/ComponentContainer';
+import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { ListContainer, CalculatorList } from '../styles/List';
 import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
  
@@ -21,7 +22,7 @@ class Calculator extends React.Component {
       sinoToggle: false,
       pureToggle: false,
       multipleChoiceArr: [],
-      checkedRadio: null
+      checkedRadio: null,
     }
   }
 
@@ -112,196 +113,174 @@ class Calculator extends React.Component {
     })
   }
 
-  handleCheckboxChange = (e) => {
-    if (e.target.id === 'sinoToggle') {
-      this.setState({
-        pureToggle: false,
-        [e.target.id]: e.target.checked,
-      })
-    } else if (e.target.id === 'pureToggle') {
-      this.setState({
-        sinoToggle: false,
-        [e.target.id]: e.target.checked,
-      })
-    } else {
-      this.setState({
-        [e.target.id]: e.target.checked
-      })
-    }
-  }
-
   convertNumToWord = (num, sys) => {
     if (numToWordsMap[num] !== undefined) {
       return numToWordsMap[num][sys];
     }
   }
 
+  handleClick = (e) => {
+    e.preventDefault();
+    if (e.target.id === 'sinoToggle') {
+      this.setState({
+        pureToggle: false,
+        [e.target.id]: !this.state[e.target.id],
+      })
+    } else if (e.target.id === 'pureToggle') {
+      this.setState({
+        sinoToggle: false,
+        [e.target.id]: !this.state[e.target.id],
+      })
+    } else {
+      this.setState({
+        [e.target.id]: !this.state[e.target.id],
+      })
+    }
+  }
+
   render() {
     return (
-      <React.Fragment>
-        <CalculatorContainer>
-          <ComponentWrapper>
-            <Mathfield>
-              <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
-              <span className="operation">&#x2b;</span>
-              <span className="numberY">{this.convertNumToWord(this.state.y, this.state.system)} </span>
-            </Mathfield>
-          </ComponentWrapper>
-          <form action="" onSubmit={this.validate}>
-            {
-              this.state.multipleChoiceToggle === false &&
-              (
-                <ComponentWrapper>
-                  <label htmlFor="input">Answer</label>
-                  <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
-                  {this.state.response === '' && <p>&nbsp;</p>}
-                  {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
-                  {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                  <Button type="submit" theme="purple">Check</Button>
-                </ComponentWrapper>
-              )
-            }
-            {
-              this.state.multipleChoiceToggle === true &&
-              <MultipleChoice>
-                <div className="container">
-                  {
-                    this.state.multipleChoiceArr.map((item) => {
-                      return (
-                        <>
-                          <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
-                          <label htmlFor={item}>
-                            {item}
-                          </label>
-                        </>
-                      )
-                    })
-                  }
-                </div>
-                <ComponentWrapper margin="auto">
-                  {this.state.response === '' && <p>&nbsp;</p>}
-                  {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                  {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                  <Button type="submit" theme="purple">Check</Button>
-                </ComponentWrapper>
-              </MultipleChoice>
-            }
-          </form>
-          <ComponentWrapper>
-            <Button onClick={this.generateProblem}>Next</Button>
-          </ComponentWrapper>
-        </CalculatorContainer>
-        <Settings
-          simpleNumbersToggle={this.state.simpleNumbersToggle}
-          multipleChoiceToggle={this.state.multipleChoiceToggle}
-          sinoToggle={this.state.sinoToggle}
-          pureToggle={this.state.pureToggle}
-        >
-          <ul className="options-list">
-            <li className="options-list-item option">
-              <label htmlFor="simpleNumbersToggle">
-                <p className="simpleNumbers">Simple numbers</p>
-                <Checkbox
-                  firstItem
-                  id="simpleNumbersToggle"
-                  checked={this.state.simpleNumbersToggle}
-                  onChange={this.handleCheckboxChange}
-                />
-              </label>
-            </li>
-            <li className="options-list-item option">
-              <label htmlFor="multipleChoiceToggle">
-                <p className="multipleChoice">Multiple choice</p>
-                <Checkbox
-                  id="multipleChoiceToggle"
-                  checked={this.state.multipleChoiceToggle}
-                  onChange={this.handleCheckboxChange}
-                />
-              </label>
-            </li>
-            <li className="options-list-item number">
-              <label htmlFor="sinoToggle">
-                <p className="sino">Sino<span className="mobileHide">-Korean</span></p>
-                <Checkbox
-                  secondLastItem
-                  id="sinoToggle"
-                  checked={this.state.sinoToggle}
-                  onChange={this.handleCheckboxChange}
-                />
-              </label>
-            </li>
-            <li className="options-list-item number">
-              <label htmlFor="pureToggle">
-                <p className="pure">Pure <span className="mobileHide">Korean</span></p>
-                <Checkbox
-                  lastItem
-                  id="pureToggle"
-                  checked={this.state.pureToggle}
-                  onChange={this.handleCheckboxChange}
-                />
-              </label>
-            </li>
-          </ul>
-          <ListContainer 
-            isVisible={this.state.sinoToggle} 
-            topValueDesktop={'180px'} 
-            topValueMobile={'153px'}
-          >
-            <CalculatorList digits="single">
-              <li><span>1</span><span>일</span></li>
-              <li><span>2</span><span>이</span></li>
-              <li><span>3</span><span>삼</span></li>
-              <li><span>4</span><span>사</span></li>
-              <li><span>5</span><span>오</span></li>
-              <li><span>6</span><span>육</span></li>
-              <li><span>7</span><span>칠</span></li>
-              <li><span>8</span><span>팔</span></li>
-              <li><span>9</span><span>구</span></li>
-            </CalculatorList>
-            <CalculatorList>
-              <li><span>10</span><span>십</span></li>
-              <li><span>20</span><span>이십</span></li>
-              <li><span>30</span><span>삼십</span></li>
-              <li><span>40</span><span>사십</span></li>
-              <li><span>50</span><span>오십</span></li>
-              <li><span>60</span><span>육십</span></li>
-              <li><span>70</span><span>칠십</span></li>
-              <li><span>80</span><span>팔십</span></li>
-              <li><span>90</span><span>구십</span></li>
-              <li><span>100</span><span>백</span></li>
-            </CalculatorList>
-          </ListContainer>
-          <ListContainer 
-            isVisible={this.state.pureToggle} 
-            topValueDesktop={'180px'} 
-            topValueMobile={'153px'}
-          >
-            <CalculatorList digits="single">
-              <li><span>1</span><span>하나</span></li>
-              <li><span>2</span><span>둘</span></li>
-              <li><span>3</span><span>셋</span></li>
-              <li><span>4</span><span>넷</span></li>
-              <li><span>5</span><span>다섯</span></li>
-              <li><span>6</span><span>여섯</span></li>
-              <li><span>7</span><span>일곱</span></li>
-              <li><span>8</span><span>여덟</span></li>
-              <li><span>9</span><span>아홉</span></li>
-            </CalculatorList>
-            <CalculatorList>
-              <li><span>10</span><span>열</span></li>
-              <li><span>20</span><span>스물</span></li>
-              <li><span>30</span><span>서른</span></li>
-              <li><span>40</span><span>마흔</span></li>
-              <li><span>50</span><span>쉰</span></li>
-              <li><span>60</span><span>예순</span></li>
-              <li><span>70</span><span>일흔</span></li>
-              <li><span>80</span><span>여든</span></li>
-              <li><span>90</span><span>아흔</span></li>
-              <li><span>100</span><span>백</span></li>
-            </CalculatorList>
-          </ListContainer>
-        </Settings>
-      </React.Fragment>
+      <Wrapper>
+        <ComponentContainer>
+          <Settings>
+            <div>
+              <h2 className="settings-heading">Options</h2>
+              <ul className="settings-list option">
+                <li className="settings-item option">
+                  <button className="settings-button" id="simpleNumbersToggle" onClick={this.handleClick} data-active={this.state.simpleNumbersToggle}>Simple numbers</button>
+                </li>
+                <li className="settings-item option">
+                  <button className="settings-button" id="multipleChoiceToggle" onClick={this.handleClick} data-active={this.state.multipleChoiceToggle}>Multiple Choice</button>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h2 className="settings-heading">Reference</h2>
+              <ul className="settings-list number">
+                <li className="settings-item number">
+                  <button className="settings-button" id="sinoToggle" onClick={this.handleClick} data-active={this.state.sinoToggle}>Sino numbers</button>
+                </li>
+                <li className="settings-item number">
+                  <button className="settings-button" id="pureToggle" onClick={this.handleClick} data-active={this.state.pureToggle}>Pure numbers</button>
+                </li>
+              </ul>
+            </div>
+             
+             
+            
+            {/* <ListContainer 
+              isVisible={this.state.sinoToggle} 
+              topValueDesktop={'180px'} 
+              topValueMobile={'153px'}
+            >
+              <CalculatorList digits="single">
+                <li><span>1</span><span>일</span></li>
+                <li><span>2</span><span>이</span></li>
+                <li><span>3</span><span>삼</span></li>
+                <li><span>4</span><span>사</span></li>
+                <li><span>5</span><span>오</span></li>
+                <li><span>6</span><span>육</span></li>
+                <li><span>7</span><span>칠</span></li>
+                <li><span>8</span><span>팔</span></li>
+                <li><span>9</span><span>구</span></li>
+              </CalculatorList>
+              <CalculatorList>
+                <li><span>10</span><span>십</span></li>
+                <li><span>20</span><span>이십</span></li>
+                <li><span>30</span><span>삼십</span></li>
+                <li><span>40</span><span>사십</span></li>
+                <li><span>50</span><span>오십</span></li>
+                <li><span>60</span><span>육십</span></li>
+                <li><span>70</span><span>칠십</span></li>
+                <li><span>80</span><span>팔십</span></li>
+                <li><span>90</span><span>구십</span></li>
+                <li><span>100</span><span>백</span></li>
+              </CalculatorList>
+            </ListContainer> */}
+            {/* <ListContainer 
+              isVisible={this.state.pureToggle} 
+              topValueDesktop={'180px'} 
+              topValueMobile={'153px'}
+            >
+              <CalculatorList digits="single">
+                <li><span>1</span><span>하나</span></li>
+                <li><span>2</span><span>둘</span></li>
+                <li><span>3</span><span>셋</span></li>
+                <li><span>4</span><span>넷</span></li>
+                <li><span>5</span><span>다섯</span></li>
+                <li><span>6</span><span>여섯</span></li>
+                <li><span>7</span><span>일곱</span></li>
+                <li><span>8</span><span>여덟</span></li>
+                <li><span>9</span><span>아홉</span></li>
+              </CalculatorList>
+              <CalculatorList>
+                <li><span>10</span><span>열</span></li>
+                <li><span>20</span><span>스물</span></li>
+                <li><span>30</span><span>서른</span></li>
+                <li><span>40</span><span>마흔</span></li>
+                <li><span>50</span><span>쉰</span></li>
+                <li><span>60</span><span>예순</span></li>
+                <li><span>70</span><span>일흔</span></li>
+                <li><span>80</span><span>여든</span></li>
+                <li><span>90</span><span>아흔</span></li>
+                <li><span>100</span><span>백</span></li>
+              </CalculatorList>
+            </ListContainer> */}
+          </Settings>
+          <CalculatorContainer>
+            <ComponentWrapper>
+              <Mathfield>
+                <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
+                <span className="operation">&#x2b;</span>
+                <span className="numberY">{this.convertNumToWord(this.state.y, this.state.system)} </span>
+              </Mathfield>
+            </ComponentWrapper>
+            <form action="" onSubmit={this.validate}>
+              {
+                this.state.multipleChoiceToggle === false &&
+                (
+                  <ComponentWrapper>
+                    <label htmlFor="input">Answer</label>
+                    <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
+                    {this.state.response === '' && <p>&nbsp;</p>}
+                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
+                    {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                    <Button type="submit" theme="purple">Check</Button>
+                  </ComponentWrapper>
+                )
+              }
+              {
+                this.state.multipleChoiceToggle === true &&
+                <MultipleChoice>
+                  <div className="container">
+                    {
+                      this.state.multipleChoiceArr.map((item) => {
+                        return (
+                          <>
+                            <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
+                            <label htmlFor={item}>
+                              {item}
+                            </label>
+                          </>
+                        )
+                      })
+                    }
+                  </div>
+                  <ComponentWrapper margin="auto">
+                    {this.state.response === '' && <p>&nbsp;</p>}
+                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
+                    {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                    <Button type="submit" theme="purple">Check</Button>
+                  </ComponentWrapper>
+                </MultipleChoice>
+              }
+            </form>
+            <ComponentWrapper>
+              <Button onClick={this.generateProblem}>Next</Button>
+            </ComponentWrapper>
+          </CalculatorContainer>
+        </ComponentContainer>
+      </Wrapper>
     )
   }
 };

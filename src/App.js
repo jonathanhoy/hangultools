@@ -15,8 +15,8 @@ function App() {
         <Header />
         <Nav />
         <Route path="/" exact component={Home} />
-        {/* <Route path="/calculator" component={Calculator} />
-        <Route path="/clock" component={Calculator} /> */}
+        <Route path="/calculator" component={Calculator} />
+        {/* <Route path="/clock" component={Calculator} /> */}
       </Router>
     </div>
   );
