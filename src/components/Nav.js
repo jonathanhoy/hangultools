@@ -28,6 +28,7 @@ const StyledNav = styled.nav`
   background: ${variables.grey};
   ul {
     display: flex;
+    justify-content: center;
     margin: 0;
     padding: 1rem 0;
     li {
@@ -39,7 +40,7 @@ const StyledNav = styled.nav`
         font-weight: 700;
         &.active {
           padding-bottom: 0.25rem;
-          border-bottom: 3px solid ${variables.primary};
+          border-bottom: 0.25rem solid ${variables.primary};
         }
       }
     }

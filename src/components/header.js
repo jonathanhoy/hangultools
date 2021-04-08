@@ -24,6 +24,7 @@ const StyledHeader = styled.header`
     padding: 1rem 0;
     font-size: 2.5rem;
     color: ${variables.white};
+    text-align: center;
   }
 `;
 

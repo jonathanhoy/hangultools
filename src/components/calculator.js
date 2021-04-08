@@ -4,8 +4,8 @@ import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
+import { Card, CardHeading, ReferenceCard, CalculatorList } from '../styles/Card';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
-import { ListContainer, CalculatorList } from '../styles/List';
 import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
  
 class Calculator extends React.Component {
@@ -143,89 +143,30 @@ class Calculator extends React.Component {
       <Wrapper>
         <ComponentContainer>
           <Settings>
-            <div>
-              <h2 className="settings-heading">Options</h2>
-              <ul className="settings-list option">
-                <li className="settings-item option">
-                  <button className="settings-button" id="simpleNumbersToggle" onClick={this.handleClick} data-active={this.state.simpleNumbersToggle}>Simple numbers</button>
-                </li>
-                <li className="settings-item option">
-                  <button className="settings-button" id="multipleChoiceToggle" onClick={this.handleClick} data-active={this.state.multipleChoiceToggle}>Multiple Choice</button>
-                </li>
-              </ul>
-            </div>
-            <div>
-              <h2 className="settings-heading">Reference</h2>
-              <ul className="settings-list number">
-                <li className="settings-item number">
-                  <button className="settings-button" id="sinoToggle" onClick={this.handleClick} data-active={this.state.sinoToggle}>Sino numbers</button>
-                </li>
-                <li className="settings-item number">
-                  <button className="settings-button" id="pureToggle" onClick={this.handleClick} data-active={this.state.pureToggle}>Pure numbers</button>
-                </li>
-              </ul>
-            </div>
-             
-             
-            
-            {/* <ListContainer 
-              isVisible={this.state.sinoToggle} 
-              topValueDesktop={'180px'} 
-              topValueMobile={'153px'}
-            >
-              <CalculatorList digits="single">
-                <li><span>1</span><span>일</span></li>
-                <li><span>2</span><span>이</span></li>
-                <li><span>3</span><span>삼</span></li>
-                <li><span>4</span><span>사</span></li>
-                <li><span>5</span><span>오</span></li>
-                <li><span>6</span><span>육</span></li>
-                <li><span>7</span><span>칠</span></li>
-                <li><span>8</span><span>팔</span></li>
-                <li><span>9</span><span>구</span></li>
-              </CalculatorList>
-              <CalculatorList>
-                <li><span>10</span><span>십</span></li>
-                <li><span>20</span><span>이십</span></li>
-                <li><span>30</span><span>삼십</span></li>
-                <li><span>40</span><span>사십</span></li>
-                <li><span>50</span><span>오십</span></li>
-                <li><span>60</span><span>육십</span></li>
-                <li><span>70</span><span>칠십</span></li>
-                <li><span>80</span><span>팔십</span></li>
-                <li><span>90</span><span>구십</span></li>
-                <li><span>100</span><span>백</span></li>
-              </CalculatorList>
-            </ListContainer> */}
-            {/* <ListContainer 
-              isVisible={this.state.pureToggle} 
-              topValueDesktop={'180px'} 
-              topValueMobile={'153px'}
-            >
-              <CalculatorList digits="single">
-                <li><span>1</span><span>하나</span></li>
-                <li><span>2</span><span>둘</span></li>
-                <li><span>3</span><span>셋</span></li>
-                <li><span>4</span><span>넷</span></li>
-                <li><span>5</span><span>다섯</span></li>
-                <li><span>6</span><span>여섯</span></li>
-                <li><span>7</span><span>일곱</span></li>
-                <li><span>8</span><span>여덟</span></li>
-                <li><span>9</span><span>아홉</span></li>
-              </CalculatorList>
-              <CalculatorList>
-                <li><span>10</span><span>열</span></li>
-                <li><span>20</span><span>스물</span></li>
-                <li><span>30</span><span>서른</span></li>
-                <li><span>40</span><span>마흔</span></li>
-                <li><span>50</span><span>쉰</span></li>
-                <li><span>60</span><span>예순</span></li>
-                <li><span>70</span><span>일흔</span></li>
-                <li><span>80</span><span>여든</span></li>
-                <li><span>90</span><span>아흔</span></li>
-                <li><span>100</span><span>백</span></li>
-              </CalculatorList>
-            </ListContainer> */}
+            <Card>
+              <div className="settings-container">
+                <CardHeading className="settings-heading">Options</CardHeading>
+                <ul className="settings-list option">
+                  <li className="settings-item option">
+                    <button className="settings-button" id="simpleNumbersToggle" onClick={this.handleClick} data-active={this.state.simpleNumbersToggle}>Simple Numbers</button>
+                  </li>
+                  <li className="settings-item option">
+                    <button className="settings-button" id="multipleChoiceToggle" onClick={this.handleClick} data-active={this.state.multipleChoiceToggle}>Multiple Choice</button>
+                  </li>
+                </ul>
+              </div>
+              <div className="settings-container">
+                <CardHeading className="settings-heading">Reference</CardHeading>
+                <ul className="settings-list number">
+                  <li className="settings-item number">
+                    <button className="settings-button" id="sinoToggle" onClick={this.handleClick} data-active={this.state.sinoToggle}>Sino Numbers</button>
+                  </li>
+                  <li className="settings-item number">
+                    <button className="settings-button" id="pureToggle" onClick={this.handleClick} data-active={this.state.pureToggle}>Pure Numbers</button>
+                  </li>
+                </ul>
+              </div>
+            </Card>
           </Settings>
           <CalculatorContainer>
             <ComponentWrapper>
@@ -279,6 +220,72 @@ class Calculator extends React.Component {
               <Button onClick={this.generateProblem}>Next</Button>
             </ComponentWrapper>
           </CalculatorContainer>
+          <section>
+              <ReferenceCard 
+              isVisible={this.state.sinoToggle} 
+              topValueDesktop={'180px'} 
+              topValueMobile={'153px'}
+            >
+              <CardHeading>Sino Korean Numbers</CardHeading>
+              <div>
+                <CalculatorList digits="single">
+                  <li><span>1</span><span>일</span></li>
+                  <li><span>2</span><span>이</span></li>
+                  <li><span>3</span><span>삼</span></li>
+                  <li><span>4</span><span>사</span></li>
+                  <li><span>5</span><span>오</span></li>
+                  <li><span>6</span><span>육</span></li>
+                  <li><span>7</span><span>칠</span></li>
+                  <li><span>8</span><span>팔</span></li>
+                  <li><span>9</span><span>구</span></li>
+                </CalculatorList>
+                <CalculatorList>
+                  <li><span>10</span><span>십</span></li>
+                  <li><span>20</span><span>이십</span></li>
+                  <li><span>30</span><span>삼십</span></li>
+                  <li><span>40</span><span>사십</span></li>
+                  <li><span>50</span><span>오십</span></li>
+                  <li><span>60</span><span>육십</span></li>
+                  <li><span>70</span><span>칠십</span></li>
+                  <li><span>80</span><span>팔십</span></li>
+                  <li><span>90</span><span>구십</span></li>
+                  <li><span>100</span><span>백</span></li>
+                </CalculatorList>
+              </div>
+            </ReferenceCard>
+            <ReferenceCard 
+              isVisible={this.state.pureToggle} 
+              topValueDesktop={'180px'} 
+              topValueMobile={'153px'}
+            >
+              <CardHeading>Pure Korean Numbers</CardHeading>
+              <div>
+                <CalculatorList digits="single">
+                  <li><span>1</span><span>하나</span></li>
+                  <li><span>2</span><span>둘</span></li>
+                  <li><span>3</span><span>셋</span></li>
+                  <li><span>4</span><span>넷</span></li>
+                  <li><span>5</span><span>다섯</span></li>
+                  <li><span>6</span><span>여섯</span></li>
+                  <li><span>7</span><span>일곱</span></li>
+                  <li><span>8</span><span>여덟</span></li>
+                  <li><span>9</span><span>아홉</span></li>
+                </CalculatorList>
+                <CalculatorList>
+                  <li><span>10</span><span>열</span></li>
+                  <li><span>20</span><span>스물</span></li>
+                  <li><span>30</span><span>서른</span></li>
+                  <li><span>40</span><span>마흔</span></li>
+                  <li><span>50</span><span>쉰</span></li>
+                  <li><span>60</span><span>예순</span></li>
+                  <li><span>70</span><span>일흔</span></li>
+                  <li><span>80</span><span>여든</span></li>
+                  <li><span>90</span><span>아흔</span></li>
+                  <li><span>100</span><span>백</span></li>
+                </CalculatorList>
+              </div>
+            </ReferenceCard>
+          </section>
         </ComponentContainer>
       </Wrapper>
     )

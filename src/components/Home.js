@@ -14,8 +14,7 @@ class Home extends React.Component {
   render() {
     return (
       <Wrapper>
-        <PageHeading>안녕하세요!</PageHeading>
-        <PageBody>Please choose a tool from the list.</PageBody>
+        <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
         <TileList>
           <TileItem>
             <Link to="/calculator">

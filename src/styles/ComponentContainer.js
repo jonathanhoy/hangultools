@@ -6,7 +6,7 @@ const ComponentContainer = styled.section`
   grid-template-columns: 1fr 2fr 1fr;
   align-items: start;
   margin-top: 2rem;
-  grid-gap: 75px;
+  grid-gap: 3rem;
   /* Settings */
   section:nth-child(1) {
     grid-column: 1 / 2;
