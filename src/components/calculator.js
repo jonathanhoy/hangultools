@@ -170,7 +170,6 @@ class Calculator extends React.Component {
             </Card>
           </Settings>
           <CalculatorContainer>
-            <Card>
               <ComponentWrapper>
                 <Mathfield>
                   <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
@@ -221,7 +220,6 @@ class Calculator extends React.Component {
               <ComponentWrapper>
                 <Button onClick={this.generateProblem}>Next</Button>
               </ComponentWrapper>
-            </Card>
           </CalculatorContainer>
           <section>
             <ReferenceCard isVisible={this.state.sinoToggle} >

@@ -119,7 +119,6 @@ class ClockComponent extends React.Component {
             </Card>
           </Settings>
           <ClockContainer>
-            <Card>
               <ComponentWrapper>
                 <ClockField>
                   <p><span>{this.state.hour}</span><span>:</span><span>{this.state.minute}</span></p>
@@ -146,7 +145,6 @@ class ClockComponent extends React.Component {
               <ComponentWrapper>
                 <Button onClick={this.generateProblem}>Next</Button>
               </ComponentWrapper>
-            </Card>
           </ClockContainer>
           <section>
             <ReferenceCard isVisible={this.state.sinoToggle} >
