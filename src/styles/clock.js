@@ -1,11 +1,10 @@
 import styled from 'styled-components';
 
-const Clock = styled.section`
+const ClockContainer = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
   form {
     display: flex;
     flex-wrap: wrap;
@@ -96,4 +95,4 @@ const ClockField = styled.div`
   }
 `;
 
-export { Clock, ClockField };
+export { ClockContainer, ClockField };

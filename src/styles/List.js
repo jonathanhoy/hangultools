@@ -1,31 +1,6 @@
 import styled from 'styled-components';
 import variables from '../styles/variables';
 
-const Card = styled.div`
-  background: ${variables.grey};
-  border-radius: 0.25rem;
-  box-shadow: ${variables.boxshadow};
-  padding: 1rem;
-`;
-
-const CardHeading = styled.h2`
-  text-transform: uppercase;
-  font-style: italic;
-  font-size: 0.75rem;
-  color: ${variables.darkgrey};
-  margin: 0 0 0.5rem 0;
-`;
-
-const ReferenceCard = styled(Card)`
-  display: ${props => props.isVisible ? 'flex' : 'none'};
-  flex-wrap: wrap;
-  > div {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-`;
-
 const List = styled.ul`
   display: flex;
   flex-direction: column;
@@ -55,4 +30,4 @@ const ClockList = styled(List)`
   margin-right: auto;
 `;
 
-export { Card, CardHeading, ReferenceCard, CalculatorList, ClockList };
+export { CalculatorList, ClockList };

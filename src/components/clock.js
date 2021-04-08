@@ -3,9 +3,11 @@ import { minuteToStrMap, hourToHangulMap, minuteToHangulMap } from './util/timeM
 import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
-import Wrapper from '../styles/Wrapper';
-import { ListContainer, ClockList } from '../styles/List';
-import { Clock, ClockField } from '../styles/clock';
+import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
+import ComponentContainer from '../styles/ComponentContainer';
+import { Card, CardHeading, ReferenceCard } from '../styles/Card';
+import { ClockList } from '../styles/List';
+import { ClockContainer, ClockField } from '../styles/clock';
 
 class ClockComponent extends React.Component {
   constructor() {
@@ -70,24 +72,6 @@ class ClockComponent extends React.Component {
     })
   }
 
-  handleCheckboxChange = (e) => {
-    if (e.target.id === 'sinoToggle') {
-      this.setState({
-        pureToggle: false,
-        [e.target.id]: e.target.checked,
-      })
-    } else if (e.target.id === 'pureToggle') {
-      this.setState({
-        sinoToggle: false,
-        [e.target.id]: e.target.checked,
-      })
-    } else {
-      this.setState({
-        [e.target.id]: e.target.checked
-      })
-    }
-  }
-
   convertNumToHangul = (num, time) => {
     if (hourToHangulMap[num] !== undefined && time === "hour") {
       return hourToHangulMap[num];
@@ -96,107 +80,108 @@ class ClockComponent extends React.Component {
     }
   }
 
+  handleClick = (e) => {
+    e.preventDefault();
+    if (e.target.id === 'sinoToggle') {
+      this.setState({
+        pureToggle: false,
+        [e.target.id]: !this.state[e.target.id],
+      })
+    } else if (e.target.id === 'pureToggle') {
+      this.setState({
+        sinoToggle: false,
+        [e.target.id]: !this.state[e.target.id],
+      })
+    } else {
+      this.setState({
+        [e.target.id]: !this.state[e.target.id],
+      })
+    }
+  }
+
   render() {
     return (
-      <React.Fragment>
-        <Clock>
-          <Wrapper>
-            <ClockField>
-              <p><span>{this.state.hour}</span><span>:</span><span>{this.state.minute}</span></p>
-            </ClockField>
-            <form action="" onSubmit={this.validate}>
-              <div className="inputGroup">
-                <input aria-label={`Type hour here`} className="hour" type="text" id="ansHour" name="ansHour" onChange={this.handleChange} value={this.state.ansHour} placeholder="" />
-                <label htmlFor="ansHour">시</label>
+      <Wrapper>
+        <ComponentContainer>
+          <Settings>
+            <Card>
+              <div className="settings-container">
+                <CardHeading className="settings-heading">Reference</CardHeading>
+                <ul className="settings-list number">
+                  <li className="settings-item number">
+                    <button className="settings-button" id="sinoToggle" onClick={this.handleClick} data-active={this.state.sinoToggle}>Sino Numbers</button>
+                  </li>
+                  <li className="settings-item number">
+                    <button className="settings-button" id="pureToggle" onClick={this.handleClick} data-active={this.state.pureToggle}>Pure Numbers</button>
+                  </li>
+                </ul>
               </div>
-              <div className="inputGroup">
-                <input disabled={this.state.minute === "00" ? true : false} aria-label={`Type minute here`} className={this.state.minute === "00" ? "minute disabled" : "minute"} type="text" id="ansMinute" name="ansMinute" onChange={this.handleChange} value={this.state.ansMinute} placeholder="" />
-                <label htmlFor="ansMinute" className={this.state.minute === "00" ? "minute disabled" : "minute"}>분</label>
-              </div>
-              <div className="responseContainer">
-                {this.state.response === '' && <p>&nbsp;</p>}
-                {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-              </div>
-              <div className="submitContainer">
-                <Button type="submit" theme="purple">Check</Button>
-              </div>
-            </form>
-          </Wrapper>
-          <Wrapper>
-            <Button onClick={this.generateProblem}>Next</Button>
-          </Wrapper>
-        </Clock>
-        <Settings
-          sinoToggle={this.state.sinoToggle}
-          pureToggle={this.state.pureToggle}
-        >
-          <ul className="settings-list">
-            <li className="settings-item number">
-              <label htmlFor="sinoToggle">
-                <p className="sino">Sino<span className="mobileHide">-Korean</span></p>
-                <Checkbox
-                  firstItem
-                  twoItemsOnly
-                  id="sinoToggle"
-                  checked={this.state.sinoToggle}
-                  onChange={this.handleCheckboxChange}
-                />
-              </label>
-            </li>
-            <li className="settings-item number">
-              <label htmlFor="pureToggle">
-                <p className="pure">Pure <span className="mobileHide">Korean</span></p>
-                <Checkbox
-                  lastItem
-                  twoItemsOnly
-                  id="pureToggle"
-                  checked={this.state.pureToggle}
-                  onChange={this.handleCheckboxChange}
-                />
-              </label>
-            </li>
-          </ul>
-          <ListContainer 
-            isVisible={this.state.sinoToggle} 
-            topValueDesktop={'98px'} 
-            topValueMobile={'60px'}
-            singleList
-          >
-            <ClockList digits="single">
-              <li><span>1</span><span>일</span></li>
-              <li><span>2</span><span>이</span></li>
-              <li><span>3</span><span>삼</span></li>
-              <li><span>4</span><span>사</span></li>
-              <li><span>5</span><span>오</span></li>
-              <li><span>6</span><span>육</span></li>
-              <li><span>7</span><span>칠</span></li>
-              <li><span>8</span><span>팔</span></li>
-              <li><span>9</span><span>구</span></li>
-              <li><span>10</span><span>십</span></li>
-            </ClockList>
-          </ListContainer>
-          <ListContainer 
-            isVisible={this.state.pureToggle} 
-            topValueDesktop={'98px'} 
-            topValueMobile={'60px'}
-            singleList
-          >
-            <ClockList digits="single">
-              <li><span>1</span><span>하나 / 한</span></li>
-              <li><span>2</span><span>둘 / 두</span></li>
-              <li><span>3</span><span>셋 / 세</span></li>
-              <li><span>4</span><span>넷 / 네</span></li>
-              <li><span>5</span><span>다섯</span></li>
-              <li><span>6</span><span>여섯</span></li>
-              <li><span>7</span><span>일곱</span></li>
-              <li><span>8</span><span>여덟</span></li>
-              <li><span>9</span><span>아홉</span></li>
-              <li><span>10</span><span>열</span></li>
-            </ClockList>
-          </ListContainer>
-        </Settings>
-      </React.Fragment>
+            </Card>
+          </Settings>
+          <ClockContainer>
+            <Card>
+              <ComponentWrapper>
+                <ClockField>
+                  <p><span>{this.state.hour}</span><span>:</span><span>{this.state.minute}</span></p>
+                </ClockField>
+                <form action="" onSubmit={this.validate}>
+                  <div className="inputGroup">
+                    <input aria-label={`Type hour here`} className="hour" type="text" id="ansHour" name="ansHour" onChange={this.handleChange} value={this.state.ansHour} placeholder="" />
+                    <label htmlFor="ansHour">시</label>
+                  </div>
+                  <div className="inputGroup">
+                    <input disabled={this.state.minute === "00" ? true : false} aria-label={`Type minute here`} className={this.state.minute === "00" ? "minute disabled" : "minute"} type="text" id="ansMinute" name="ansMinute" onChange={this.handleChange} value={this.state.ansMinute} placeholder="" />
+                    <label htmlFor="ansMinute" className={this.state.minute === "00" ? "minute disabled" : "minute"}>분</label>
+                  </div>
+                  <div className="responseContainer">
+                    {this.state.response === '' && <p>&nbsp;</p>}
+                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
+                    {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                  </div>
+                  <div className="submitContainer">
+                    <Button type="submit" theme="purple">Check</Button>
+                  </div>
+                </form>
+              </ComponentWrapper>
+              <ComponentWrapper>
+                <Button onClick={this.generateProblem}>Next</Button>
+              </ComponentWrapper>
+            </Card>
+          </ClockContainer>
+          <section>
+            <ReferenceCard isVisible={this.state.sinoToggle} >
+              <CardHeading>Sino Korean Numbers</CardHeading>
+              <ClockList digits="single">
+                <li><span>1</span><span>일</span></li>
+                <li><span>2</span><span>이</span></li>
+                <li><span>3</span><span>삼</span></li>
+                <li><span>4</span><span>사</span></li>
+                <li><span>5</span><span>오</span></li>
+                <li><span>6</span><span>육</span></li>
+                <li><span>7</span><span>칠</span></li>
+                <li><span>8</span><span>팔</span></li>
+                <li><span>9</span><span>구</span></li>
+                <li><span>10</span><span>십</span></li>
+              </ClockList>
+            </ReferenceCard>
+            <ReferenceCard isVisible={this.state.pureToggle} >
+              <CardHeading>Sino Korean Numbers</CardHeading>
+              <ClockList digits="single">
+                <li><span>1</span><span>하나 / 한</span></li>
+                <li><span>2</span><span>둘 / 두</span></li>
+                <li><span>3</span><span>셋 / 세</span></li>
+                <li><span>4</span><span>넷 / 네</span></li>
+                <li><span>5</span><span>다섯</span></li>
+                <li><span>6</span><span>여섯</span></li>
+                <li><span>7</span><span>일곱</span></li>
+                <li><span>8</span><span>여덟</span></li>
+                <li><span>9</span><span>아홉</span></li>
+                <li><span>10</span><span>열</span></li>
+              </ClockList>
+            </ReferenceCard>
+          </section>
+        </ComponentContainer>
+      </Wrapper>
     )
   }
 };

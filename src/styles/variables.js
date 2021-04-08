@@ -15,7 +15,7 @@ const variables = {
   lg: '64rem',
 
   // MISC
-  boxshadow: '0px 5px 10px 0px rgba(0,0,0,0.65);',
+  boxshadow: '0px 3px 5px 0px rgba(0,0,0,0.65);',
 };
 
 export default variables;

@@ -5,6 +5,7 @@ import Header from './components/Header';
 import Nav from './components/Nav';
 import Home from './components/Home';
 import Calculator from './components/calculator';
+import Clock from './components/clock';
 
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
@@ -16,7 +17,7 @@ function App() {
         <Nav />
         <Route path="/" exact component={Home} />
         <Route path="/calculator" component={Calculator} />
-        {/* <Route path="/clock" component={Calculator} /> */}
+        <Route path="/clock" component={Clock} />
       </Router>
     </div>
   );

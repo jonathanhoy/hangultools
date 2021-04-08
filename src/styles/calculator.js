@@ -5,9 +5,8 @@ const CalculatorContainer = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
   label {
-    margin-top: 25px;
+    margin-top: 1.5rem;
     display: block;
     text-align: center;
     font-weight: 600;
@@ -15,16 +14,16 @@ const CalculatorContainer = styled.section`
   input[type="text"] {
     width: 100%;
     border: 3px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px 0;
+    border-radius: 0.25rem;;
+    padding: 0.25rem;
+    margin: 1rem 0;
     text-align: center;
-    font-size: 32px;
+    font-size: 2rem;
   }
   form p {
     text-align: center;
-    font-size: 32px;
-    margin: 16px 0;
+    font-size: 2rem;
+    margin: 1rem 0;
   }
   label[for="input"] { 
     border: 0;
@@ -51,7 +50,7 @@ const Mathfield = styled.div`
   grid-template-rows: 60px 60px;
   border-bottom: 3px solid black;
   span {
-    font-size: 48px;
+    font-size: 3rem;
   }
   .numberX {
     grid-column: 2 / 3;
@@ -64,8 +63,8 @@ const Mathfield = styled.div`
     justify-self: end;
   }
   .operation {
-    width: 25px;
-    height: 25px;
+    width: 1.5rem;
+    height: 1.5rem;
     grid-row: 2 / 3;
   }
 `;
@@ -75,9 +74,9 @@ const MultipleChoice = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 10px;
-    margin-top: 10px;
-    margin-bottom: 26px;
+    grid-gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
   }
   input[type="radio"] {
     opacity: 0;
@@ -86,11 +85,11 @@ const MultipleChoice = styled.div`
   }
   label {
     display: inline-block;
-    padding: 5px;
+    padding: 0.5rem;
     border: 3px solid #000;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     margin-top: 0;
-    font-size: 24px;
+    font-size: 1.5rem;
     transition: all 0.2s;
   }
   input[type="radio"]:checked+label {
@@ -113,8 +112,8 @@ const MultipleChoice = styled.div`
       grid-template-columns: 1fr 1fr;
     }
     label {
-      font-size: 18px;
-      padding: 15px 10px;
+      font-size: 1.25rem;
+      padding: 1rem 0.5rem;
     }
   }
 `;

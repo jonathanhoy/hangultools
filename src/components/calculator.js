@@ -4,7 +4,8 @@ import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
-import { Card, CardHeading, ReferenceCard, CalculatorList } from '../styles/Card';
+import { Card, CardHeading, ReferenceCard } from '../styles/Card';
+import { CalculatorList } from '../styles/List';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
  
@@ -169,63 +170,61 @@ class Calculator extends React.Component {
             </Card>
           </Settings>
           <CalculatorContainer>
-            <ComponentWrapper>
-              <Mathfield>
-                <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
-                <span className="operation">&#x2b;</span>
-                <span className="numberY">{this.convertNumToWord(this.state.y, this.state.system)} </span>
-              </Mathfield>
-            </ComponentWrapper>
-            <form action="" onSubmit={this.validate}>
-              {
-                this.state.multipleChoiceToggle === false &&
-                (
-                  <ComponentWrapper>
-                    <label htmlFor="input">Answer</label>
-                    <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
-                    {this.state.response === '' && <p>&nbsp;</p>}
-                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
-                    {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                    <Button type="submit" theme="purple">Check</Button>
-                  </ComponentWrapper>
-                )
-              }
-              {
-                this.state.multipleChoiceToggle === true &&
-                <MultipleChoice>
-                  <div className="container">
-                    {
-                      this.state.multipleChoiceArr.map((item) => {
-                        return (
-                          <>
-                            <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
-                            <label htmlFor={item}>
-                              {item}
-                            </label>
-                          </>
-                        )
-                      })
-                    }
-                  </div>
-                  <ComponentWrapper margin="auto">
-                    {this.state.response === '' && <p>&nbsp;</p>}
-                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                    {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                    <Button type="submit" theme="purple">Check</Button>
-                  </ComponentWrapper>
-                </MultipleChoice>
-              }
-            </form>
-            <ComponentWrapper>
-              <Button onClick={this.generateProblem}>Next</Button>
-            </ComponentWrapper>
+            <Card>
+              <ComponentWrapper>
+                <Mathfield>
+                  <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
+                  <span className="operation">&#x2b;</span>
+                  <span className="numberY">{this.convertNumToWord(this.state.y, this.state.system)} </span>
+                </Mathfield>
+              </ComponentWrapper>
+              <form action="" onSubmit={this.validate}>
+                {
+                  this.state.multipleChoiceToggle === false &&
+                  (
+                    <ComponentWrapper>
+                      <label htmlFor="input">Answer</label>
+                      <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
+                      {this.state.response === '' && <p>&nbsp;</p>}
+                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
+                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                      <Button type="submit" theme="purple">Check</Button>
+                    </ComponentWrapper>
+                  )
+                }
+                {
+                  this.state.multipleChoiceToggle === true &&
+                  <MultipleChoice>
+                    <div className="container">
+                      {
+                        this.state.multipleChoiceArr.map((item) => {
+                          return (
+                            <>
+                              <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
+                              <label htmlFor={item}>
+                                {item}
+                              </label>
+                            </>
+                          )
+                        })
+                      }
+                    </div>
+                    <ComponentWrapper margin="auto">
+                      {this.state.response === '' && <p>&nbsp;</p>}
+                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
+                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                      <Button type="submit" theme="purple">Check</Button>
+                    </ComponentWrapper>
+                  </MultipleChoice>
+                }
+              </form>
+              <ComponentWrapper>
+                <Button onClick={this.generateProblem}>Next</Button>
+              </ComponentWrapper>
+            </Card>
           </CalculatorContainer>
           <section>
-              <ReferenceCard 
-              isVisible={this.state.sinoToggle} 
-              topValueDesktop={'180px'} 
-              topValueMobile={'153px'}
-            >
+            <ReferenceCard isVisible={this.state.sinoToggle} >
               <CardHeading>Sino Korean Numbers</CardHeading>
               <div>
                 <CalculatorList digits="single">
@@ -253,11 +252,7 @@ class Calculator extends React.Component {
                 </CalculatorList>
               </div>
             </ReferenceCard>
-            <ReferenceCard 
-              isVisible={this.state.pureToggle} 
-              topValueDesktop={'180px'} 
-              topValueMobile={'153px'}
-            >
+            <ReferenceCard isVisible={this.state.pureToggle} >
               <CardHeading>Pure Korean Numbers</CardHeading>
               <div>
                 <CalculatorList digits="single">
