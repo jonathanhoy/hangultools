@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import variables from './variables';
 
 const CalculatorContainer = styled.section`
   display: flex;
@@ -35,10 +36,9 @@ const CalculatorContainer = styled.section`
     position: absolute;
     width: 1px;
   }
-  @media (max-width: 599px) {
+  @media (max-width: ${variables.sm}) {
     grid-column: 2 / 3;
-    grid-row: 2 / 4;
-    margin-top: 20px;
+    /* grid-row: 2 / 4; */
     margin-bottom: 0;
     align-items: flex-end;
   }

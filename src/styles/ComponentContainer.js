@@ -15,6 +15,11 @@ const ComponentContainer = styled.section`
   section:nth-child(2) {
     grid-column: 2 / 3;
   }
+  @media (max-width: ${variables.sm}) {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1rem;
+    grid-gap: 0.5rem;
+  }
 `;
 
 export default ComponentContainer;

@@ -19,6 +19,12 @@ const Settings = styled.section`
           border: none;
           border-radius: 0.25rem;
           color: ${variables.black};
+          position: relative;
+          z-index: 10;
+          span {
+            position: relative;
+            z-index: -1;
+          }
           &[data-active="true"] {
             background: ${variables.primary};
             color: ${variables.white};
