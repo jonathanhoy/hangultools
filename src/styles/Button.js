@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import variables from '../styles/variables'
 
 const Button = styled.button`
-  background: ${props => (props.theme === "purple" ? "#5E3399" : "white")};
-  color: ${props => (props.theme === "purple" ? "white" : "#5E3399")};;
-  border: 3px solid #5E3399;
+  background: ${props => (props.theme === "purple" ? `${variables.primary}` : "white")};
+  color: ${props => (props.theme === "purple" ? "white" : `${variables.primary}`)};;
+  border: 3px solid ${variables.primary};
   border-radius: 5px;
   width: 100%;
   margin: 10px 0;
@@ -12,8 +13,8 @@ const Button = styled.button`
   font-weight: 600;
   font-size: 20px;
   &:hover {
-    background: #5E3399;
-    border: 3px solid #5E3399;
+    background: ${variables.primary};
+    border: 3px solid ${variables.primary};
     color: white;
   }
   @media (max-width: 599px) {

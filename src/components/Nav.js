@@ -14,7 +14,7 @@ class Nav extends React.Component {
             <li><NavLink to="/" exact activeClassName="active">Home</NavLink></li>
             <li><NavLink to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
             <li><NavLink to="/clock" exact activeClassName="active">Clock</NavLink></li>
-            <li><NavLink to="/reference" exact activeClassName="active">Reference</NavLink></li>
+            {/* <li><NavLink to="/reference" exact activeClassName="active">Reference</NavLink></li> */}
             <li><NavLink to="/about" exact activeClassName="active">About</NavLink></li>
           </ul>
         </Wrapper>

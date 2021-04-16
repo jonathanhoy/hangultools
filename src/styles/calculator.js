@@ -93,14 +93,13 @@ const MultipleChoice = styled.div`
     transition: all 0.2s;
   }
   input[type="radio"]:checked+label {
-    background-color: #5E3399;
-    border-color: #5E3399;
+    background-color: ${variables.primary};
+    border-color: ${variables.primary};
     color: white;
   }
   label:hover {
-    background-color: #8353c6;
-    border-color: #8353c6;
-    color: white;
+    border-color: ${variables.primary};
+    color: ${variables.primary};
   }
   input[type="submit"] {
     grid-column: 0 / 4;
