@@ -24,7 +24,8 @@ const CalculatorContainer = styled.section`
   form p {
     text-align: center;
     font-size: 2rem;
-    margin: 1rem 0;
+    margin: 0 0 1rem 0;
+    line-height: 1;
   }
   label[for="input"] { 
     border: 0;
@@ -37,6 +38,9 @@ const CalculatorContainer = styled.section`
     width: 1px;
   }
   @media (max-width: ${variables.sm}) {
+    form {
+      width: 100%;
+    }
     grid-column: 2 / 3;
     /* grid-row: 2 / 4; */
     margin-bottom: 0;
@@ -112,7 +116,7 @@ const MultipleChoice = styled.div`
     }
     label {
       font-size: 1.25rem;
-      padding: 1rem 0.5rem;
+      padding: 0.25rem;
     }
   }
 `;

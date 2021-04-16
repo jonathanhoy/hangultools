@@ -143,7 +143,7 @@ class Calculator extends React.Component {
     return (
       <Wrapper>
         <ComponentContainer>
-          <Settings>
+          <Settings className="settings">
             <Card>
               <div className="settings-container">
                 <CardHeading className="settings-heading">Options</CardHeading>
@@ -169,7 +169,7 @@ class Calculator extends React.Component {
               </div>
             </Card>
           </Settings>
-          <CalculatorContainer>
+          <CalculatorContainer className="component">
               <ComponentWrapper>
                 <Mathfield>
                   <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
@@ -221,7 +221,7 @@ class Calculator extends React.Component {
                 <Button onClick={this.generateProblem}>Next</Button>
               </ComponentWrapper>
           </CalculatorContainer>
-          <section>
+          <section className="reference">
             <ReferenceCard isVisible={this.state.sinoToggle} >
               <CardHeading>Sino Korean Numbers</CardHeading>
               <div>

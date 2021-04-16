@@ -103,7 +103,7 @@ class ClockComponent extends React.Component {
     return (
       <Wrapper>
         <ComponentContainer>
-          <Settings>
+          <Settings className="settings">
             <Card>
               <div className="settings-container">
                 <CardHeading className="settings-heading">Reference</CardHeading>
@@ -118,7 +118,7 @@ class ClockComponent extends React.Component {
               </div>
             </Card>
           </Settings>
-          <ClockContainer>
+          <ClockContainer className="component">
               <ComponentWrapper>
                 <ClockField>
                   <p><span>{this.state.hour}</span><span>:</span><span>{this.state.minute}</span></p>
@@ -146,7 +146,7 @@ class ClockComponent extends React.Component {
                 <Button onClick={this.generateProblem}>Next</Button>
               </ComponentWrapper>
           </ClockContainer>
-          <section>
+          <section className="reference">
             <ReferenceCard isVisible={this.state.sinoToggle} >
               <CardHeading>Sino Korean Numbers</CardHeading>
               <ClockList digits="single">

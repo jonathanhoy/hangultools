@@ -8,25 +8,30 @@ const ComponentContainer = styled.section`
   margin-top: 2rem;
   grid-gap: 3rem;
   /* Settings */
-  section:nth-child(1) {
+  .settings {
     grid-column: 1 / 2;
   }
   /* Main Component */
-  section:nth-child(2) {
+  .component {
     grid-column: 2 / 3;
   }
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr 1fr;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     grid-gap: 0.5rem;
-    section:nth-child(1) {
+    .settings {
       grid-column: 1 / 3;
       grid-row: 1 / 2;
     }
-    section:nth-child(2) {
-      grid-column: 1 / 3;
+    .component {
+      grid-column: 2 / 3;
       grid-row: 2 / 3;
       align-items: center;
+    }
+    .reference {
+      grid-column: 1 / 2;
+      grid-row: 2 / 3;
     }
   }
 `;

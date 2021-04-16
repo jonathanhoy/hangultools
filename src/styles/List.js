@@ -22,6 +22,9 @@ const List = styled.ul`
 
 const CalculatorList = styled(List)`
 	width: ${props => (props.digits === 'single' ? '55px' : '75px')};
+  @media (max-width: ${variables.sm}) {
+    width: 55px;
+  }
 `;
 
 const ClockList = styled(List)`

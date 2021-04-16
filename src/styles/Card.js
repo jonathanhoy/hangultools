@@ -6,6 +6,9 @@ const Card = styled.div`
   border-radius: 0.25rem;
   box-shadow: ${variables.boxshadow};
   padding: 1rem;
+  @media (max-width: ${variables.sm}) {
+    padding: 0.5rem;
+  }
 `;
 
 const CardHeading = styled.h2`
@@ -19,10 +22,18 @@ const CardHeading = styled.h2`
 const ReferenceCard = styled(Card)`
   display: ${props => props.isVisible ? 'flex' : 'none'};
   flex-wrap: wrap;
+  flex-direction: column;
   > div {
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+  @media (max-width: ${variables.sm}) {
+    > div {
+      /* width: 50%; */
+      /* margin: 0 auto; */
+
+    }
   }
 `;
 
@@ -45,14 +56,4 @@ const List = styled.ul`
 	}
 `;
 
-const CalculatorList = styled(List)`
-	width: ${props => (props.digits === 'single' ? '55px' : '75px')};
-`;
-
-const ClockList = styled(List)`
-  width: 75px;
-  margin-left: auto;
-  margin-right: auto;
-`;
-
-export { Card, CardHeading, ReferenceCard, CalculatorList, ClockList };
+export { Card, CardHeading, ReferenceCard };
