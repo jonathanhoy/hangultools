@@ -188,7 +188,7 @@ class Calculator extends React.Component {
                       {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                       <ButtonGroup>
                         <Button type="submit" theme="purple">Check</Button>
-                        <Button onClick={this.generateProblem}>Next</Button>
+                        <Button type="button" onClick={this.generateProblem}>Next</Button>
                       </ButtonGroup>
                     </ComponentWrapper>
                   )
@@ -216,7 +216,7 @@ class Calculator extends React.Component {
                       {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                       <ButtonGroup>
                         <Button type="submit" theme="purple">Check</Button>
-                        <Button onClick={this.generateProblem}>Next</Button>
+                        <Button type="button" onClick={this.generateProblem}>Next</Button>
                       </ButtonGroup>
                     </ComponentWrapper>
                   </MultipleChoice>

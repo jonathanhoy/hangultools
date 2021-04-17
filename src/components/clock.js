@@ -141,7 +141,7 @@ class ClockComponent extends React.Component {
                   <div className="submitContainer">
                     <ButtonGroup>
                       <Button type="submit" theme="purple">Check</Button>
-                      <Button onClick={this.generateProblem}>Next</Button>
+                      <Button type="button" onClick={this.generateProblem}>Next</Button>
                     </ButtonGroup>
                   </div>
                 </form>
