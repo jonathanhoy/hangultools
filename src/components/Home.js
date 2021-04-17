@@ -14,32 +14,24 @@ class Home extends React.Component {
         <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
         <TileList>
           <TileItem className="calculator">
-            <Card>
-              <Link to="/calculator">
+            <Link to="/calculator">
+              <Card>
                 <i class="fas fa-calculator"></i>
                 <p>Calculator</p>
                 <i class="fas fa-arrow-right"></i>
-              </Link>
-            </Card>
+              </Card>
+            </Link>
           </TileItem>
 
           <TileItem className="clock">
-            <Card>
-              <Link to="/clock">
+            <Link to="/clock">
+              <Card>
                 <i class="fas fa-clock"></i>
                 <p>Clock</p>
                 <i class="fas fa-arrow-right"></i>
-              </Link>
-            </Card>
-          </TileItem>
-
-          {/* <TileItem>
-            <Link to="/reference">
-              <div>
-                <p>Reference</p>
-              </div>
+              </Card>
             </Link>
-          </TileItem> */}
+          </TileItem>
 
         </TileList>
 
@@ -61,17 +53,7 @@ const TileList = styled.ul`
 `;
 
 const TileItem = styled.li`
-  > div {
-    display: flex;
-    justify-content: center;
-  }
   a {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 3rem 1fr 3rem;
-    grid-gap: 1rem;
-    justify-items: center;
-    align-items: center;
     text-decoration: none;
     font-size: 1.5rem;
     font-weight: 700;
@@ -82,6 +64,14 @@ const TileItem = styled.li`
     p {
       margin: 1rem 0;
       justify-self: left;
+    }
+    div {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 3rem 1fr 3rem;
+      grid-gap: 1rem;
+      justify-items: center;
+      align-items: center;
     }
   }
 `;
