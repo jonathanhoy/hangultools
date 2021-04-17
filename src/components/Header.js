@@ -153,10 +153,12 @@ const StyledNav = styled.nav`
       margin: 0 auto;
       margin-top: 4rem;
       margin-bottom: 1rem;
+      text-align: right;
       li {
         margin-bottom: 2rem;
         &:last-of-type {
           margin-bottom: 0;
+          margin-right: 1.5rem;
         }
       }
     }
