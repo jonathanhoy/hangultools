@@ -160,6 +160,9 @@ const StyledNav = styled.nav`
           margin-bottom: 0;
           margin-right: 1.5rem;
         }
+        a {
+          font-size: 1.5rem;
+        }
       }
     }
   }
