@@ -2,7 +2,6 @@ import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/Header';
-import Nav from './components/Nav';
 import Home from './components/Home';
 import Calculator from './components/calculator';
 import Clock from './components/clock';
@@ -14,7 +13,6 @@ function App() {
     <div className="App">
       <Router>
         <Header />
-        <Nav />
         <Route path="/" exact component={Home} />
         <Route path="/calculator" component={Calculator} />
         <Route path="/clock" component={Clock} />

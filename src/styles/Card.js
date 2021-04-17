@@ -17,6 +17,9 @@ const CardHeading = styled.h2`
   font-size: 0.75rem;
   color: ${variables.darkgrey};
   margin: 0 0 0.5rem 0;
+  @media (max-width: ${variables.sm}) {
+    margin: 0;
+  }
 `;
 
 const ReferenceCard = styled(Card)`
