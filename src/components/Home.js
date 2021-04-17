@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
+import { Card, CardHeading, ReferenceCard } from '../styles/Card';
 import variables from '../styles/variables';
 
 class Home extends React.Component {
@@ -16,31 +17,37 @@ class Home extends React.Component {
       <Wrapper>
         <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
         <TileList>
-          <TileItem>
-            <Link to="/calculator">
-              <div>
+          <TileItem className="calculator">
+            <Card>
+              <Link to="/calculator">
+                <i class="fas fa-calculator"></i>
                 <p>Calculator</p>
-              </div>
-            </Link>
+                <i class="fas fa-arrow-right"></i>
+              </Link>
+            </Card>
           </TileItem>
 
-          <TileItem>
-            <Link to="/clock">
-              <div>
+          <TileItem className="clock">
+            <Card>
+              <Link to="/clock">
+                <i class="fas fa-clock"></i>
                 <p>Clock</p>
-              </div>
-            </Link>
+                <i class="fas fa-arrow-right"></i>
+              </Link>
+            </Card>
           </TileItem>
 
-          <TileItem>
+          {/* <TileItem>
             <Link to="/reference">
               <div>
                 <p>Reference</p>
               </div>
             </Link>
-          </TileItem>
+          </TileItem> */}
 
         </TileList>
+
+        <PageBody>More tools coming soon!</PageBody>
       </Wrapper>
     )
   }
@@ -48,23 +55,38 @@ class Home extends React.Component {
 
 
 const TileList = styled.ul`
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  margin-bottom: 1rem;
+  @media (max-width: ${variables.sm}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const TileItem = styled.li`
-  background: ${variables.primary};
-  margin: 0 2rem 2rem 0;
-  div {
+  > div {
     display: flex;
-    align-items: flex-end;
+    justify-content: center;
   }
   a {
-    display: flex;
-    align-items: flex-end;
-    width: 300px;
-    height: 350px;
-    color: ${variables.white};
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3rem 1fr 3rem;
+    grid-gap: 1rem;
+    justify-items: center;
+    align-items: center;
     text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: ${variables.black};
+    &:active, &:hover {
+      color: ${variables.primary};
+    }
+    p {
+      margin: 1rem 0;
+      justify-self: left;
+    }
   }
 `;
 
