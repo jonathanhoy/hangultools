@@ -10,10 +10,11 @@ const ClockContainer = styled.section`
     display: flex;
     flex-wrap: wrap;
     .inputGroupContainer {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-      }
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 1rem;
+    }
     .inputGroup {
       display: flex;
       align-items: center;
@@ -26,7 +27,7 @@ const ClockContainer = styled.section`
         border: 3px solid black;
         border-radius: 5px;
         padding: 5px;
-        margin: 10px 0;
+        margin: 0.5rem 0 0 0;
         text-align: center;
         font-size: 18px;
       }

@@ -183,13 +183,13 @@ class Calculator extends React.Component {
                     <ComponentWrapper>
                       <label htmlFor="input">Answer</label>
                       <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
-                      {this.state.response === '' && <p>&nbsp;</p>}
-                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
-                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                       <ButtonGroup>
                         <Button type="submit" theme="purple">Check</Button>
                         <Button type="button" onClick={this.generateProblem}>Next</Button>
                       </ButtonGroup>
+                      {this.state.response === '' && <p>&nbsp;</p>}
+                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
+                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                     </ComponentWrapper>
                   )
                 }
@@ -211,13 +211,13 @@ class Calculator extends React.Component {
                       }
                     </div>
                     <ComponentWrapper margin="auto">
-                      {this.state.response === '' && <p>&nbsp;</p>}
-                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                       <ButtonGroup>
                         <Button type="submit" theme="purple">Check</Button>
                         <Button type="button" onClick={this.generateProblem}>Next</Button>
                       </ButtonGroup>
+                      {this.state.response === '' && <p>&nbsp;</p>}
+                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
+                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
                     </ComponentWrapper>
                   </MultipleChoice>
                 }

@@ -24,7 +24,7 @@ const CalculatorContainer = styled.section`
   form p {
     text-align: center;
     font-size: 2rem;
-    margin: 0 0 1rem 0;
+    margin: 1rem 0 0 0;
     line-height: 1;
   }
   label[for="input"] { 
@@ -80,7 +80,7 @@ const MultipleChoice = styled.div`
     grid-template-rows: 1fr 1fr;
     grid-gap: 1rem;
     margin-top: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
   input[type="radio"] {
     opacity: 0;

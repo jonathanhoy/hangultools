@@ -133,16 +133,16 @@ class ClockComponent extends React.Component {
                       <label htmlFor="ansMinute" className={this.state.minute === "00" ? "minute disabled" : "minute"}>분</label>
                     </div>
                   </div>
-                  <div className="responseContainer">
-                    {this.state.response === '' && <p>&nbsp;</p>}
-                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                    {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}</p>}
-                  </div>
                   <div className="submitContainer">
                     <ButtonGroup>
                       <Button type="submit" theme="purple">Check</Button>
                       <Button type="button" onClick={this.generateProblem}>Next</Button>
                     </ButtonGroup>
+                  </div>
+                  <div className="responseContainer">
+                    {this.state.response === '' && <p>&nbsp;</p>}
+                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
+                    {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}</p>}
                   </div>
                 </form>
               </ComponentWrapper>
