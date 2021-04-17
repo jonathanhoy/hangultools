@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import variables from '../styles/variables';
+// import variables from '../styles/variables';
 
 const List = styled.ul`
   display: flex;
