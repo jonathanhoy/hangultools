@@ -135,7 +135,7 @@ class ClockComponent extends React.Component {
                   <div className="responseContainer">
                     {this.state.response === '' && <p>&nbsp;</p>}
                     {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                    {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                    {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}</p>}
                   </div>
                   <div className="submitContainer">
                     <Button type="submit" theme="purple">Check</Button>
@@ -163,7 +163,7 @@ class ClockComponent extends React.Component {
               </ClockList>
             </ReferenceCard>
             <ReferenceCard isVisible={this.state.pureToggle} >
-              <CardHeading>Sino Korean Numbers</CardHeading>
+              <CardHeading>Pure Korean Numbers</CardHeading>
               <ClockList digits="single">
                 <li><span>1</span><span>하나 / 한</span></li>
                 <li><span>2</span><span>둘 / 두</span></li>

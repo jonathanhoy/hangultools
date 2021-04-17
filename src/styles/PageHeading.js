@@ -9,7 +9,7 @@ const PageHeading = styled.h2`
 `;
 
 const PageBody = styled.p`
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: ${variables.black};
   margin-top: 0;
 `;

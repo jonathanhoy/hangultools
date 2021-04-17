@@ -102,6 +102,7 @@ const StyledHeader = styled.header`
       text-align: left;
       position: relative;
       z-index: 30;
+      padding: 0.5rem 0;
       .eng {
         display: ${props => props.mobileNavHidden ? 'block' : 'none'};
         color: ${variables.white};
@@ -123,6 +124,9 @@ const StyledNav = styled.nav`
     padding: 1rem 0;
     li {
       margin-right: 1.5rem;
+      &:last-of-type {
+        margin-right: 0;
+      }
       a {
         text-decoration: none;
         color: ${variables.black};
@@ -136,6 +140,7 @@ const StyledNav = styled.nav`
     }
   }
   @media (max-width: ${variables.sm}) {
+    box-shadow: ${variables.boxshadow};
     display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
     position: absolute;
     z-index: 20;

@@ -19,7 +19,8 @@ const ComponentContainer = styled.section`
     grid-template-columns: 1fr 1fr;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    grid-gap: 0.5rem;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 1rem;
     .settings {
       grid-column: 1 / 3;
       grid-row: 1 / 2;
