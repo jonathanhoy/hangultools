@@ -4,7 +4,7 @@ import variables from '../styles/variables';
 const PageHeading = styled.h2`
   font-size: 2rem;
   color: ${variables.black};
-  margin-top: 2.5rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
 `;
 
