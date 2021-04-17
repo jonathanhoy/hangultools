@@ -23,4 +23,10 @@ const Button = styled.button`
   }
 `;
 
-export default Button;
+const ButtonGroup = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 0.5rem;
+`;
+
+export { Button, ButtonGroup };

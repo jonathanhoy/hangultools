@@ -1,7 +1,7 @@
 import React from 'react';
 import { minuteToStrMap, hourToHangulMap, minuteToHangulMap } from './util/timeMapping';
 import Settings from '../styles/Settings';
-import Button from '../styles/Button';
+import { Button, ButtonGroup } from '../styles/Button';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import ComponentContainer from '../styles/ComponentContainer';
 import { Card, CardHeading, ReferenceCard } from '../styles/Card';
@@ -139,12 +139,12 @@ class ClockComponent extends React.Component {
                     {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour} 시 {this.state.hangulMinute} {this.state.hangulMinute !== "" && "분"}</p>}
                   </div>
                   <div className="submitContainer">
-                    <Button type="submit" theme="purple">Check</Button>
+                    <ButtonGroup>
+                      <Button type="submit" theme="purple">Check</Button>
+                      <Button onClick={this.generateProblem}>Next</Button>
+                    </ButtonGroup>
                   </div>
                 </form>
-              </ComponentWrapper>
-              <ComponentWrapper>
-                <Button onClick={this.generateProblem}>Next</Button>
               </ComponentWrapper>
           </ClockContainer>
           <section className="reference">

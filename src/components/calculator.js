@@ -1,7 +1,7 @@
 import React from 'react';
 import numToWordsMap from './util/mapping';
 import Settings from '../styles/Settings';
-import Button from '../styles/Button';
+import { Button, ButtonGroup } from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
 import { Card, CardHeading, ReferenceCard } from '../styles/Card';
 import { CalculatorList } from '../styles/List';
@@ -186,7 +186,10 @@ class Calculator extends React.Component {
                       {this.state.response === '' && <p>&nbsp;</p>}
                       {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
                       {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                      <Button type="submit" theme="purple">Check</Button>
+                      <ButtonGroup>
+                        <Button type="submit" theme="purple">Check</Button>
+                        <Button onClick={this.generateProblem}>Next</Button>
+                      </ButtonGroup>
                     </ComponentWrapper>
                   )
                 }
@@ -211,14 +214,14 @@ class Calculator extends React.Component {
                       {this.state.response === '' && <p>&nbsp;</p>}
                       {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
                       {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                      <Button type="submit" theme="purple">Check</Button>
+                      <ButtonGroup>
+                        <Button type="submit" theme="purple">Check</Button>
+                        <Button onClick={this.generateProblem}>Next</Button>
+                      </ButtonGroup>
                     </ComponentWrapper>
                   </MultipleChoice>
                 }
               </form>
-              <ComponentWrapper>
-                <Button onClick={this.generateProblem}>Next</Button>
-              </ComponentWrapper>
           </CalculatorContainer>
           <section className="reference">
             <ReferenceCard isVisible={this.state.sinoToggle} >
