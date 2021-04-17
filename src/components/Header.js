@@ -38,7 +38,7 @@ class Header extends React.Component {
     return (
       <StyledHeader mobileNavHidden={this.state.mobileNavHidden} >
         <Wrapper>
-          <h1><span className="eng">Hangul Tools</span><span className="han">한글도구들</span></h1>
+          <h1>Hangul Tools</h1>
           <button className="mobile-nav-toggle" onClick={this.handleClick}>
               <i className="fas fa-bars fa-fw"></i>
               <i className="fas fa-times fa-fw"></i>
@@ -84,13 +84,14 @@ const StyledHeader = styled.header`
       border: none;
       padding: 0;
       font-size: 1.5rem;
+      i {
+        color: ${variables.white};
+      }
       .fa-bars {
         display: ${props => props.mobileNavHidden ? 'block' : 'none'};
-        color: ${variables.white};
       }
       .fa-times {
         display: ${props => props.mobileNavHidden ? 'none' : 'block'};
-        color: ${variables.black};
       }
     }
     > div {
@@ -103,14 +104,7 @@ const StyledHeader = styled.header`
       position: relative;
       z-index: 30;
       padding: 0.5rem 0;
-      .eng {
-        display: ${props => props.mobileNavHidden ? 'block' : 'none'};
-        color: ${variables.white};
-      }
-      .han {
-        display: ${props => props.mobileNavHidden ? 'none' : 'block'};
-        color: ${variables.black};
-      }
+      color: ${variables.white};
     }
   }
 `;
@@ -144,21 +138,21 @@ const StyledNav = styled.nav`
     display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
     position: absolute;
     z-index: 20;
-    top: 0;
     left: 0;
     right: 0;
     ul {
       flex-direction: column;
       width: 95%;
       margin: 0 auto;
-      margin-top: 4rem;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
+      padding: 0;
       text-align: right;
       li {
         margin-bottom: 2rem;
+        margin-right: 0;
         &:last-of-type {
           margin-bottom: 0;
-          margin-right: 1.5rem;
+          /* margin-right: 1.5rem; */
         }
         a {
           font-size: 1.5rem;

@@ -83,13 +83,6 @@ const ClockContainer = styled.section`
           margin-left: 0.25rem;
           font-size: 1.5rem;
         }
-        input.hour {
-          width: 50px;
-        }
-        input.minute {
-          width: 64px;
-          margin-left: 0.5rem;
-        }
       }
     }
   }

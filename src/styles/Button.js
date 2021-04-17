@@ -12,11 +12,6 @@ const Button = styled.button`
   transition: all 0.2s;
   font-weight: 600;
   font-size: 20px;
-  &:hover {
-    background: ${variables.primary};
-    border: 3px solid ${variables.primary};
-    color: white;
-  }
   @media (max-width: 599px) {
     padding: 10px 5px;
     margin: 5px 0;
