@@ -123,13 +123,15 @@ class ClockComponent extends React.Component {
                   <p><span>{this.state.hour}</span><span>:</span><span>{this.state.minute}</span></p>
                 </ClockField>
                 <form action="" onSubmit={this.validate}>
-                  <div className="inputGroup">
-                    <input aria-label={`Type hour here`} className="hour" type="text" id="ansHour" name="ansHour" onChange={this.handleChange} value={this.state.ansHour} placeholder="" />
-                    <label htmlFor="ansHour">시</label>
-                  </div>
-                  <div className="inputGroup">
-                    <input disabled={this.state.minute === "00" ? true : false} aria-label={`Type minute here`} className={this.state.minute === "00" ? "minute disabled" : "minute"} type="text" id="ansMinute" name="ansMinute" onChange={this.handleChange} value={this.state.ansMinute} placeholder="" />
-                    <label htmlFor="ansMinute" className={this.state.minute === "00" ? "minute disabled" : "minute"}>분</label>
+                  <div className="inputGroupContainer">
+                    <div className="inputGroup">
+                      <input aria-label={`Type hour here`} className="hour" type="text" id="ansHour" name="ansHour" onChange={this.handleChange} value={this.state.ansHour} placeholder="" />
+                      <label htmlFor="ansHour">시</label>
+                    </div>
+                    <div className="inputGroup">
+                      <input disabled={this.state.minute === "00" ? true : false} aria-label={`Type minute here`} className={this.state.minute === "00" ? "minute disabled" : "minute"} type="text" id="ansMinute" name="ansMinute" onChange={this.handleChange} value={this.state.ansMinute} placeholder="" />
+                      <label htmlFor="ansMinute" className={this.state.minute === "00" ? "minute disabled" : "minute"}>분</label>
+                    </div>
                   </div>
                   <div className="responseContainer">
                     {this.state.response === '' && <p>&nbsp;</p>}

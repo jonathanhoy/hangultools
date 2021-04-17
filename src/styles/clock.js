@@ -9,6 +9,11 @@ const ClockContainer = styled.section`
   form {
     display: flex;
     flex-wrap: wrap;
+    .inputGroupContainer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
     .inputGroup {
       display: flex;
       align-items: center;
@@ -77,9 +82,6 @@ const ClockContainer = styled.section`
           font-weight: 600;
           margin-left: 0.25rem;
           font-size: 1.5rem;
-        }
-        input {
-  
         }
         input.hour {
           width: 50px;
