@@ -1,6 +1,5 @@
 import React from 'react';
 import { minuteToStrMap, hourToHangulMap, minuteToHangulMap } from './util/timeMapping';
-import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';

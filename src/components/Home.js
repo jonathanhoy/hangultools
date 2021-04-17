@@ -4,14 +4,10 @@ import { Link } from 'react-router-dom';
 
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
-import { Card, CardHeading, ReferenceCard } from '../styles/Card';
+import { Card } from '../styles/Card';
 import variables from '../styles/variables';
 
 class Home extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <Wrapper>

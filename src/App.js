@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import Header from './components/Header';
@@ -7,7 +6,7 @@ import Calculator from './components/calculator';
 import Clock from './components/clock';
 import About from './components/About';
 
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   return (

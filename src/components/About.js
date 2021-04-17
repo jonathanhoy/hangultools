@@ -1,6 +1,4 @@
 import React from 'react';
-import variables from '../styles/variables';
-import styled from 'styled-components';
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
  

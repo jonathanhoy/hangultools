@@ -1,6 +1,5 @@
 import React from 'react';
 import numToWordsMap from './util/mapping';
-import Checkbox from './checkbox';
 import Settings from '../styles/Settings';
 import Button from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
