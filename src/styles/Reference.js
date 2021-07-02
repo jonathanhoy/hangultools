@@ -21,6 +21,10 @@ const TableOfContents = styled.ul`
 
 const ReferenceSection = styled.section`
   margin-top: 3rem;
+  &.numbers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const ReferenceTable = styled.table`

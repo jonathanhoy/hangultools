@@ -23,59 +23,58 @@ class Reference extends React.Component {
           <PageHeading>Reference</PageHeading>
           <PageSubHeading>Table of Contents</PageSubHeading>
           <TableOfContents>
-            <li><a href="#number-sino">Numbers (Sino)</a></li>
-            <li><a href="#number-pure">Numbers (Pure)</a></li>
+            <li><a href="#numbers">Numbers</a></li>
           </TableOfContents>
 
-          <ReferenceSection id="number-sino">
-            <PageSubHeading>Numbers (Sino)</PageSubHeading>
-            <ReferenceTableContainer>
-              <ReferenceTable>
-                <caption className="show-for-sr">Sino numbers 1 - 49</caption>
-                <thead>
-                  <tr>
-                    <th>Number</th>
-                    <th>Hangul</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.entries(numToWordsMap).map((number, i) => {
-                    if (i+1 <= 49) {
-                      return (
-                        <tr className={`row-${i+1}`}>
-                          <td>{number[0]}</td>
-                          <td>{number[1].sino}</td>
-                        </tr>
-                      )
-                    }
-                  })}
-                </tbody>
-              </ReferenceTable>
-              <ReferenceTable>
-                <caption className="show-for-sr">Sino numbers 50 - 100</caption>
-                <thead>
-                  <tr>
-                    <th>Number</th>
-                    <th>Hangul</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {Object.entries(numToWordsMap).map((number, i) => {
-                    if (i+1 > 49) {
-                      return (
-                        <tr className={`row-${i+1}`}>
-                          <td>{number[0]}</td>
-                          <td>{number[1].sino}</td>
-                        </tr>
-                      )
-                    }
-                  })}
-                </tbody>
-              </ReferenceTable>
-            </ReferenceTableContainer>
-          </ReferenceSection>
-
-          <ReferenceSection id="number-pure">
+          <ReferenceSection id="numbers" className="numbers">
+            <div>
+              <PageSubHeading>Numbers (Sino)</PageSubHeading>
+              <ReferenceTableContainer>
+                <ReferenceTable>
+                  <caption className="show-for-sr">Sino numbers 1 - 49</caption>
+                  <thead>
+                    <tr>
+                      <th>Number</th>
+                      <th>Hangul</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(numToWordsMap).map((number, i) => {
+                      if (i+1 <= 49) {
+                        return (
+                          <tr className={`row-${i+1}`}>
+                            <td>{number[0]}</td>
+                            <td>{number[1].sino}</td>
+                          </tr>
+                        )
+                      }
+                    })}
+                  </tbody>
+                </ReferenceTable>
+                <ReferenceTable>
+                  <caption className="show-for-sr">Sino numbers 50 - 100</caption>
+                  <thead>
+                    <tr>
+                      <th>Number</th>
+                      <th>Hangul</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(numToWordsMap).map((number, i) => {
+                      if (i+1 > 49) {
+                        return (
+                          <tr className={`row-${i+1}`}>
+                            <td>{number[0]}</td>
+                            <td>{number[1].sino}</td>
+                          </tr>
+                        )
+                      }
+                    })}
+                  </tbody>
+                </ReferenceTable>
+              </ReferenceTableContainer>
+            </div>
+            <div>
             <PageSubHeading>Numbers (Pure)</PageSubHeading>
             <ReferenceTableContainer>
               <ReferenceTable>
@@ -121,6 +120,10 @@ class Reference extends React.Component {
                 </tbody>
               </ReferenceTable>
             </ReferenceTableContainer>
+            </div>
+          </ReferenceSection>
+
+          <ReferenceSection>
           </ReferenceSection>
 
       </Wrapper>
