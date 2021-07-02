@@ -49,7 +49,7 @@ class Header extends React.Component {
             <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Home</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active">Clock</NavLink></li>
-            {/* <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li> */}
+            <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
           </ul>
         </StyledNav>

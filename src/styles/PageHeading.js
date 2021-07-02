@@ -8,10 +8,17 @@ const PageHeading = styled.h2`
   margin-bottom: 1rem;
 `;
 
+const PageSubHeading = styled.h3`
+  font-size: 1.75rem;
+  color: ${variables.black};
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
 const PageBody = styled.p`
   font-size: 1rem;
   color: ${variables.black};
   margin-top: 0;
 `;
 
-export { PageHeading, PageBody };
+export { PageHeading, PageSubHeading, PageBody };
