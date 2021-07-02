@@ -55,15 +55,14 @@ const ReferenceTable = styled.table`
   }
   th {
     font-size: 1rem;
-    font-weight: 400;
     color: ${variables.white};
     margin: 0;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
     text-align: left;
   }
   td {
     font-size: 1rem;
-    padding: 0.5rem 1.5rem;
+    padding: 0.5rem 1rem;
   }
 `;
 
