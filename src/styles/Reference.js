@@ -28,7 +28,6 @@ const ReferenceSection = styled.section`
 `;
 
 const ReferenceTable = styled.table`
-  margin-top: 1rem;
   border-collapse: collapse;
   thead tr {
     background: ${variables.primary};
