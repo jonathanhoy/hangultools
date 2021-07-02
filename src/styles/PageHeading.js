@@ -11,7 +11,7 @@ const PageHeading = styled.h2`
 const PageSubHeading = styled.h3`
   font-size: 1.75rem;
   color: ${variables.black};
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 1rem;
 `;
 

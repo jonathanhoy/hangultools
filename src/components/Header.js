@@ -61,6 +61,12 @@ class Header extends React.Component {
 const StyledHeader = styled.header`
   background: ${variables.primary};
   box-shadow: ${variables.boxshadow};
+  position: fixed;
+  left: 0;
+  right: 0;
+  > div {
+    padding-top: 0;
+  }
   h1 {
     margin: 0;
     padding: 1rem 0;

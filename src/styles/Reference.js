@@ -1,6 +1,22 @@
 import styled from 'styled-components';
 import variables from './variables';
 
+const ReferenceOuterContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: flex-start;
+  grid-gap: 5rem;
+  padding-bottom: 5rem;
+`;
+
+const ReferenceFixed = styled.div`
+  position: fixed;
+`;
+
+const ReferenceScroll = styled.div`
+  grid-column: 2 / 3;
+`;
+
 const TableOfContents = styled.ul`
   list-style: disc;
   list-style-position: inside;
@@ -20,10 +36,12 @@ const TableOfContents = styled.ul`
 `;
 
 const ReferenceSection = styled.section`
-  margin-top: 3rem;
-  &.numbers {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  margin-top: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  /* justify-items: end; */
+  &.numbers-sino {
+    margin-top: 4.375rem;
   }
 `;
 
@@ -41,6 +59,7 @@ const ReferenceTable = styled.table`
     color: ${variables.white};
     margin: 0;
     padding: 0.5rem 1.5rem;
+    text-align: left;
   }
   td {
     font-size: 1rem;
@@ -53,4 +72,12 @@ const ReferenceTableContainer = styled.div`
   align-items: flex-start;
 `;
 
-export { TableOfContents, ReferenceSection, ReferenceTable, ReferenceTableContainer };
+export { 
+  ReferenceOuterContainer,
+  ReferenceFixed, 
+  ReferenceScroll, 
+  TableOfContents, 
+  ReferenceSection, 
+  ReferenceTable, 
+  ReferenceTableContainer 
+};
