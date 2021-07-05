@@ -64,6 +64,7 @@ const StyledHeader = styled.header`
   position: fixed;
   left: 0;
   right: 0;
+  z-index: 30;
   > div {
     padding-top: 0;
   }
@@ -81,11 +82,10 @@ const StyledHeader = styled.header`
     display: none;
   }
   @media (max-width: ${variables.sm}) {
-    position: relative;
+    position: fixed;
     .mobile-nav-toggle {
       display: block;
       position: relative;
-      z-index: 30;
       background: none;
       border: none;
       padding: 0;

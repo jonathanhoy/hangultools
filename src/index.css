@@ -17,6 +17,11 @@ html {
   scroll-behavior: smooth;
 }
 
+@media (max-width: 47.9375rem) {
+  html {
+    scroll-padding-top: 79px;
+  }
+}
 ul {
   list-style: none;
   margin: 0;
