@@ -1,14 +1,9 @@
+/* eslint-disable array-callback-return */
 import React from 'react';
 import numToWordsMap from './util/mapping';
 import { months, days } from './util/monthsAndDaysMapping';
-import Settings from '../styles/Settings';
-import { Button, ButtonGroup } from '../styles/Button';
-import ComponentContainer from '../styles/ComponentContainer';
-import { Card, CardHeading, ReferenceCard } from '../styles/Card';
-import { CalculatorList } from '../styles/List';
-import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
-import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
-import { PageHeading, PageSubHeading, PageBody } from '../styles/PageHeading';
+import { Wrapper } from '../styles/Wrapper';
+import { PageHeading, PageSubHeading } from '../styles/PageHeading';
 import { 
   ReferenceOuterContainer,
   ReferenceFixed, 
