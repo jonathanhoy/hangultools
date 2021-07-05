@@ -45,13 +45,17 @@ class Header extends React.Component {
           </button>
         </Wrapper>
         <StyledNav mobileNavHidden={this.state.mobileNavHidden} >
-          <ul>
-            <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Home</NavLink></li>
-            <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
-            <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active">Clock</NavLink></li>
-            <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
-            <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
-          </ul>
+          <Wrapper>
+            <ul className="site-nav">
+              <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Home</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
+            </ul>
+            <ul className="tool-nav">
+              <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active">Clock</NavLink></li>
+            </ul>
+          </Wrapper>
         </StyledNav>
       </StyledHeader>
     )
@@ -73,7 +77,6 @@ const StyledHeader = styled.header`
     padding: 1rem 0;
     font-size: 2.5rem;
     color: ${variables.white};
-    text-align: center;
     .han {
       display: none;
     }
@@ -117,6 +120,12 @@ const StyledHeader = styled.header`
 
 const StyledNav = styled.nav`
   background: ${variables.grey};
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0;
+  }
   ul {
     display: flex;
     justify-content: center;
@@ -146,23 +155,31 @@ const StyledNav = styled.nav`
     z-index: 20;
     left: 0;
     right: 0;
+    > div {
+    align-items: flex-start;
+    
+    }
     ul {
       flex-direction: column;
       width: 95%;
       margin: 0 auto;
       margin: 1rem 0;
       padding: 0;
-      text-align: right;
       li {
         margin-bottom: 2rem;
         margin-right: 0;
         &:last-of-type {
           margin-bottom: 0;
-          /* margin-right: 1.5rem; */
         }
         a {
           font-size: 1.5rem;
         }
+      }
+      &.site-nav {
+        text-align: left;
+      }
+      &.tool-nav {
+        text-align: right;
       }
     }
   }
