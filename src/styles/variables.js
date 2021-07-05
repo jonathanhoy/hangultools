@@ -5,6 +5,8 @@ const variables = {
   grey: '#dcdcdc',
   lightgrey: '#c0c0c0',
   darkgrey: '#696969',
+  // tableAlt: '#d6c6ec',
+  tableAlt: '#e4d9f2',
   black: '#181818',
   white: '#f8f8f8',
 

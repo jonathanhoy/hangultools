@@ -5,6 +5,10 @@ const Wrapper = styled.div`
     margin: 0 auto;
     max-width: 1000px;
     width: 95%;
+    padding-top: 129px;
+    @media (max-width: ${variables.sm}) {
+      padding-top: 63px;
+    }
 `;
 
 const ComponentWrapper = styled.div`

@@ -49,7 +49,7 @@ class Header extends React.Component {
             <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Home</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active">Clock</NavLink></li>
-            {/* <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li> */}
+            <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
           </ul>
         </StyledNav>
@@ -61,6 +61,13 @@ class Header extends React.Component {
 const StyledHeader = styled.header`
   background: ${variables.primary};
   box-shadow: ${variables.boxshadow};
+  position: fixed;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  > div {
+    padding-top: 0;
+  }
   h1 {
     margin: 0;
     padding: 1rem 0;
@@ -75,11 +82,10 @@ const StyledHeader = styled.header`
     display: none;
   }
   @media (max-width: ${variables.sm}) {
-    position: relative;
+    position: fixed;
     .mobile-nav-toggle {
       display: block;
       position: relative;
-      z-index: 30;
       background: none;
       border: none;
       padding: 0;

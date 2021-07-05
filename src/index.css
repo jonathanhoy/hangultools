@@ -12,6 +12,16 @@ body {
   box-sizing: border-box;
 }
 
+html {
+  scroll-padding-top: 199px; /* height of sticky header + margin */
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 47.9375rem) {
+  html {
+    scroll-padding-top: 79px;
+  }
+}
 ul {
   list-style: none;
   margin: 0;
