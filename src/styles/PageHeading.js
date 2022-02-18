@@ -16,6 +16,7 @@ const PageSubHeading = styled.h3`
 `;
 
 const PageBody = styled.p`
+  width: 35rem;
   font-size: 1rem;
   color: ${variables.black};
   margin-top: 0;
