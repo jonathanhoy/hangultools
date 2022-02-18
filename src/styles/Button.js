@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import variables from '../styles/variables'
 
 const Button = styled.button`
-  background: ${props => (props.theme === "purple" ? `${variables.primary}` : "white")};
-  color: ${props => (props.theme === "purple" ? "white" : `${variables.primary}`)};;
-  border: 2px solid ${variables.primary};
+  background: ${props => (props.theme === "purple" ? `${variables.primary900}` : "white")};
+  color: ${props => (props.theme === "purple" ? "white" : `${variables.primary900}`)};;
+  border: 2px solid ${variables.primary900};
   border-radius: 0.25rem;
   width: 100%;
   margin: 10px 0;

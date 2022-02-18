@@ -39,7 +39,7 @@ const TableOfContents = styled.ul`
         color: ${variables.black};
       }
       &:hover {
-        color: ${variables.primary};
+        color: ${variables.primary900};
       }
     }
   }
@@ -70,10 +70,10 @@ const ReferenceSection = styled.section`
 const ReferenceTable = styled.table`
   border-collapse: collapse;
   thead tr {
-    background: ${variables.primary};
+    background: ${variables.primary900};
   }
   tbody tr:nth-child(2n) {
-    background: ${variables.primaryLight};
+    background: ${variables.primary100};
   }
   th {
     color: ${variables.white};

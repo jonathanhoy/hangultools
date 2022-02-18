@@ -15,7 +15,7 @@ const Settings = styled.section`
           padding: 0.5rem;
           font-size: 1rem;
           margin: 0.5rem 0 0 0;
-          background: ${variables.lightgrey};
+          background: ${variables.grey400};
           border: none;
           border-radius: 0.25rem;
           color: ${variables.black};
@@ -26,7 +26,7 @@ const Settings = styled.section`
             z-index: -1;
           }
           &[data-active="true"] {
-            background: ${variables.primary};
+            background: ${variables.primary900};
             color: ${variables.white};
           }
         }

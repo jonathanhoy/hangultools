@@ -55,7 +55,7 @@ const TileItem = styled.li`
     text-decoration: none;
     color: ${variables.black};
     &:active, &:hover {
-      color: ${variables.primary};
+      color: ${variables.primary900};
     }
     div {
       padding: 3rem 0;
@@ -76,8 +76,8 @@ const TileItem = styled.li`
     }
   }
   &:hover {
-    border: 2px solid ${variables.primary};
-    background-color: ${variables.primaryLight};
+    border: 2px solid ${variables.primary900};
+    background-color: ${variables.primary100};
   }
 
   @media (max-width: ${variables.sm}) {

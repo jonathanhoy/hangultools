@@ -2,9 +2,10 @@ import styled from 'styled-components';
 import variables from '../styles/variables';
 
 const Card = styled.div`
-  background: ${variables.grey};
+  background: ${variables.grey100};
   border-radius: 0.25rem;
-  box-shadow: ${variables.boxshadow};
+  /* box-shadow: ${variables.boxshadow}; */
+  border: 1px solid ${variables.grey400};
   padding: 1rem;
   @media (max-width: ${variables.sm}) {
     padding: 0.5rem;
@@ -15,7 +16,7 @@ const CardHeading = styled.h2`
   text-transform: uppercase;
   font-style: italic;
   font-size: 0.75rem;
-  color: ${variables.darkgrey};
+  color: ${variables.grey900};
   margin: 0 0 0.5rem 0;
   @media (max-width: ${variables.sm}) {
     margin: 0;

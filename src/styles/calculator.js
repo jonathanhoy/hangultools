@@ -96,14 +96,14 @@ const MultipleChoice = styled.div`
     font-size: 1.5rem;
   }
   input[type="radio"]:checked+label {
-    background-color: ${variables.primary};
-    border-color: ${variables.primary};
+    background-color: ${variables.primary900};
+    border-color: ${variables.primary900};
     color: white;
   }
   label:hover {
-    background-color: ${variables.primaryLight};
-    border-color: ${variables.primary};
-    color: ${variables.primary};
+    background-color: ${variables.primary100};
+    border-color: ${variables.primary900};
+    color: ${variables.primary900};
   }
   input[type="submit"] {
     grid-column: 0 / 4;
