@@ -24,7 +24,7 @@ const ClockContainer = styled.section`
         font-size: 24px;
       }
       input {
-        border: 2px solid black;
+        border: 2px solid ${variables.black};
         border-radius: 0.25rem;
         padding: 5px;
         margin: 0.5rem 0 0 0;
@@ -90,7 +90,7 @@ const ClockContainer = styled.section`
 `;
 
 const ClockField = styled.div`
-  border: 2px solid black;
+  border: 2px solid ${variables.black};
   border-radius: 0.25rem;
   p {
     margin: 0;

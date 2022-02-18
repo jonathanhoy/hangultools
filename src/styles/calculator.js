@@ -14,7 +14,7 @@ const CalculatorContainer = styled.section`
   }
   input[type="text"] {
     width: 100%;
-    border: 2px solid black;
+    border: 2px solid ${variables.black};
     border-radius: 0.25rem;
     padding: 0.25rem;
     margin: 1rem 0;
@@ -52,7 +52,7 @@ const Mathfield = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 60px 60px;
-  border-bottom: 3px solid black;
+  border-bottom: 3px solid ${variables.black};
   span {
     font-size: 3rem;
   }

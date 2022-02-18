@@ -1,10 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
-// import { Card } from '../styles/Card';
 import variables from '../styles/variables';
 
 class Home extends React.Component {
@@ -18,7 +16,6 @@ class Home extends React.Component {
               <div>
                 <i class="fas fa-calculator"></i>
                 <p>Calculator</p>
-                <i class="fas fa-arrow-right"></i>
               </div>
             </Link>
           </TileItem>
@@ -28,7 +25,6 @@ class Home extends React.Component {
               <div>
                 <i class="fas fa-clock"></i>
                 <p>Clock</p>
-                <i class="fas fa-arrow-right"></i>
               </div>
             </Link>
           </TileItem>
@@ -44,41 +40,59 @@ class Home extends React.Component {
 
 const TileList = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
   margin-bottom: 1rem;
   @media (max-width: ${variables.sm}) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
 const TileItem = styled.li`
-  border: 2px solid black;
+  border: 2px solid ${variables.black};
   border-radius: 0.5rem;
   a {
     text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: 700;
     color: ${variables.black};
     &:active, &:hover {
       color: ${variables.primary};
     }
-    p {
-      margin: 1rem 0;
-      justify-self: left;
-    }
     div {
+      padding: 3rem 0;
       width: 100%;
       display: grid;
-      grid-template-columns: 3rem 1fr 3rem;
-      grid-gap: 1rem;
+      grid-template-columns: 1fr;
+      grid-gap: 2.5rem;
       justify-items: center;
       align-items: center;
+      i {
+        font-size: 6rem;
+      }
+      p {
+        font-weight: 400;
+        font-size: 1.5rem;
+        margin: 0;
+      }
     }
   }
   &:hover {
     border: 2px solid ${variables.primary};
     background-color: ${variables.primaryLight};
+  }
+
+  @media (max-width: ${variables.sm}) {
+    a {
+      div {
+        padding: 2rem 0;
+        i {
+          font-size: 5rem;
+        }
+        p {
+  
+        }
+        
+      }
+    }
   }
 `;
 
