@@ -38,7 +38,7 @@ class Header extends React.Component {
     return (
       <StyledHeader mobileNavHidden={this.state.mobileNavHidden} >
         <Wrapper>
-          <h1>Hangul Tools</h1>
+          <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
           <button className="mobile-nav-toggle" onClick={this.handleClick}>
               <i className="fas fa-bars fa-fw"></i>
               <i className="fas fa-times fa-fw"></i>
@@ -46,14 +46,13 @@ class Header extends React.Component {
         </Wrapper>
         <StyledNav mobileNavHidden={this.state.mobileNavHidden} >
           <Wrapper>
-            <ul className="site-nav">
-              <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Home</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
-            </ul>
             <ul className="tool-nav">
               <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
               <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active">Clock</NavLink></li>
+            </ul>
+            <ul className="site-nav">
+              <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
             </ul>
           </Wrapper>
         </StyledNav>
@@ -77,8 +76,9 @@ const StyledHeader = styled.header`
     padding: 1rem 0;
     font-size: 2.5rem;
     color: ${variables.white};
-    .han {
-      display: none;
+    a {
+      text-decoration: none;
+      color: ${variables.white};
     }
   }
   .mobile-nav-toggle {

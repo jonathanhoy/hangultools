@@ -73,7 +73,7 @@ const ReferenceTable = styled.table`
     background: ${variables.primary};
   }
   tbody tr:nth-child(2n) {
-    background: ${variables.tableAlt};
+    background: ${variables.primaryLight};
   }
   th {
     color: ${variables.white};

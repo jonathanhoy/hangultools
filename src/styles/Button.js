@@ -4,14 +4,19 @@ import variables from '../styles/variables'
 const Button = styled.button`
   background: ${props => (props.theme === "purple" ? `${variables.primary}` : "white")};
   color: ${props => (props.theme === "purple" ? "white" : `${variables.primary}`)};;
-  border: 3px solid ${variables.primary};
-  border-radius: 5px;
+  border: 2px solid ${variables.primary};
+  border-radius: 0.25rem;
   width: 100%;
   margin: 10px 0;
   padding: 5px;
   transition: all 0.2s;
   font-weight: 600;
   font-size: 20px;
+  box-shadow: ${variables.buttonBoxShadow};
+  &:active {
+    box-shadow: none;
+    transform: translateY(4px);
+  }
   @media (max-width: 599px) {
     padding: 10px 5px;
     margin: 5px 0;

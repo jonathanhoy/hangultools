@@ -184,8 +184,8 @@ class Calculator extends React.Component {
                       <label htmlFor="input">Answer</label>
                       <input aria-label={`Type answer here`} type="text" id="input" name="input" onChange={this.handleSingleInput} value={this.state.input} placeholder="Answer"/>
                       <ButtonGroup>
-                        <Button type="submit" theme="purple">Check</Button>
-                        <Button type="button" onClick={this.generateProblem}>Next</Button>
+                        <Button type="submit" className="check" theme="purple">Check</Button>
+                        <Button type="button" className="next" onClick={this.generateProblem}>Next</Button>
                       </ButtonGroup>
                       {this.state.response === '' && <p>&nbsp;</p>}
                       {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p> }
