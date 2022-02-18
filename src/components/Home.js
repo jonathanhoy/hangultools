@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
-import { Card } from '../styles/Card';
+// import { Card } from '../styles/Card';
 import variables from '../styles/variables';
 
 class Home extends React.Component {
@@ -15,21 +15,21 @@ class Home extends React.Component {
         <TileList>
           <TileItem className="calculator">
             <Link to="/calculator">
-              <Card>
+              <div>
                 <i class="fas fa-calculator"></i>
                 <p>Calculator</p>
                 <i class="fas fa-arrow-right"></i>
-              </Card>
+              </div>
             </Link>
           </TileItem>
 
           <TileItem className="clock">
             <Link to="/clock">
-              <Card>
+              <div>
                 <i class="fas fa-clock"></i>
                 <p>Clock</p>
                 <i class="fas fa-arrow-right"></i>
-              </Card>
+              </div>
             </Link>
           </TileItem>
 
@@ -53,6 +53,8 @@ const TileList = styled.ul`
 `;
 
 const TileItem = styled.li`
+  border: 2px solid black;
+  border-radius: 0.5rem;
   a {
     text-decoration: none;
     font-size: 1.5rem;
@@ -73,6 +75,10 @@ const TileItem = styled.li`
       justify-items: center;
       align-items: center;
     }
+  }
+  &:hover {
+    border: 2px solid ${variables.primary};
+    background-color: ${variables.primaryLight};
   }
 `;
 
