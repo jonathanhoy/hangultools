@@ -52,7 +52,7 @@ const Mathfield = styled.div`
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: 60px 60px;
-  border-bottom: 3px solid ${variables.black};
+  border-bottom: 2px solid ${variables.black};
   span {
     font-size: 3rem;
   }
