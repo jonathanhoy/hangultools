@@ -4,7 +4,6 @@ import variables from '../styles/variables';
 const Card = styled.div`
   background: ${variables.grey100};
   border-radius: 0.25rem;
-  /* box-shadow: ${variables.boxshadow}; */
   border: 1px solid ${variables.grey400};
   padding: 1rem;
   @media (max-width: ${variables.sm}) {
