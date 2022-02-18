@@ -141,8 +141,11 @@ const StyledNav = styled.nav`
         font-size: 1rem;
         font-weight: 700;
         &.active {
-          padding-bottom: 0.875rem;
           border-bottom: 2px solid ${variables.primary};
+          padding-bottom: 0.875rem;
+          @media (max-width: ${variables.sm}) {
+            padding-bottom: 0.5rem;
+          }
         }
       }
     }
@@ -175,10 +178,10 @@ const StyledNav = styled.nav`
         }
       }
       &.site-nav {
-        text-align: left;
+        text-align: right;
       }
       &.tool-nav {
-        text-align: right;
+        text-align: left;
       }
     }
   }
