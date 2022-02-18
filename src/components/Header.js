@@ -63,7 +63,6 @@ class Header extends React.Component {
 
 const StyledHeader = styled.header`
   background: ${variables.primary};
-  box-shadow: ${variables.boxshadow};
   position: fixed;
   left: 0;
   right: 0;
@@ -142,8 +141,8 @@ const StyledNav = styled.nav`
         font-size: 1rem;
         font-weight: 700;
         &.active {
-          padding-bottom: 0.25rem;
-          border-bottom: 0.25rem solid ${variables.primary};
+          padding-bottom: 0.875rem;
+          border-bottom: 2px solid ${variables.primary};
         }
       }
     }
