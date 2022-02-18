@@ -1,11 +1,11 @@
 const variables = {
   
   // COLORS
-  primary: '#5e3399',
-  primaryLight: '#e4d9f2',
-  grey: '#dcdcdc',
-  lightgrey: '#c0c0c0',
-  darkgrey: '#696969',
+  primary900: '#5e3399',
+  primary100: '#e4d9f2',
+  grey100: '#dcdcdc', // 100
+  grey400: '#c0c0c0', // 400
+  grey900: '#696969', // 900
   black: '#181818',
   white: '#f8f8f8',
 
