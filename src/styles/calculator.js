@@ -14,8 +14,8 @@ const CalculatorContainer = styled.section`
   }
   input[type="text"] {
     width: 100%;
-    border: 3px solid black;
-    border-radius: 0.25rem;;
+    border: 2px solid black;
+    border-radius: 0.25rem;
     padding: 0.25rem;
     margin: 1rem 0;
     text-align: center;
@@ -90,11 +90,10 @@ const MultipleChoice = styled.div`
   label {
     display: inline-block;
     padding: 0.5rem;
-    border: 3px solid #000;
-    border-radius: 0.5rem;
+    border: 2px solid #000;
+    border-radius: 0.25rem;
     margin-top: 0;
     font-size: 1.5rem;
-    transition: all 0.2s;
   }
   input[type="radio"]:checked+label {
     background-color: ${variables.primary};
@@ -102,6 +101,7 @@ const MultipleChoice = styled.div`
     color: white;
   }
   label:hover {
+    background-color: ${variables.primaryLight};
     border-color: ${variables.primary};
     color: ${variables.primary};
   }

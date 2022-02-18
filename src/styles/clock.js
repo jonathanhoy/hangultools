@@ -24,8 +24,8 @@ const ClockContainer = styled.section`
         font-size: 24px;
       }
       input {
-        border: 3px solid black;
-        border-radius: 5px;
+        border: 2px solid black;
+        border-radius: 0.25rem;
         padding: 5px;
         margin: 0.5rem 0 0 0;
         text-align: center;
@@ -39,7 +39,7 @@ const ClockContainer = styled.section`
         margin-left: 8px;
       }
       input.disabled {
-        border: 3px solid lightgrey;
+        border: 2px solid lightgrey;
       }
       label.disabled {
         color: lightgrey;
@@ -90,8 +90,8 @@ const ClockContainer = styled.section`
 `;
 
 const ClockField = styled.div`
-  border: 3px solid black;
-  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 0.25rem;
   p {
     margin: 0;
     text-align: center;
