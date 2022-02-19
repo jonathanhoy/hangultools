@@ -106,6 +106,9 @@ const StyledHeader = styled.header`
           color: ${variables.white};
           font-size: 1.25rem;
           font-weight: 600;
+          &:hover {
+            color: ${variables.primary100};
+          }
         }
       }
     }
