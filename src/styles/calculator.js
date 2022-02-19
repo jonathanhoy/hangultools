@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 import variables from './variables';
+import keyOne from '../assets/key-1.svg';
+import keyTwo from '../assets/key-2.svg';
+import keyThree from '../assets/key-3.svg';
+import keyFour from '../assets/key-4.svg';
 
 const CalculatorContainer = styled.section`
   display: flex;
@@ -24,7 +28,7 @@ const CalculatorContainer = styled.section`
   form p {
     text-align: center;
     font-size: 2rem;
-    margin: 1rem 0 0 0;
+    margin: 3rem 0 0 0;
     line-height: 1;
   }
   label[for="input"] { 
@@ -94,6 +98,42 @@ const MultipleChoice = styled.div`
     border-radius: 0.25rem;
     margin-top: 0;
     font-size: 1.5rem;
+    &.multiple-choice-1, &.multiple-choice-2, &.multiple-choice-3, &.multiple-choice-4 {
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -2.5rem;
+        width: 1.5rem;
+        height: 1.5rem;
+        background-size: contain;
+        @media (max-width: ${variables.md}) {
+          display: none;
+        }
+      }
+    }
+    &.multiple-choice-1 {
+      &:after {
+        background-image: url(${keyOne});
+      }
+    }
+    &.multiple-choice-2 {
+      &:after {
+        background-image: url(${keyTwo});
+      }
+    }
+    &.multiple-choice-3 {
+      &:after {
+        background-image: url(${keyThree});
+      }
+    }
+    &.multiple-choice-4 {
+      &:after {
+        background-image: url(${keyFour});
+      }
+    }
   }
   input[type="radio"]:checked+label {
     background-color: ${variables.primary900};

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import numToWordsMap from './util/mapping';
 import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
@@ -240,11 +240,11 @@ class Calculator extends React.Component {
                   <MultipleChoice>
                     <div className="container">
                       {
-                        this.state.multipleChoiceArr.map((item) => {
+                        this.state.multipleChoiceArr.map((item, i) => {
                           return (
                             <>
                               <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
-                              <label htmlFor={item}>
+                              <label htmlFor={item} className={`multiple-choice-${(i + 1)}`}>
                                 {item}
                               </label>
                             </>
@@ -255,7 +255,7 @@ class Calculator extends React.Component {
                     <ComponentWrapper margin="auto">
                       <ButtonGroup>
                         <Button type="submit" theme="purple">Check</Button>
-                        <Button type="button" onClick={this.generateProblem}>Next</Button>
+                        <Button type="button" onClick={this.generateProblem} className="next">Next</Button>
                       </ButtonGroup>
                       {this.state.response === '' && <p>&nbsp;</p>}
                       {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
