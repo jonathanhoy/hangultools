@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import numToWordsMap from './util/mapping';
 import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
@@ -7,6 +7,7 @@ import { Card, CardHeading, ReferenceCard } from '../styles/Card';
 import { CalculatorList } from '../styles/List';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
+import Keydown from './keydown';
  
 class Calculator extends React.Component {
   constructor() {
@@ -100,6 +101,18 @@ class Calculator extends React.Component {
     } 
   }
 
+  keypressValidate = () => {
+    if (this.state.input === this.state.answer) {
+      this.setState({
+        response: 'correct'
+      })
+    } else {
+      this.setState({
+        response: 'wrong'
+      })
+    } 
+  }
+
   handleSingleInput = (e) => {
     this.setState({
       input: e.target.value
@@ -138,9 +151,38 @@ class Calculator extends React.Component {
     }
   }
 
+  handleKeyDown = (e) => {
+    // right arrow key 39
+    // 1, 2, 3, 4 = 49, 50, 51, 52
+    if (e.keyCode === 39) {
+      this.generateProblem();
+    } else if (e.keyCode === 49 && this.state.multipleChoiceToggle === true) {
+      this.setState({
+        input: this.state.multipleChoiceArr[0]
+      })
+      this.keypressValidate()
+    } else if (e.keyCode === 50 && this.state.multipleChoiceToggle === true) {
+      this.setState({
+        input: this.state.multipleChoiceArr[1]
+      })
+      this.keypressValidate()
+    } else if (e.keyCode === 51 && this.state.multipleChoiceToggle === true) {
+      this.setState({
+        input: this.state.multipleChoiceArr[2]
+      })
+      this.keypressValidate()
+    } else if (e.keyCode === 52 && this.state.multipleChoiceToggle === true) {
+      this.setState({
+        input: this.state.multipleChoiceArr[3]
+      })
+      this.keypressValidate()
+    }
+  }
+
   render() {
     return (
       <Wrapper>
+        <Keydown onKeyDown={this.handleKeyDown} />
         <ComponentContainer>
           <Settings className="settings">
             <Card>
@@ -198,11 +240,11 @@ class Calculator extends React.Component {
                   <MultipleChoice>
                     <div className="container">
                       {
-                        this.state.multipleChoiceArr.map((item) => {
+                        this.state.multipleChoiceArr.map((item, i) => {
                           return (
                             <>
                               <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
-                              <label htmlFor={item}>
+                              <label htmlFor={item} className={`multiple-choice-${(i + 1)}`}>
                                 {item}
                               </label>
                             </>
@@ -213,7 +255,7 @@ class Calculator extends React.Component {
                     <ComponentWrapper margin="auto">
                       <ButtonGroup>
                         <Button type="submit" theme="purple">Check</Button>
-                        <Button type="button" onClick={this.generateProblem}>Next</Button>
+                        <Button type="button" onClick={this.generateProblem} className="next">Next</Button>
                       </ButtonGroup>
                       {this.state.response === '' && <p>&nbsp;</p>}
                       {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}

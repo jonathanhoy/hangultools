@@ -27,7 +27,7 @@ const ClockContainer = styled.section`
       input {
         border: 2px solid ${variables.black};
         border-radius: 0.25rem;
-        padding: 5px;
+        padding: 0.25rem;
         margin: 0.5rem 0 0 0;
         text-align: center;
         font-size: 18px;
@@ -43,8 +43,8 @@ const ClockContainer = styled.section`
     }
     p {
       text-align: center;
-      font-size: 32px;
-      margin: 16px 0;
+      font-size: 2rem;
+      margin: 3rem 0 0 0;
       line-height: 30px;
     }
     .submitContainer {
