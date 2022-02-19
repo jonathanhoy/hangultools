@@ -20,7 +20,8 @@ const ClockContainer = styled.section`
       align-items: center;
       label {
         font-weight: 600;
-        margin-left: 8px;
+        margin-left: 0.25rem;
+        margin-top: 0.25rem;
         font-size: 24px;
       }
       input {
@@ -30,13 +31,8 @@ const ClockContainer = styled.section`
         margin: 0.5rem 0 0 0;
         text-align: center;
         font-size: 18px;
-      }
-      input.hour {
-        width: 60px;
-      }
-      input.minute {
         width: 74px;
-        margin-left: 8px;
+      }th: 74px;
       }
       input.disabled {
         border: 2px solid lightgrey;
