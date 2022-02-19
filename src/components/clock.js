@@ -31,7 +31,12 @@ class ClockComponent extends React.Component {
   }
 
   generateProblem = () => {
-    const hour = (Math.floor(Math.random() * 12) + 1).toString();
+    let hour;
+    if (this.state.twelveHourClock === true ) {
+      hour = (Math.floor(Math.random() * 12) + 1).toString();
+    } else {
+      hour = (Math.floor(Math.random() * 24) + 1).toString();
+    }
     const minute = this.convertMinuteToStr(Math.floor(Math.random() * 59 ));
     const hangulHour = this.convertNumToHangul(hour, "hour");
     const hangulMinute = this.convertNumToHangul(minute, "minute");
