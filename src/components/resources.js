@@ -5,16 +5,16 @@ import { months, days } from './util/monthsAndDaysMapping';
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageSubHeading } from '../styles/PageHeading';
 import { 
-  ReferenceOuterContainer,
-  ReferenceFixed, 
-  ReferenceScroll, 
+  ResourcesOuterContainer,
+  ResourcesFixed, 
+  ResourcesScroll, 
   TableOfContents, 
-  ReferenceSection, 
-  ReferenceTable, 
-  ReferenceTableContainer
-} from '../styles/Reference';
+  ResourcesSection, 
+  ResourcesTable, 
+  ResourcesTableContainer
+} from '../styles/Resources';
  
-class Reference extends React.Component {
+class Resources extends React.Component {
   constructor() {
     super();
     this.state = {}
@@ -24,9 +24,9 @@ class Reference extends React.Component {
   render() {
     return (
       <Wrapper>
-        <ReferenceOuterContainer>
-          <ReferenceFixed>
-            <PageHeading>Reference</PageHeading>
+        <ResourcesOuterContainer>
+          <ResourcesFixed>
+            <PageHeading>Resources</PageHeading>
             <PageSubHeading>Table of Contents</PageSubHeading>
             <TableOfContents>
               <li><a href="#numbers-sino">Numbers (Sino)</a></li>
@@ -34,13 +34,13 @@ class Reference extends React.Component {
               <li><a href="#months">Months</a></li>
               <li><a href="#days">Days</a></li>
             </TableOfContents>
-          </ReferenceFixed>
+          </ResourcesFixed>
 
-          <ReferenceScroll>
-            <ReferenceSection id="numbers-sino" className="numbers-sino" >
+          <ResourcesScroll>
+            <ResourcesSection id="numbers-sino" className="numbers-sino" >
               <PageSubHeading>Numbers (Sino)</PageSubHeading>
-              <ReferenceTableContainer>
-                <ReferenceTable>
+              <ResourcesTableContainer>
+                <ResourcesTable>
                   <caption className="show-for-sr">Sino numbers 1 - 49</caption>
                   <thead>
                     <tr>
@@ -60,8 +60,8 @@ class Reference extends React.Component {
                       }
                     })}
                   </tbody>
-                </ReferenceTable>
-                <ReferenceTable>
+                </ResourcesTable>
+                <ResourcesTable>
                   <caption className="show-for-sr">Sino numbers 50 - 100</caption>
                   <thead>
                     <tr>
@@ -81,14 +81,14 @@ class Reference extends React.Component {
                       }
                     })}
                   </tbody>
-                </ReferenceTable>
-              </ReferenceTableContainer>
-            </ReferenceSection>
+                </ResourcesTable>
+              </ResourcesTableContainer>
+            </ResourcesSection>
             
-            <ReferenceSection id="numbers-pure">
+            <ResourcesSection id="numbers-pure">
               <PageSubHeading>Numbers (Pure)</PageSubHeading>
-              <ReferenceTableContainer>
-                <ReferenceTable>
+              <ResourcesTableContainer>
+                <ResourcesTable>
                   <caption className="show-for-sr">Pure numbers 1 - 49</caption>
                   <thead>
                     <tr>
@@ -108,8 +108,8 @@ class Reference extends React.Component {
                       }
                     })}
                   </tbody>
-                </ReferenceTable>
-                <ReferenceTable>
+                </ResourcesTable>
+                <ResourcesTable>
                   <caption className="show-for-sr">Pure numbers 50 - 100</caption>
                   <thead>
                     <tr>
@@ -129,14 +129,14 @@ class Reference extends React.Component {
                       }
                     })}
                   </tbody>
-                </ReferenceTable>
-              </ReferenceTableContainer>
-            </ReferenceSection>
+                </ResourcesTable>
+              </ResourcesTableContainer>
+            </ResourcesSection>
 
-            <ReferenceSection id="months">
+            <ResourcesSection id="months">
               <PageSubHeading>Months</PageSubHeading>
-              <ReferenceTableContainer>
-                <ReferenceTable>
+              <ResourcesTableContainer>
+                <ResourcesTable>
                   <caption className="show-for-sr">Months</caption>
                   <thead>
                     <tr>
@@ -156,14 +156,14 @@ class Reference extends React.Component {
                       }
                     })}
                   </tbody>
-                </ReferenceTable>
-              </ReferenceTableContainer>
-            </ReferenceSection>
+                </ResourcesTable>
+              </ResourcesTableContainer>
+            </ResourcesSection>
 
-            <ReferenceSection id="days">
+            <ResourcesSection id="days">
               <PageSubHeading>Days</PageSubHeading>
-              <ReferenceTableContainer>
-                <ReferenceTable>
+              <ResourcesTableContainer>
+                <ResourcesTable>
                   <caption className="show-for-sr">Days</caption>
                   <thead>
                     <tr>
@@ -183,15 +183,15 @@ class Reference extends React.Component {
                       }
                     })}
                   </tbody>
-                </ReferenceTable>
-              </ReferenceTableContainer>
-            </ReferenceSection>
+                </ResourcesTable>
+              </ResourcesTableContainer>
+            </ResourcesSection>
 
-          </ReferenceScroll>
-        </ReferenceOuterContainer>
+          </ResourcesScroll>
+        </ResourcesOuterContainer>
       </Wrapper>
     )
   }
 };
 
-export default Reference;
+export default Resources;

@@ -38,7 +38,13 @@ class Header extends React.Component {
     return (
       <StyledHeader mobileNavHidden={this.state.mobileNavHidden} >
         <Wrapper>
-          <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
+          <div className="top-nav">
+            <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
+            <ul className="site-nav">
+              <li><NavLink onClick={this.handleClose} to="/resources" exact activeClassName="active">Resources</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
+            </ul>
+          </div>
           <button className="mobile-nav-toggle" onClick={this.handleClick}>
               <i className="fas fa-bars fa-fw"></i>
               <i className="fas fa-times fa-fw"></i>
@@ -47,12 +53,8 @@ class Header extends React.Component {
         <StyledNav mobileNavHidden={this.state.mobileNavHidden} >
           <Wrapper>
             <ul className="tool-nav">
-              <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active">Calculator</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active">Clock</NavLink></li>
-            </ul>
-            <ul className="site-nav">
-              <li><NavLink onClick={this.handleClose} to="/reference" exact activeClassName="active">Reference</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><i class="fas fa-calculator"></i> Calculator</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><i class="fas fa-clock"></i> Clock</NavLink></li>
             </ul>
           </Wrapper>
         </StyledNav>
@@ -67,6 +69,7 @@ const StyledHeader = styled.header`
   left: 0;
   right: 0;
   z-index: 30;
+  border-bottom: 1px solid ${variables.grey400};
   > div {
     padding-top: 0;
   }
@@ -82,6 +85,26 @@ const StyledHeader = styled.header`
   }
   .mobile-nav-toggle {
     display: none;
+  }
+  .top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .site-nav {
+      display: flex;
+      li {
+        margin-right: 1.5rem;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        a {
+          text-decoration: none;
+          color: ${variables.white};
+          font-size: 1rem;
+          font-weight: 600;
+        }
+      }
+    }
   }
   @media (max-width: ${variables.sm}) {
     position: fixed;
@@ -131,25 +154,33 @@ const StyledNav = styled.nav`
     margin: 0;
     padding: 1rem 0;
     li {
-      margin-right: 1.5rem;
-      &:last-of-type {
-        margin-right: 0;
-      }
       a {
         text-decoration: none;
         color: ${variables.black};
         font-size: 1rem;
-        font-weight: 700;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .tool-nav {
+    li {
+      margin-right: 1rem;
+      a {
+        background-color: ${variables.grey400};
+        padding: 0.5rem 1rem;
+        border-radius: 0.25rem;
+        i {
+          margin-right: 0.5rem;
+        }
         &.active {
-          border-bottom: 2px solid ${variables.primary900};
-          padding-bottom: 0.875rem;
-          @media (max-width: ${variables.sm}) {
-            padding-bottom: 0.5rem;
-          }
+          background-color: ${variables.primary900};
+          color: ${variables.white};
         }
       }
     }
   }
+
   @media (max-width: ${variables.sm}) {
     box-shadow: ${variables.boxshadow};
     display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
