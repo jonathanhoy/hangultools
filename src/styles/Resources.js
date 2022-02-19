@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import variables from './variables';
 
-const ReferenceOuterContainer = styled.div`
+const ResourcesOuterContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 3fr;
   align-items: flex-start;
@@ -13,14 +13,14 @@ const ReferenceOuterContainer = styled.div`
   }
 `;
 
-const ReferenceFixed = styled.div`
+const ResourcesFixed = styled.div`
   position: fixed;
   @media (max-width: ${variables.sm}) {
     position: static;
   }
 `;
 
-const ReferenceScroll = styled.div`
+const ResourcesScroll = styled.div`
   grid-column: 2 / 3;
   @media (max-width: ${variables.sm}) {
     grid-column: 1 / 2;
@@ -28,29 +28,37 @@ const ReferenceScroll = styled.div`
 `;
 
 const TableOfContents = styled.ul`
-  list-style: disc;
+  list-style: none;
   list-style-position: inside;
   li {
+    margin-bottom: 0.25rem;
     a {
+      display: block;
+      padding: 0.5rem 1rem;
       font-size: 1.25rem;
       color: ${variables.black};
       text-decoration: none;
+      /* background: ${variables.grey100}; */
+      border-radius: 0.25rem;
+      border: 1px solid transparent;
       &:visited {
         color: ${variables.black};
       }
       &:hover {
         color: ${variables.primary900};
+        background-color: ${variables.primary100};
+        border-color: ${variables.primary900};
       }
     }
   }
 `;
 
-const ReferenceSection = styled.section`
+const ResourcesSection = styled.section`
   margin-top: 4rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
   &.numbers-sino {
-    margin-top: 4.375rem;
+    margin-top: 5.375rem;
   }
   table {
     width: 100%;
@@ -67,7 +75,7 @@ const ReferenceSection = styled.section`
   }
 `;
 
-const ReferenceTable = styled.table`
+const ResourcesTable = styled.table`
   border-collapse: collapse;
   thead tr {
     background: ${variables.primary900};
@@ -89,17 +97,17 @@ const ReferenceTable = styled.table`
   }
 `;
 
-const ReferenceTableContainer = styled.div`
+const ResourcesTableContainer = styled.div`
   display: flex;
   align-items: flex-start;
 `;
 
 export { 
-  ReferenceOuterContainer,
-  ReferenceFixed, 
-  ReferenceScroll, 
+  ResourcesOuterContainer,
+  ResourcesFixed, 
+  ResourcesScroll, 
   TableOfContents, 
-  ReferenceSection, 
-  ReferenceTable, 
-  ReferenceTableContainer 
+  ResourcesSection, 
+  ResourcesTable, 
+  ResourcesTableContainer 
 };
