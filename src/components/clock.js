@@ -175,7 +175,7 @@ class ClockComponent extends React.Component {
                   <div className="responseContainer">
                     {this.state.response === '' && <p>&nbsp;</p>}
                     {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                    {this.state.response === 'wrong' && <p class="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour}시 {this.state.hangulMinute}{this.state.hangulMinute !== "" && "분"}</p>}
+                    {this.state.response === 'wrong' && <p className="wrong"><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.hangulHour}시 {this.state.hangulMinute}{this.state.hangulMinute !== "" && "분"}</p>}
                   </div>
                 </form>
               </ComponentWrapper>

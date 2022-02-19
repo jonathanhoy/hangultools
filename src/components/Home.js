@@ -14,7 +14,7 @@ class Home extends React.Component {
           <TileItem className="calculator">
             <Link to="/calculator">
               <div>
-                <i class="fas fa-calculator"></i>
+                <i className="fas fa-calculator"></i>
                 <p>Calculator</p>
               </div>
             </Link>
@@ -23,7 +23,7 @@ class Home extends React.Component {
           <TileItem className="clock">
             <Link to="/clock">
               <div>
-                <i class="fas fa-clock"></i>
+                <i className="fas fa-clock"></i>
                 <p>Clock</p>
               </div>
             </Link>

@@ -53,8 +53,8 @@ class Header extends React.Component {
         <StyledNav mobileNavHidden={this.state.mobileNavHidden} >
           <Wrapper>
             <ul className="tool-nav">
-              <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><i class="fas fa-calculator"></i> Calculator</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><i class="fas fa-clock"></i> Clock</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><i className="fas fa-calculator"></i> Calculator</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><i className="fas fa-clock"></i> Clock</NavLink></li>
             </ul>
             <ul className="site-nav">
               <li><NavLink onClick={this.handleClose} to="/resources" exact activeClassName="active">Resources</NavLink></li>
