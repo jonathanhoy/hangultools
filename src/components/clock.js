@@ -21,6 +21,8 @@ class ClockComponent extends React.Component {
       sinoToggle: false,
       pureToggle: false,
       response: '',
+      twelveHourClock: true,
+      twentyFourHourClock: false,
     }
   }
 
@@ -91,7 +93,22 @@ class ClockComponent extends React.Component {
         sinoToggle: false,
         [e.target.id]: !this.state[e.target.id],
       })
-    } else {
+    } else if (e.target.id === 'twelveHourClock' && this.state.twelveHourClock === true) {
+      return;
+    } else if (e.target.id === 'twelveHourClock' && this.state.twelveHourClock === false) {
+      this.setState({
+        twelveHourClock: true,
+        twentyFourHourClock: false,
+      })
+    } else if (e.target.id === 'twentyFourHourClock' && this.state.twentyFourHourClock === true) {
+      return;
+    } else if (e.target.id === 'twentyFourHourClock' && this.state.twentyFourHourClock === false) {
+      this.setState({
+        twelveHourClock: false,
+        twentyFourHourClock: true,
+      })
+    }
+    else {
       this.setState({
         [e.target.id]: !this.state[e.target.id],
       })
@@ -104,6 +121,17 @@ class ClockComponent extends React.Component {
         <ComponentContainer>
           <Settings className="settings">
             <Card>
+              <div className="settings-container">
+                <CardHeading className="settings-heading">Options</CardHeading>
+                <ul className="settings-list option">
+                  <li className="settings-item option">
+                    <button className="settings-button" id="twelveHourClock" onClick={this.handleClick} data-active={this.state.twelveHourClock}>12-hour Clock</button>
+                  </li>
+                  <li className="settings-item option">
+                    <button className="settings-button" id="twentyFourHourClock" onClick={this.handleClick} data-active={this.state.twentyFourHourClock}>24-hour Clock</button>
+                  </li>
+                </ul>
+              </div>
               <div className="settings-container">
                 <CardHeading className="settings-heading">Reference</CardHeading>
                 <ul className="settings-list number">
