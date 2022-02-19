@@ -53,9 +53,9 @@ export const hourToHangulMap = {
   19: "열아홉",
   20: "스물",
   21: "스물한",
-  22: "스물둘",
-  23: "스물셋",
-  24: "스물넷",  
+  22: "스물두",
+  23: "스물세",
+  24: "스물네",  
 }
 
 export const minuteToHangulMap = {
