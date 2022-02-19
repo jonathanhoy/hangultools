@@ -108,10 +108,10 @@ class ClockComponent extends React.Component {
                 <CardHeading className="settings-heading">Reference</CardHeading>
                 <ul className="settings-list number">
                   <li className="settings-item number">
-                    <button className="settings-button" id="sinoToggle" onClick={this.handleClick} data-active={this.state.sinoToggle}>Sino <span className="hide-for-small">Numbers</span></button>
+                    <button className="settings-button" id="sinoToggle" onClick={this.handleClick} data-active={this.state.sinoToggle}>Sino Numbers</button>
                   </li>
                   <li className="settings-item number">
-                    <button className="settings-button" id="pureToggle" onClick={this.handleClick} data-active={this.state.pureToggle}>Pure <span className="hide-for-small">Numbers</span></button>
+                    <button className="settings-button" id="pureToggle" onClick={this.handleClick} data-active={this.state.pureToggle}>Pure Numbers</button>
                   </li>
                 </ul>
               </div>
