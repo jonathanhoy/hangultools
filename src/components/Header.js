@@ -40,7 +40,7 @@ class Header extends React.Component {
         <Wrapper>
           <div className="top-nav">
             <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
-            <ul className="site-nav">
+            <ul className="desktop-top-nav">
               <li><NavLink onClick={this.handleClose} to="/resources" exact activeClassName="active">Resources</NavLink></li>
               <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
             </ul>
@@ -55,6 +55,10 @@ class Header extends React.Component {
             <ul className="tool-nav">
               <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><i class="fas fa-calculator"></i> Calculator</NavLink></li>
               <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><i class="fas fa-clock"></i> Clock</NavLink></li>
+            </ul>
+            <ul className="site-nav">
+              <li><NavLink onClick={this.handleClose} to="/resources" exact activeClassName="active">Resources</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
             </ul>
           </Wrapper>
         </StyledNav>
@@ -90,7 +94,7 @@ const StyledHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    .site-nav {
+    .desktop-top-nav {
       display: flex;
       li {
         margin-right: 1.5rem;
@@ -100,7 +104,7 @@ const StyledHeader = styled.header`
         a {
           text-decoration: none;
           color: ${variables.white};
-          font-size: 1rem;
+          font-size: 1.25rem;
           font-weight: 600;
         }
       }
@@ -136,6 +140,11 @@ const StyledHeader = styled.header`
       z-index: 30;
       padding: 0.5rem 0;
       color: ${variables.white};
+    }
+    .top-nav {
+      .desktop-top-nav {
+        display: none;
+      }
     }
   }
 `;
@@ -179,6 +188,19 @@ const StyledNav = styled.nav`
         }
       }
     }
+    @media (max-width: ${variables.sm}) {
+      li {
+        text-align: right;
+        margin-right: 0;
+      }
+    }
+  }
+
+  .site-nav {
+    display: none;
+    @media (max-width: ${variables.sm}) {
+      display: block;
+    }
   }
 
   @media (max-width: ${variables.sm}) {
@@ -189,31 +211,34 @@ const StyledNav = styled.nav`
     left: 0;
     right: 0;
     > div {
-    align-items: flex-start;
-    
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 1rem 0;
     }
     ul {
       flex-direction: column;
-      width: 95%;
-      margin: 0 auto;
-      margin: 1rem 0;
+      margin: 0;
       padding: 0;
       li {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         margin-right: 0;
-        &:last-of-type {
-          margin-bottom: 0;
-        }
         a {
           font-size: 1.5rem;
+          display: inline-block;
         }
       }
       &.site-nav {
         text-align: right;
       }
-      &.tool-nav {
-        text-align: left;
+      .tool-nav, .site-nav {
+      margin: 0;
+      li {
+        margin-bottom: 1rem;
+        a {
+          display: inline-block;
+        }
       }
+    }
     }
   }
 `;

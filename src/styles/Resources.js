@@ -28,18 +28,26 @@ const ResourcesScroll = styled.div`
 `;
 
 const TableOfContents = styled.ul`
-  list-style: disc;
+  list-style: none;
   list-style-position: inside;
   li {
+    margin-bottom: 0.25rem;
     a {
+      display: block;
+      padding: 0.5rem 1rem;
       font-size: 1.25rem;
       color: ${variables.black};
       text-decoration: none;
+      /* background: ${variables.grey100}; */
+      border-radius: 0.25rem;
+      border: 1px solid transparent;
       &:visited {
         color: ${variables.black};
       }
       &:hover {
         color: ${variables.primary900};
+        background-color: ${variables.primary100};
+        border-color: ${variables.primary900};
       }
     }
   }
