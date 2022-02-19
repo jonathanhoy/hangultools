@@ -7,6 +7,7 @@ import ComponentContainer from '../styles/ComponentContainer';
 import { Card, CardHeading, ReferenceCard } from '../styles/Card';
 import { ClockList } from '../styles/List';
 import { ClockContainer, ClockField } from '../styles/clock';
+import Keydown from './keydown';
 
 class ClockComponent extends React.Component {
   constructor() {
@@ -120,9 +121,17 @@ class ClockComponent extends React.Component {
     }
   }
 
+  handleKeyDown = (e) => {
+    // right arrow key 39
+    if (e.keyCode === 39) {
+      this.generateProblem();
+    }
+  }
+
   render() {
     return (
       <Wrapper>
+        <Keydown onKeyDown={this.handleKeyDown} />
         <ComponentContainer>
           <Settings className="settings">
             <Card>
