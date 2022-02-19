@@ -125,10 +125,10 @@ class ClockComponent extends React.Component {
                 <CardHeading className="settings-heading">Options</CardHeading>
                 <ul className="settings-list option">
                   <li className="settings-item option">
-                    <button className="settings-button" id="twelveHourClock" onClick={this.handleClick} data-active={this.state.twelveHourClock}>12-hour Clock</button>
+                    <button className="settings-button" id="twelveHourClock" onClick={this.handleClick} data-active={this.state.twelveHourClock}>12-hour</button>
                   </li>
                   <li className="settings-item option">
-                    <button className="settings-button" id="twentyFourHourClock" onClick={this.handleClick} data-active={this.state.twentyFourHourClock}>24-hour Clock</button>
+                    <button className="settings-button" id="twentyFourHourClock" onClick={this.handleClick} data-active={this.state.twentyFourHourClock}>24-hour</button>
                   </li>
                 </ul>
               </div>
