@@ -20,7 +20,7 @@ const CalculatorContainer = styled.section`
     width: 100%;
     border: 2px solid ${variables.black};
     border-radius: 0.25rem;
-    padding: 0.25rem;
+    padding: 0.5rem 0.25rem;
     margin: 1rem 0;
     text-align: center;
     font-size: 2rem;
