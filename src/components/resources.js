@@ -13,7 +13,9 @@ import {
   ResourcesTable, 
   ResourcesTableContainer
 } from '../styles/Resources';
- 
+import { Card, CardHeading } from '../styles/Card'; 
+
+
 class Resources extends React.Component {
   constructor() {
     super();
@@ -27,13 +29,15 @@ class Resources extends React.Component {
         <ResourcesOuterContainer>
           <ResourcesFixed>
             <PageHeading>Resources</PageHeading>
-            <PageSubHeading>Table of Contents</PageSubHeading>
-            <TableOfContents>
-              <li><a href="#numbers-sino">Numbers (Sino)</a></li>
-              <li><a href="#numbers-pure">Numbers (Pure)</a></li>
-              <li><a href="#months">Months</a></li>
-              <li><a href="#days">Days</a></li>
-            </TableOfContents>
+            <Card>
+              <CardHeading className="settings-heading">Table of Contents</CardHeading>
+              <ul>
+                <TableOfContents><a href="#numbers-sino">Numbers (Sino)</a></TableOfContents>
+                <TableOfContents><a href="#numbers-pure">Numbers (Pure)</a></TableOfContents>
+                <TableOfContents><a href="#months">Months</a></TableOfContents>
+                <TableOfContents><a href="#days">Days</a></TableOfContents>
+              </ul>
+            </Card>
           </ResourcesFixed>
 
           <ResourcesScroll>

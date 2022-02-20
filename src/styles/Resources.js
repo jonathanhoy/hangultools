@@ -27,28 +27,30 @@ const ResourcesScroll = styled.div`
   }
 `;
 
-const TableOfContents = styled.ul`
+const TableOfContents = styled.li`
   list-style: none;
   list-style-position: inside;
-  li {
-    margin-bottom: 0.25rem;
-    a {
-      display: block;
-      padding: 0.5rem 1rem;
-      font-size: 1.25rem;
+  margin-bottom: 0.25rem;
+  a {
+    display: block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: ${variables.black};
+    text-decoration: none;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    &:visited {
       color: ${variables.black};
-      text-decoration: none;
-      /* background: ${variables.grey100}; */
-      border-radius: 0.25rem;
-      border: 1px solid transparent;
-      &:visited {
-        color: ${variables.black};
-      }
-      &:hover {
-        color: ${variables.primary900};
-        background-color: ${variables.primary100};
-        border-color: ${variables.primary900};
-      }
+    }
+    &:hover {
+      color: ${variables.primary900};
+      background-color: ${variables.primary100};
+      border-color: ${variables.primary900};
+    }
+  }
+  @media (max-width: ${variables.sm}) {
+    &:first-of-type {
+      margin-top: 0.5rem;
     }
   }
 `;
