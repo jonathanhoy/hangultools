@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-// import variables from '../styles/variables';
+import variables from '../styles/variables';
 
 const List = styled.ul`
   display: flex;
@@ -10,22 +10,33 @@ const List = styled.ul`
   li {
     margin-bottom: 0.5rem;
     display: flex;
-    justify-content: space-between;
     span {
       font-size: 1rem;
+      &:first-of-type {
+        margin-right: 1rem;
+      }
     }
   }
 	li:last-child {
 		margin-bottom: 0;
 	}
+  @media (max-width: ${variables.sm}) {
+    li {
+      span {
+      &:first-of-type {
+        margin-right: 0.25rem;
+      }
+    }
+    }
+  }
 `;
 
 const CalculatorList = styled(List)`
-  width: 65px;
+  /* width: 65px; */
 `;
 
 const ClockList = styled(List)`
-  width: 75px;
+  /* width: 75px; */
   margin-left: auto;
   margin-right: auto;
 `;

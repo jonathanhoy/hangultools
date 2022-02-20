@@ -159,7 +159,7 @@ class ClockComponent extends React.Component {
               </div>
             </Card>
           </Settings>
-          <ClockContainer className="component">
+          <ClockContainer className={`component ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
               <ComponentWrapper>
                 <ClockField>
                   <p><span>{this.state.hour}</span><span>:</span><span>{this.state.minute}</span></p>
@@ -189,7 +189,7 @@ class ClockComponent extends React.Component {
                 </form>
               </ComponentWrapper>
           </ClockContainer>
-          <section className="reference">
+          <section className={`reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
             <ReferenceCard isVisible={this.state.sinoToggle} >
               <CardHeading>Sino Korean Numbers</CardHeading>
               <ClockList digits="single">

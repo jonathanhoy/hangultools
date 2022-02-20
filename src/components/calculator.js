@@ -210,7 +210,7 @@ class Calculator extends React.Component {
               </div>
             </Card>
           </Settings>
-          <CalculatorContainer className="component">
+          <CalculatorContainer className={`component ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
               <ComponentWrapper>
                 <Mathfield>
                   <span className="numberX">{this.convertNumToWord(this.state.x, this.state.system)}</span>
@@ -265,7 +265,7 @@ class Calculator extends React.Component {
                 }
               </form>
           </CalculatorContainer>
-          <section className="reference">
+          <section className={`reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
             <ReferenceCard isVisible={this.state.sinoToggle} >
               <CardHeading>Sino Korean Numbers</CardHeading>
               <div>
