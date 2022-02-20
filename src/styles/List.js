@@ -32,13 +32,11 @@ const List = styled.ul`
 `;
 
 const CalculatorList = styled(List)`
-  /* width: 65px; */
+
 `;
 
 const ClockList = styled(List)`
-  /* width: 75px; */
-  margin-left: auto;
-  margin-right: auto;
+
 `;
 
 export { CalculatorList, ClockList };
