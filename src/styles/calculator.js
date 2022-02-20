@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import variables from './variables';
-import keyOne from '../assets/key-1.svg';
-import keyTwo from '../assets/key-2.svg';
-import keyThree from '../assets/key-3.svg';
-import keyFour from '../assets/key-4.svg';
+import keyOne from '../assets/key-1.png';
+import keyTwo from '../assets/key-2.png';
+import keyThree from '../assets/key-3.png';
+import keyFour from '../assets/key-4.png';
 
 const CalculatorContainer = styled.section`
   display: flex;

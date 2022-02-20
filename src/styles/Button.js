@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import variables from '../styles/variables';
-import rightArrow from '../assets/key-right-arrow.svg';
+import rightArrow from '../assets/key-right-arrow.png';
 
 const Button = styled.button`
   background: ${props => (props.theme === "purple" ? `${variables.primary900}` : "white")};
