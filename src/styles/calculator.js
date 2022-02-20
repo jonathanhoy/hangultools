@@ -28,7 +28,7 @@ const CalculatorContainer = styled.section`
   form p {
     text-align: center;
     font-size: 2rem;
-    margin: 3rem 0 0 0;
+    margin: 1rem 0 0 0;
     line-height: 1;
   }
   label[for="input"] { 
@@ -103,8 +103,7 @@ const MultipleChoice = styled.div`
       &:after {
         content: '';
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
+        bottom: -2px;
         right: -2.5rem;
         width: 1.5rem;
         height: 1.5rem;

@@ -25,9 +25,8 @@ const Button = styled.button`
     &:after {
       content: '';
       position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      bottom: -2.5rem;
+      bottom: -4px;
+      right: -2.5rem;
       width: 1.5rem;
       height: 1.5rem;
       background-image: url(${rightArrow});
@@ -45,7 +44,7 @@ const Button = styled.button`
     transform: translateY(4px);
     &.next {
       &:after {
-        transform: translate(-50%, -4px);
+        transform: translateY(-4px);
       }
     }
   }

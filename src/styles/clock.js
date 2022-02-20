@@ -44,7 +44,7 @@ const ClockContainer = styled.section`
     p {
       text-align: center;
       font-size: 2rem;
-      margin: 3rem 0 0 0;
+      margin: 1rem 0 0 0;
       line-height: 30px;
     }
     .submitContainer {
