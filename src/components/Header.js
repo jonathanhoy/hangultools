@@ -82,6 +82,7 @@ const StyledHeader = styled.header`
     padding: 1rem 0;
     font-size: 2.5rem;
     color: ${variables.white};
+    font-weight: 600;
     a {
       text-decoration: none;
       color: ${variables.white};
@@ -164,9 +165,10 @@ const StyledNav = styled.nav`
     display: flex;
     justify-content: center;
     margin: 0;
-    padding: 1rem 0;
+    padding: 0.5rem 0;
     li {
       a {
+        display: inline-block;
         text-decoration: none;
         color: ${variables.black};
         font-size: 1rem;
