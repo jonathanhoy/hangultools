@@ -32,6 +32,7 @@ const Button = styled.button`
       height: 1.5rem;
       background-image: url(${rightArrow});
       background-size: contain;
+      background-repeat: no-repeat;
       transition: all 0.2s;
       @media (max-width: ${variables.md}) {
         display: none;

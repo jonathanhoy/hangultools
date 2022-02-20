@@ -109,6 +109,7 @@ const MultipleChoice = styled.div`
         width: 1.5rem;
         height: 1.5rem;
         background-size: contain;
+        background-repeat: no-repeat;
         @media (max-width: ${variables.md}) {
           display: none;
         }
