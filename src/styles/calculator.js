@@ -14,7 +14,6 @@ const CalculatorContainer = styled.section`
     margin-top: 1.5rem;
     display: block;
     text-align: center;
-    font-weight: 600;
   }
   input[type="text"] {
     width: 100%;
