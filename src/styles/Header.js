@@ -71,7 +71,7 @@ const StyledHeader = styled.header`
         width: 100%;
         left: 0;
         z-index: 50;
-        top: 63px;
+        top: 64px;
         padding: 1.5rem 0;
         border-bottom: 1px solid ${variables.grey400};
 
