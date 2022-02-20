@@ -7,7 +7,7 @@ import { Card, CardHeading, ReferenceCard } from '../styles/Card';
 import { CalculatorList } from '../styles/List';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { CalculatorContainer, Mathfield, MultipleChoice } from '../styles/calculator';
-import Keydown from './keydown';
+import Keydown from './util/keydown';
  
 class Calculator extends React.Component {
   constructor() {

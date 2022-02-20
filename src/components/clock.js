@@ -7,7 +7,7 @@ import ComponentContainer from '../styles/ComponentContainer';
 import { Card, CardHeading, ReferenceCard } from '../styles/Card';
 import { ClockList } from '../styles/List';
 import { ClockContainer, ClockField } from '../styles/clock';
-import Keydown from './keydown';
+import Keydown from './util/keydown';
 
 class ClockComponent extends React.Component {
   constructor() {
