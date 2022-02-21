@@ -10,18 +10,18 @@ const Tag = styled.p`
   border-radius: 0.5rem;
   font-weight: 500;
   font-size: 0.875rem;
-  margin-right: 0.5rem;
+  margin-right: 0.25rem;
   margin-bottom: 0;
   margin-top: 0;
   @media (max-width: ${variables.md}) {
     &:not(:last-of-type) {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
   }
 `;
 
 const TagContainer = styled.div`
-  padding: 0.5rem;
+  padding: 0.25rem;
   display: flex;
   flex-wrap: wrap;
 `;
