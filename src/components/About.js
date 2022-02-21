@@ -36,7 +36,7 @@ class About extends React.Component {
           <PageBody>This tool asks you to write the time that is displayed. The clock can be switched between a 12-hour clock and a 24-hour clock. Note that the Pure number system is used for the hour and the Sino number system is used for minutes. Reference cards are available for each number system.</PageBody>
 
           <PageSubSectionHeading>Positions</PageSubSectionHeading>
-          <PageBody>Featuring members of TWICE, this tool asks you to help locate the position of 지효, relative to where 사나 and 댜현 are. Reference cards are available for a quick introduction and each position.</PageBody>
+          <PageBody>Featuring members of TWICE, this tool asks you to help locate the position of a member relative to where other members are. Reference cards are available for a quick introduction and each position.</PageBody>
    
           <PageBody className='ending'>Good luck in your studies!</PageBody>
           <PageBody>&copy; <a href="https://jonathanhoy.com" aria-label="Go to Jonathan Hoy's personal portfolio, opens in a new window" target="_blank" rel="noreferrer">Jonathan Hoy</a> {currentYear}</PageBody>
