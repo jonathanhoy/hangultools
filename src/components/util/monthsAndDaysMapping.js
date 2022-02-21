@@ -1,58 +1,58 @@
 const months = {
   1: {
     eng: 'January',
-    han: '일월',
+    han: '일월',
   },
   2: {
     eng: 'February',
-    han: '이월',
+    han: '이월',
   },
   3: {
     eng: 'March',
-    han: '삼월',
+    han: '삼월',
   },
   4: {
     eng: 'April',
-    han: '사월',
+    han: '사월',
   },
   5: {
     eng: 'May',
-    han: '오월',
+    han: '오월',
   },
   6: {
     eng: 'June',
-    han: '유월',
+    han: '유월',
   },
   7: {
     eng: 'July',
-    han: '칠월',
+    han: '칠월',
   },
   8: {
     eng: 'August',
-    han: '팔월',
+    han: '팔월',
   },
   9: {
     eng: 'September',
-    han: '구월',
+    han: '구월',
   },
   10: {
     eng: 'October',
-    han: '시월',
+    han: '시월',
   },
   11: {
     eng: 'November',
-    han: '십일월',
+    han: '십일월',
   },
   12: {
     eng: 'December',
-    han: '십이월',
+    han: '십이월',
   },
 }
 
 const days = {
   1: {
     eng: 'Sunday',
-    han: '일요일',
+    han: '일요일',
   },
   2: {
     eng: 'Monday',
@@ -60,7 +60,7 @@ const days = {
   },
   3: {
     eng: 'Tuesday',
-    han: '화요일',
+    han: '화요일',
   },
   4: {
     eng: 'Wednesday',
@@ -68,7 +68,7 @@ const days = {
   },
   5: {
     eng: 'Thursday',
-    han: '목요일',
+    han: '목요일',
   },
   6: {
     eng: 'Friday',
