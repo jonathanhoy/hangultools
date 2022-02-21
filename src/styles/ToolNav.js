@@ -25,12 +25,18 @@ const StyledToolNav = styled.nav`
         background-color: ${variables.grey400};
         padding: 0.5rem 1rem;
         border-radius: 0.25rem;
+        border: 1px solid ${variables.grey400};
         i {
           margin-right: 0.5rem;
+        }
+        &:hover {
+          background-color: ${variables.primary100};
+          border-color: ${variables.primary900};
         }
         &.active {
           background-color: ${variables.primary900};
           color: ${variables.white};
+          border-color: ${variables.primary900};
         }
       }
     }
