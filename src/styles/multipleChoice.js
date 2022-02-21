@@ -8,9 +8,9 @@ import keyFour from '../assets/keys/key-4.png';
 const MultipleChoice = styled.div`
   .container {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-gap: 1rem;
+    grid-gap: 0.25rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
@@ -25,14 +25,12 @@ const MultipleChoice = styled.div`
     border: 2px solid #000;
     border-radius: 0.25rem;
     margin-top: 0;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     &.multiple-choice-1, &.multiple-choice-2, &.multiple-choice-3, &.multiple-choice-4 {
-      position: relative;
       &:after {
         content: '';
         position: absolute;
         bottom: -2px;
-        right: -2.5rem;
         width: 1.5rem;
         height: 1.5rem;
         background-size: contain;
@@ -42,25 +40,25 @@ const MultipleChoice = styled.div`
         }
       }
     }
-    &.multiple-choice-1 {
-      &:after {
-        background-image: url(${keyOne});
-      }
+    &.multiple-choice-1:after {
+      background-image: url(${keyOne});
+      right: -2.5rem;
+      bottom: 10rem;
     }
-    &.multiple-choice-2 {
-      &:after {
-        background-image: url(${keyTwo});
-      }
+    &.multiple-choice-2:after {
+      background-image: url(${keyTwo});
+      right: -4.5rem;
+      bottom: 10rem;
     }
-    &.multiple-choice-3 {
-      &:after {
-        background-image: url(${keyThree});
-      }
+    &.multiple-choice-3:after {
+      background-image: url(${keyThree});
+      right: -2.5rem;
+      bottom: 8rem;
     }
-    &.multiple-choice-4 {
-      &:after {
-        background-image: url(${keyFour});
-      }
+    &.multiple-choice-4:after {
+      background-image: url(${keyFour});
+      right: -4.5rem;
+      bottom: 8rem;
     }
   }
   input[type="radio"]:checked+label {
@@ -78,14 +76,6 @@ const MultipleChoice = styled.div`
   }
   @media (max-width: 599px) {
     width: auto;
-    .container {
-      grid-gap: 5px;
-      grid-template-columns: 1fr 1fr;
-    }
-    label {
-      font-size: 1.25rem;
-      padding: 0.25rem;
-    }
   }
 `;
 

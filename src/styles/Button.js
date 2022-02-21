@@ -20,12 +20,11 @@ const Button = styled.button`
   }
 
   &.next {
-    position: relative;
     padding: 0.5rem;
     &:after {
       content: '';
       position: absolute;
-      bottom: -4px;
+      bottom: 3.5rem;
       right: -2.5rem;
       width: 1.5rem;
       height: 1.5rem;

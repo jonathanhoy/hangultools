@@ -43,10 +43,10 @@ const PositionsContainer = styled.section`
 `;
 
 const PositionsField = styled.div`
-  height: 175px;
+  height: 200px;
   position: relative;
   img {
-    width: 65px;
+    width: 75px;
     position: absolute;
   }
   &.above {
