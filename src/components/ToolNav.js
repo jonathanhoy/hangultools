@@ -11,6 +11,7 @@ class ToolNav extends React.Component {
           <ul>
             <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><i className="fas fa-calculator"></i> Calculator</NavLink></li>
             <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><i className="fas fa-clock"></i> Clock</NavLink></li>
+            <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><i className="fas fa-shapes"></i> Positions</NavLink></li>
           </ul>
         </Wrapper>
       </StyledToolNav>

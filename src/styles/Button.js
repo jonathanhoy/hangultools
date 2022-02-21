@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import variables from '../styles/variables';
-import rightArrow from '../assets/key-right-arrow.png';
+import rightArrow from '../assets/keys/key-right-arrow.png';
 
 const Button = styled.button`
   background: ${props => (props.theme === "purple" ? `${variables.primary900}` : "white")};
@@ -20,33 +20,12 @@ const Button = styled.button`
   }
 
   &.next {
-    position: relative;
     padding: 0.5rem;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      right: -2.5rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-image: url(${rightArrow});
-      background-size: contain;
-      background-repeat: no-repeat;
-      transition: all 0.2s;
-      @media (max-width: ${variables.md}) {
-        display: none;
-      }
-    }
   }
 
   &:active {
     box-shadow: none;
     transform: translateY(4px);
-    &.next {
-      &:after {
-        transform: translateY(-4px);
-      }
-    }
   }
 `;
 
@@ -54,6 +33,21 @@ const ButtonGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-gap: 0.5rem;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 3.5rem;
+    right: -2.5rem;
+    width: 2rem;
+    height: 1.5rem;
+    background-image: url(${rightArrow});
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+    @media (max-width: ${variables.md}) {
+      display: none;
+    }
+  }
 `;
 
 export { Button, ButtonGroup };

@@ -43,6 +43,10 @@ const ComponentContainer = styled.section`
       }
     }
   }
+
+  form {
+    position: relative;
+  }
 `;
 
 export default ComponentContainer;

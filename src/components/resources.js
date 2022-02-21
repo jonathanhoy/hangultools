@@ -1,6 +1,7 @@
 /* eslint-disable array-callback-return */
 import React from 'react';
 import numToWordsMap from './util/mapping';
+import { positionsMapping } from './util/positionsMapping';
 import { months, days } from './util/monthsAndDaysMapping';
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageSubHeading } from '../styles/PageHeading';
@@ -34,6 +35,7 @@ class Resources extends React.Component {
               <ul>
                 <TableOfContents><a href="#numbers-sino">Numbers (Sino)</a></TableOfContents>
                 <TableOfContents><a href="#numbers-pure">Numbers (Pure)</a></TableOfContents>
+                <TableOfContents><a href="#positions">Positions</a></TableOfContents>
                 <TableOfContents><a href="#months">Months</a></TableOfContents>
                 <TableOfContents><a href="#days">Days</a></TableOfContents>
               </ul>
@@ -131,6 +133,31 @@ class Resources extends React.Component {
                           </tr>
                         )
                       }
+                    })}
+                  </tbody>
+                </ResourcesTable>
+              </ResourcesTableContainer>
+            </ResourcesSection>
+
+            <ResourcesSection id="positions">
+              <PageSubHeading>Positions</PageSubHeading>
+              <ResourcesTableContainer>
+                <ResourcesTable>
+                  <caption className="show-for-sr">Positions</caption>
+                  <thead>
+                    <tr>
+                      <th>Position</th>
+                      <th>Hangul</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {Object.entries(positionsMapping).map((position, i) => {
+                      return (
+                        <tr className={`row-${i+1}`}>
+                          <td>{position[1].eng.charAt(0).toUpperCase() + position[1].eng.slice(1)}</td>
+                          <td>{position[1].han}</td>
+                        </tr>
+                      )
                     })}
                   </tbody>
                 </ResourcesTable>
