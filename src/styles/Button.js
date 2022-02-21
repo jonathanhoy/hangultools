@@ -21,31 +21,11 @@ const Button = styled.button`
 
   &.next {
     padding: 0.5rem;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 3.5rem;
-      right: -2.5rem;
-      width: 1.5rem;
-      height: 1.5rem;
-      background-image: url(${rightArrow});
-      background-size: contain;
-      background-repeat: no-repeat;
-      transition: all 0.2s;
-      @media (max-width: ${variables.md}) {
-        display: none;
-      }
-    }
   }
 
   &:active {
     box-shadow: none;
     transform: translateY(4px);
-    &.next {
-      &:after {
-        transform: translateY(-4px);
-      }
-    }
   }
 `;
 
@@ -53,6 +33,21 @@ const ButtonGroup = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   grid-gap: 0.5rem;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 3.5rem;
+    right: -2.5rem;
+    width: 2rem;
+    height: 1.5rem;
+    background-image: url(${rightArrow});
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: all 0.2s;
+    @media (max-width: ${variables.md}) {
+      display: none;
+    }
+  }
 `;
 
 export { Button, ButtonGroup };

@@ -31,7 +31,7 @@ const MultipleChoice = styled.div`
         content: '';
         position: absolute;
         bottom: -2px;
-        width: 1.5rem;
+        width: 2rem;
         height: 1.5rem;
         background-size: contain;
         background-repeat: no-repeat;
@@ -43,12 +43,12 @@ const MultipleChoice = styled.div`
     &.multiple-choice-1:after {
       background-image: url(${keyOne});
       right: -2.5rem;
-      bottom: 10rem;
+      bottom: 9.75rem;
     }
     &.multiple-choice-2:after {
       background-image: url(${keyTwo});
-      right: -4.5rem;
-      bottom: 10rem;
+      right: -4.75rem;
+      bottom: 9.75rem;
     }
     &.multiple-choice-3:after {
       background-image: url(${keyThree});
@@ -57,7 +57,7 @@ const MultipleChoice = styled.div`
     }
     &.multiple-choice-4:after {
       background-image: url(${keyFour});
-      right: -4.5rem;
+      right: -4.75rem;
       bottom: 8rem;
     }
   }

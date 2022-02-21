@@ -11,6 +11,7 @@ const PositionsContainer = styled.section`
     text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 0;
+    height: 3rem;
   }
   label {
     display: block;
