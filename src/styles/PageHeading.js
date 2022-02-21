@@ -6,7 +6,7 @@ const PageHeading = styled.h2`
   color: ${variables.black};
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 const PageSubHeading = styled.h3`
@@ -14,7 +14,7 @@ const PageSubHeading = styled.h3`
   color: ${variables.black};
   margin-top: 0;
   margin-bottom: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 `;
 
 const PageBody = styled.p`
