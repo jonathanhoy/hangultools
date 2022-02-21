@@ -48,9 +48,13 @@ class About extends React.Component {
 
 const AboutStyles = styled.div`
   margin-bottom: 15rem;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
   img {
     max-width: 100px;
   }
+ 
   .ending {
     margin-top: 5rem;
   }
