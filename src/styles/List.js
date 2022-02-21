@@ -39,4 +39,38 @@ const ClockList = styled(List)`
 
 `;
 
-export { CalculatorList, ClockList };
+const CharacterList = styled(List)`
+  width: 100%;
+  li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    img {
+      width: 65px;
+    }
+    p {
+      font-size: 1rem;
+      margin: 0;
+    }
+  }
+  @media (max-width: ${variables.sm}) {
+    li {
+      grid-template-columns: 1fr;
+      margin-bottom: 1rem;
+      justify-items: center;
+    }
+  }
+`;
+
+const PositionsList = styled(List)`
+  li {
+    display: flex;
+    justify-content: space-between;
+    span:first-of-type {
+      margin-right: 1.5rem;
+    }
+  }
+`;
+
+export { CalculatorList, ClockList, CharacterList, PositionsList };
