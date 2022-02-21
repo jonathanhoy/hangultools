@@ -29,6 +29,15 @@ class Home extends React.Component {
             </Link>
           </TileItem>
 
+          <TileItem className="positions">
+            <Link to="/positions">
+              <div>
+                <i className="fas fa-shapes"></i>
+                <p>Positions</p>
+              </div>
+            </Link>
+          </TileItem>
+
         </TileList>
 
         <PageBody>More tools coming soon!</PageBody>
