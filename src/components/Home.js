@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
+import { Tag, TagContainer } from '../styles/Tag';
 import variables from '../styles/variables';
 
 class Home extends React.Component {
@@ -13,30 +14,41 @@ class Home extends React.Component {
         <TileList>
           <TileItem className="calculator">
             <Link to="/calculator">
-              <div>
+              <div className="top-container">
                 <i className="fas fa-calculator"></i>
-                <p>Calculator</p>
+                <h3>Calculator</h3>
               </div>
+              <TagContainer>
+                <Tag>한 Keyboard</Tag>
+                <Tag>Multiple Choice</Tag>
+              </TagContainer>
             </Link>
           </TileItem>
 
           <TileItem className="clock">
             <Link to="/clock">
-              <div>
+              <div className="top-container">
                 <i className="fas fa-clock"></i>
-                <p>Clock</p>
+                <h3>Clock</h3>
               </div>
+              <TagContainer>
+                <Tag>한 Keyboard</Tag>
+              </TagContainer>
             </Link>
           </TileItem>
 
           <TileItem className="positions">
             <Link to="/positions">
-              <div>
+              <div className="top-container">
                 <i className="fas fa-shapes"></i>
-                <p>Positions</p>
+                <h3>Positions</h3>
               </div>
+              <TagContainer>
+                <Tag>Multiple Choice</Tag>
+              </TagContainer>
             </Link>
           </TileItem>
+
 
         </TileList>
 
@@ -66,40 +78,48 @@ const TileItem = styled.li`
     &:active, &:hover {
       color: ${variables.primary900};
     }
-    div {
-      padding: 3rem 0;
+    .top-container {
+      padding: 3rem 0 2rem 0;
       width: 100%;
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 2.5rem;
       justify-items: center;
       align-items: center;
+      border-bottom: 2px solid ${variables.black};
       i {
         font-size: 6rem;
       }
-      p {
-        font-weight: 400;
+      h3 {
+        font-weight: 500;
         font-size: 1.5rem;
         margin: 0;
       }
     }
   }
   &:hover {
-    border: 2px solid ${variables.primary900};
+    border-color: ${variables.primary900};
     background-color: ${variables.primary100};
+    a {
+      .top-container {
+        border-color: ${variables.primary900};
+      }
+      div:last-of-type {
+        p {
+          color: ${variables.primary100};
+          background-color: ${variables.primary900};
+        }
+      }
+    }
   }
 
   @media (max-width: ${variables.sm}) {
     a {
-      div {
-        padding: 2rem 0;
+      .top-container {
+        padding: 2rem 0 1rem 0;
         i {
           font-size: 5rem;
-        }
-        p {
-  
-        }
-        
+        }      
       }
     }
   }
