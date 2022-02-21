@@ -39,9 +39,10 @@ class Header extends React.Component {
       <StyledHeader mobileNavHidden={this.state.mobileNavHidden} >
         <Wrapper>
           <div className="container">
-            <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
+            <h1>Hangul Tools</h1>
             <nav>
               <ul>
+                <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Home</NavLink></li>
                 <li><NavLink onClick={this.handleClose} to="/resources" exact activeClassName="active">Resources</NavLink></li>
                 <li><NavLink onClick={this.handleClose} to="/about" exact activeClassName="active">About</NavLink></li>
               </ul>
