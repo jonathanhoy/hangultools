@@ -46,98 +46,100 @@ const PositionsContainer = styled.section`
 const PositionsField = styled.div`
   height: 200px;
   position: relative;
+  background: ${variables.grey100};
+  border-radius: 1rem;
   img {
     width: 75px;
     position: absolute;
   }
   &.above {
-    img.sana {
+    img.avatar-1 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    img.jihyo {
+    img.avatar-2 {
       left: 50%;
       transform: translate(-50%);
     }
-    img.dahyun {
+    img.avatar-3 {
       display: none;
     }
   }
   &.beside {
-    img.sana {
+    img.avatar-1 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    img.jihyo {
+    img.avatar-2 {
       top: 50%;
       transform: translateY(-50%);
     }
-    img.dahyun {
+    img.avatar-3 {
       display: none;
     }
   }
   &.under {
-    img.sana {
+    img.avatar-1 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    img.jihyo {
+    img.avatar-2 {
       bottom: 0;
       left: 50%;
       transform: translateX(-50%);
     }
-    img.dahyun {
+    img.avatar-3 {
       display: none;
     }
   }
   &.between {
-    img.sana {
+    img.avatar-1 {
       top: 50%;
       transform: translateY(-50%);
     }
-    img.jihyo {
+    img.avatar-2 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
     }
-    img.dahyun {
+    img.avatar-3 {
       right: 0;
       top: 50%;
       transform: translateY(-50%);
     }
   }
   &.front {
-    img.sana {
+    img.avatar-1 {
       top: 40%;
       left: 60%;
       transform: translate(-50%, -50%);
     }
-    img.jihyo {
+    img.avatar-2 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
     }
-    img.dahyun {
+    img.avatar-3 {
       display: none;
     }
   }
   &.behind {
-    img.sana {
+    img.avatar-1 {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       z-index: 10;
     }
-    img.jihyo {
+    img.avatar-2 {
       top: 40%;
       left: 60%;
       transform: translate(-50%, -50%);
     }
-    img.dahyun {
+    img.avatar-3 {
       display: none;
     }
   }

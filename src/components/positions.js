@@ -1,5 +1,5 @@
 import React from "react";
-import { positionsMapping } from './util/positionsMapping';
+import { positionsMapping, idolsMapping } from './util/positionsMapping';
 import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
@@ -19,13 +19,16 @@ class Positions extends React.Component {
     this.state = {
       answer: '',
       input: '',
-      helperText: '',
       simpleNumbersToggle: false,
       multipleChoiceToggle: true,
       charactersToggle: false,
       positionsToggle: false,
       multipleChoiceArr: [],
       checkedRadio: null,
+      idolsArr: [],
+      idolOne: "",
+      idolTwo: "",
+      idolThree: "",
     }
   }
 
@@ -43,17 +46,25 @@ class Positions extends React.Component {
     const shuffledArr = this.shuffleArray(Object.entries(positionsMapping));
     const [answer, incorrect1, incorrect2, incorrect3] = [...shuffledArr];
     const tempArr = this.shuffleArray([answer[1].han, incorrect1[1].han, incorrect2[1].han, incorrect3[1].han]);
-
+    const tempIdolsArr = this.shuffleArray(Object.values(idolsMapping));
+    const idolOne = tempIdolsArr[0].han;
+    const idolTwo = tempIdolsArr[1].han;
+    const idolThree = tempIdolsArr[2].han;
+    
 
     this.setState({
       answer: answer[1].han,
       class: answer[1].eng,
-      helperText: answer[1].text,
       input: '',
       response: '',
       multipleChoiceArr: tempArr,
       checkedRadio: null,
+      idolsArr: tempIdolsArr,
+      idolOne,
+      idolTwo,
+      idolThree,
     });
+
   }
 
   shuffleArray = (array) => {
@@ -68,20 +79,12 @@ class Positions extends React.Component {
     return array;
   }
 
-  validate = (e) => {
+  submitValidate = (e) => {
     e.preventDefault();
-    if (this.state.input === this.state.answer) {
-      this.setState({
-        response: 'correct'
-      })
-    } else {
-      this.setState({
-        response: 'wrong'
-      })
-    } 
+    this.validate();
   }
 
-  keypressValidate = () => {
+  validate = () => {
     if (this.state.input === this.state.answer) {
       this.setState({
         response: 'correct'
@@ -136,22 +139,22 @@ class Positions extends React.Component {
       this.setState({
         input: this.state.multipleChoiceArr[0]
       })
-      this.keypressValidate()
+      this.validate()
     } else if (e.keyCode === 87 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[1]
       })
-      this.keypressValidate()
+      this.validate()
     } else if (e.keyCode === 65 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[2]
       })
-      this.keypressValidate()
+      this.validate()
     } else if (e.keyCode === 83 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[3]
       })
-      this.keypressValidate()
+      this.validate()
     }
   }
 
@@ -179,14 +182,24 @@ class Positions extends React.Component {
               <ComponentWrapper>
                 <PositionsField className={this.state.class}>
                   <div className="image-container">
-                    <img src={dahyun} alt="dahyun" class="avatar dahyun"/>
-                    <img src={jihyo} alt="jihyo" class="avatar jihyo"/>
-                    <img src={sana} alt="sana" class="avatar sana"/>
+                    {
+                      this.state.idolsArr.map((idol, i) => {
+                        return (
+                          <img src={idol.src} alt={idol.name} class={`avatar avatar-${i + 1}`}/>
+                        )
+                      })
+                    }
                   </div>
                 </PositionsField>
-                <p className="helper-text">{this.state.helperText}</p>
+                <p className="helper-text">{
+                  this.state.answer !== '사이'
+                  ?
+                  `${this.state.idolOne} _에 ${this.state.idolTwo} 있습니다.`
+                  :
+                  `${this.state.idolOne}와 ${this.state.idolThree} _에 ${this.state.idolTwo} 있습니다.`
+                }</p>
               </ComponentWrapper>
-              <form action="" onSubmit={this.validate}>
+              <form action="" onSubmit={this.submitValidate}>
                 <MultipleChoice>
                   <div className="container">
                     {
@@ -220,15 +233,15 @@ class Positions extends React.Component {
               <div>
                 <CharacterList>
                   <li>
-                    <img src={jihyo} alt="jihyo" class="avatar jihyo"/>
-                    <p>저는 지효입니다.</p>
-                  </li>
-                  <li>
-                    <img src={sana} alt="sana" class="avatar sana"/>
+                    <img src={sana} alt="sana" class="avatar"/>
                     <p>저는 사나입니다.</p>
                   </li>
                   <li>
-                    <img src={dahyun} alt="dahyun" class="avatar dahyun"/>
+                    <img src={jihyo} alt="jihyo" class="avatar"/>
+                    <p>저는 지효입니다.</p>
+                  </li>
+                  <li>
+                    <img src={dahyun} alt="dahyun" class="avatar"/>
                     <p>저는 다현입니다.</p>
                   </li>
                 </CharacterList>

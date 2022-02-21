@@ -89,20 +89,12 @@ class Calculator extends React.Component {
     return array;
   }
 
-  validate = (e) => {
+  submitValidate = (e) => {
     e.preventDefault();
-    if (this.state.input === this.state.answer) {
-      this.setState({
-        response: 'correct'
-      })
-    } else {
-      this.setState({
-        response: 'wrong'
-      })
-    } 
+    this.validate();
   }
 
-  keypressValidate = () => {
+  validate = () => {
     if (this.state.input === this.state.answer) {
       this.setState({
         response: 'correct'
@@ -163,22 +155,22 @@ class Calculator extends React.Component {
       this.setState({
         input: this.state.multipleChoiceArr[0]
       })
-      this.keypressValidate()
+      this.validate()
     } else if (e.keyCode === 87 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[1]
       })
-      this.keypressValidate()
+      this.validate()
     } else if (e.keyCode === 65 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[2]
       })
-      this.keypressValidate()
+      this.validate()
     } else if (e.keyCode === 83 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[3]
       })
-      this.keypressValidate()
+      this.validate()
     }
   }
 
@@ -221,7 +213,7 @@ class Calculator extends React.Component {
                   <span className="numberY">{this.convertNumToWord(this.state.y, this.state.system)} </span>
                 </Mathfield>
               </ComponentWrapper>
-              <form action="" onSubmit={this.validate}>
+              <form action="" onSubmit={this.submitValidate}>
                 {
                   this.state.multipleChoiceToggle === false &&
                   (
