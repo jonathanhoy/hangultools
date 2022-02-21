@@ -128,24 +128,26 @@ class Positions extends React.Component {
   handleKeyDown = (e) => {
     // right arrow key 39
     // 1, 2, 3, 4 = 49, 50, 51, 52
+    // q w 81 87
+    // a s 65 83
     if (e.keyCode === 39) {
       this.generateProblem();
-    } else if (e.keyCode === 49 && this.state.multipleChoiceToggle === true) {
+    } else if (e.keyCode === 81 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[0]
       })
       this.keypressValidate()
-    } else if (e.keyCode === 50 && this.state.multipleChoiceToggle === true) {
+    } else if (e.keyCode === 87 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[1]
       })
       this.keypressValidate()
-    } else if (e.keyCode === 51 && this.state.multipleChoiceToggle === true) {
+    } else if (e.keyCode === 65 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[2]
       })
       this.keypressValidate()
-    } else if (e.keyCode === 52 && this.state.multipleChoiceToggle === true) {
+    } else if (e.keyCode === 83 && this.state.multipleChoiceToggle === true) {
       this.setState({
         input: this.state.multipleChoiceArr[3]
       })

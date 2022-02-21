@@ -24,8 +24,8 @@ class About extends React.Component {
           <PageBody>For example, if the question is <em>일 + 삼 (one + three)</em>, the answer would be <em>사</em> and not <em>4</em>.</PageBody>
           <Tag>Multiple Choice</Tag>
           <PageBody>These tools may be used without a Korean keyboard. Select the answer from the choices.</PageBody>
-          <img src={keysImage} alt="graphic of keyboard keys 1, 2, 3 and 4"/>
-          <PageBody>If you're using a computer you may also press keys 1, 2, 3, and 4 to pick an answer.</PageBody>
+          <img src={keysImage} alt="graphic of keyboard keys Q, W, A and S"/>
+          <PageBody>If you're using a computer you may also press keys Q, W, A, and S to pick an answer.</PageBody>
           
           <PageSubHeading>Available Tools</PageSubHeading>
           <PageSubSectionHeading>Calculator</PageSubSectionHeading>
