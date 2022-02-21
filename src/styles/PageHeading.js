@@ -17,11 +17,18 @@ const PageSubHeading = styled.h3`
   font-weight: 500;
 `;
 
+const PageSubSectionHeading = styled.h4`
+  font-size: 1.5rem;
+  color: ${variables.black};
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-weight: 500;
+`;
+
 const PageBody = styled.p`
   max-width: 35rem;
   font-size: 1rem;
   color: ${variables.black};
-  margin-top: 0;
 `;
 
-export { PageHeading, PageSubHeading, PageBody };
+export { PageHeading, PageSubHeading, PageSubSectionHeading, PageBody };
