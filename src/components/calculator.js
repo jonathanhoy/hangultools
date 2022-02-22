@@ -153,22 +153,26 @@ class Calculator extends React.Component {
       this.generateProblem();
     } else if (e.keyCode === 81 && this.state.multipleChoiceToggle === true) {
       this.setState({
-        input: this.state.multipleChoiceArr[0]
+        input: this.state.multipleChoiceArr[0],
+        checkedRadio: this.state.multipleChoiceArr[0],
       })
       this.validate()
     } else if (e.keyCode === 87 && this.state.multipleChoiceToggle === true) {
       this.setState({
-        input: this.state.multipleChoiceArr[1]
+        input: this.state.multipleChoiceArr[1],
+        checkedRadio: this.state.multipleChoiceArr[1],
       })
       this.validate()
     } else if (e.keyCode === 65 && this.state.multipleChoiceToggle === true) {
       this.setState({
-        input: this.state.multipleChoiceArr[2]
+        input: this.state.multipleChoiceArr[2],
+        checkedRadio: this.state.multipleChoiceArr[2],
       })
       this.validate()
     } else if (e.keyCode === 83 && this.state.multipleChoiceToggle === true) {
       this.setState({
-        input: this.state.multipleChoiceArr[3]
+        input: this.state.multipleChoiceArr[3],
+        checkedRadio: this.state.multipleChoiceArr[3],
       })
       this.validate()
     }
