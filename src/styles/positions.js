@@ -118,8 +118,8 @@ const PositionsField = styled.div`
       transform: translate(-50%, -50%);
     }
     img.avatar-2 {
-      top: 50%;
-      left: 50%;
+      top: 55%;
+      left: 45%;
       transform: translate(-50%, -50%);
       z-index: 10;
     }
@@ -129,8 +129,8 @@ const PositionsField = styled.div`
   }
   &.behind {
     img.avatar-1 {
-      top: 50%;
-      left: 50%;
+      top: 55%;
+      left: 45%;
       transform: translate(-50%, -50%);
       z-index: 10;
     }

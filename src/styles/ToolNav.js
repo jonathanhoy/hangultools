@@ -30,6 +30,7 @@ const StyledToolNav = styled.nav`
           margin-right: 0.5rem;
         }
         &:hover {
+          color: ${variables.primary900};
           background-color: ${variables.primary100};
           border-color: ${variables.primary900};
         }
