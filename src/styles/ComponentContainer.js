@@ -15,6 +15,9 @@ const ComponentContainer = styled.section`
   .component {
     grid-column: 2 / 3;
   }
+  @media (max-width: ${variables.md}) {
+    grid-gap: 0;
+  }
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     margin-top: 1rem;
