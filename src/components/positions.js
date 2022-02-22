@@ -191,13 +191,16 @@ class Positions extends React.Component {
                     }
                   </div>
                 </PositionsField>
-                <p className="helper-text">{
-                  this.state.answer !== '사이'
-                  ?
-                  `${this.state.idolOne} _에 ${this.state.idolTwo} 있습니다.`
-                  :
-                  `${this.state.idolOne}와 ${this.state.idolThree} _에 ${this.state.idolTwo} 있습니다.`
-                }</p>
+                <p className="helper-text">
+                  {
+                    this.state.answer !== '사이'
+                    ?
+                    `${this.state.idolOne} _에 ${this.state.idolTwo}`
+                    :
+                    `${this.state.idolOne}와 ${this.state.idolThree} _에 ${this.state.idolTwo}`
+                  }
+                  <span>있습니다.</span>
+                </p>
               </ComponentWrapper>
               <form action="" onSubmit={this.submitValidate}>
                 <MultipleChoice>
