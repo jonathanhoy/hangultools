@@ -13,7 +13,10 @@ const Tag = styled.p`
   margin-right: 0.25rem;
   margin-bottom: 0;
   margin-top: 0;
-  @media (max-width: ${variables.md}) {
+  @media (max-width: ${variables.sm}) {
+    margin-right: 0;
+    width: ${props => props.home ? '100%' : 'auto'};
+    text-align: center;
     &:not(:last-of-type) {
       margin-bottom: 0.25rem;
     }
@@ -21,7 +24,7 @@ const Tag = styled.p`
 `;
 
 const TagContainer = styled.div`
-  padding: 0.25rem;
+  padding: 0.25rem 0;
   display: flex;
   flex-wrap: wrap;
 `;

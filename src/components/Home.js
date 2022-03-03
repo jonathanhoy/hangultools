@@ -18,11 +18,11 @@ class Home extends React.Component {
                 <i className="fas fa-calculator"></i>
                 <h3>Calculator</h3>
               </div>
-              <TagContainer>
-                <Tag>한 Keyboard</Tag>
-                <Tag>Multiple Choice</Tag>
-              </TagContainer>
             </Link>
+            <TagContainer>
+              <Tag home>한 Keyboard</Tag>
+              <Tag home>Multiple Choice</Tag>
+            </TagContainer>
           </TileItem>
 
           <TileItem className="clock">
@@ -31,10 +31,10 @@ class Home extends React.Component {
                 <i className="fas fa-clock"></i>
                 <h3>Clock</h3>
               </div>
-              <TagContainer>
-                <Tag>한 Keyboard</Tag>
-              </TagContainer>
             </Link>
+            <TagContainer>
+              <Tag home>한 Keyboard</Tag>
+            </TagContainer>
           </TileItem>
 
           <TileItem className="positions">
@@ -43,10 +43,10 @@ class Home extends React.Component {
                 <i className="fas fa-shapes"></i>
                 <h3>Positions</h3>
               </div>
-              <TagContainer>
-                <Tag>Multiple Choice</Tag>
-              </TagContainer>
             </Link>
+            <TagContainer>
+              <Tag home>Multiple Choice</Tag>
+            </TagContainer>
           </TileItem>
 
 
@@ -70,8 +70,6 @@ const TileList = styled.ul`
 `;
 
 const TileItem = styled.li`
-  border: 2px solid ${variables.black};
-  border-radius: 0.5rem;
   a {
     text-decoration: none;
     color: ${variables.black};
@@ -79,6 +77,7 @@ const TileItem = styled.li`
       color: ${variables.primary900};
     }
     .top-container {
+      border-radius: 0.5rem;
       padding: 3rem 0 2rem 0;
       width: 100%;
       display: grid;
@@ -86,7 +85,7 @@ const TileItem = styled.li`
       grid-gap: 2.5rem;
       justify-items: center;
       align-items: center;
-      border-bottom: 2px solid ${variables.black};
+      border: 2px solid ${variables.black};
       i {
         font-size: 6rem;
       }
@@ -98,17 +97,11 @@ const TileItem = styled.li`
     }
   }
   &:hover {
-    border-color: ${variables.primary900};
-    background-color: ${variables.primary100};
     a {
+      border-color: ${variables.primary900};
       .top-container {
+        background-color: ${variables.primary100};
         border-color: ${variables.primary900};
-      }
-      div:last-of-type {
-        p {
-          color: ${variables.primary100};
-          background-color: ${variables.primary900};
-        }
       }
     }
   }
