@@ -95,9 +95,7 @@ const TileItem = styled.li`
         margin: 0;
       }
     }
-  }
-  &:hover {
-    a {
+    &:hover {
       border-color: ${variables.primary900};
       .top-container {
         background-color: ${variables.primary100};
@@ -105,7 +103,7 @@ const TileItem = styled.li`
       }
     }
   }
-
+  
   @media (max-width: ${variables.sm}) {
     a {
       .top-container {
