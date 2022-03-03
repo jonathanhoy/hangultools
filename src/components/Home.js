@@ -20,8 +20,8 @@ class Home extends React.Component {
               </div>
             </Link>
             <TagContainer>
-              <Tag home>한 Keyboard</Tag>
-              <Tag home>Multiple Choice</Tag>
+              <Tag>한 Keyboard</Tag>
+              <Tag>Multiple Choice</Tag>
             </TagContainer>
           </TileItem>
 
@@ -33,7 +33,7 @@ class Home extends React.Component {
               </div>
             </Link>
             <TagContainer>
-              <Tag home>한 Keyboard</Tag>
+              <Tag>한 Keyboard</Tag>
             </TagContainer>
           </TileItem>
 
@@ -45,7 +45,7 @@ class Home extends React.Component {
               </div>
             </Link>
             <TagContainer>
-              <Tag home>Multiple Choice</Tag>
+              <Tag>Multiple Choice</Tag>
             </TagContainer>
           </TileItem>
 
