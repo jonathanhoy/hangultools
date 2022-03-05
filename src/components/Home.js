@@ -62,10 +62,11 @@ class Home extends React.Component {
 const TileList = styled.ul`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 1rem;
+  grid-gap: 2rem;
   margin-bottom: 1rem;
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
   }
 `;
 
