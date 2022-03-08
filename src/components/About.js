@@ -18,7 +18,7 @@ class About extends React.Component {
           <PageBody>The app isn't intended as a learning tool for someone who has not learned any of the content previously. It assumes some basic knowledge and practices repetition.</PageBody>
           
           <PageSubHeading>Ways to play</PageSubHeading>
-          <PageBody>There are different ways to use each each tool. Each tool is labelled with the ways to use that tool. They are described below:</PageBody>
+          <PageBody>There are different ways to use each tool. Each tool is labelled with the ways to use that tool.</PageBody>
           <Tag>한 Keyboard</Tag>
           <PageBody>A tool with this label requires you to have a Korean keyboard installed on your device. Answers to questions should be written in words, not numbers.</PageBody>
           <PageBody>For example, if the question is <em>일 + 삼 (one + three)</em>, the answer would be <em>사</em> and not <em>4</em>.</PageBody>
