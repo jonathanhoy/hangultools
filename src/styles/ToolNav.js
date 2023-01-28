@@ -32,7 +32,7 @@ const StyledToolNav = styled.nav`
         &:hover {
           color: ${variables.primary900};
           background-color: ${variables.primary100};
-          border-color: ${variables.primary900};
+          border-color: ${variables.primary100};
         }
         &.active {
           background-color: ${variables.primary900};
