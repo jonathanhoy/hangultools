@@ -11,10 +11,10 @@ const StyledToolNav = styled.nav`
   }
   ul {
     display: flex;
-    padding: 0.5rem 0;
+    gap: 0.5rem;
     overflow: scroll;
+    padding: 0.5rem 0;
     li {
-      margin-right: 1rem;
       a {
         display: flex;
         align-items: center;
@@ -44,6 +44,10 @@ const StyledToolNav = styled.nav`
   }
 
   @media (max-width: ${variables.sm}) {
+    > div {
+      width: 100%;
+      padding-left: 2.5%;
+    }
     ul {
       li {
         margin-right: 0.5rem;
