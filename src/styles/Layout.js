@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import variables from "./variables";
 
 const MainLayout = styled.div`
   display: grid;
@@ -11,6 +12,9 @@ const MainLayout = styled.div`
     height: 100dvh;
     overflow: scroll;
   }
+  @media (max-width: ${variables.md}) {
+    grid-template-columns: 25vw 1fr;
+  }
 `;
 
 const ComponentLayout = styled.div`
@@ -18,6 +22,9 @@ const ComponentLayout = styled.div`
   grid-template-columns: 1fr 16.7vw;
   .settings {
     grid-column: 2 / 3;
+  }
+  @media (max-width: ${variables.md}) {
+    grid-template-columns: 1fr 25vw;
   }
 `;
 

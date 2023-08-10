@@ -1,17 +1,6 @@
 import styled from 'styled-components';
 import variables from './variables';
 
-const ResourcesOuterContainer = styled.div`
-  /* display: grid; */
-  /* grid-template-columns: 1fr 3fr; */
-  /* align-items: flex-start; */
-  grid-gap: 5rem;
-  @media (max-width: ${variables.sm}) {
-    grid-gap: 0;
-    grid-template-columns: 1fr;
-  }
-`;
-
 const ResourcesFixed = styled.div`
   /* position: fixed; */
   @media (max-width: ${variables.sm}) {
@@ -21,8 +10,7 @@ const ResourcesFixed = styled.div`
 
 const ResourcesScroll = styled.div`
   /* grid-column: 2 / 3; */
-  outline: 1px solid red;
-  height: 100dvh;
+  max-height: 100dvh;
   overflow: scroll;
   @media (max-width: ${variables.sm}) {
     /* grid-column: 1 / 2; */
@@ -107,7 +95,6 @@ const ResourcesTableContainer = styled.div`
 `;
 
 export { 
-  ResourcesOuterContainer,
   ResourcesFixed, 
   ResourcesScroll, 
   TableOfContents, 

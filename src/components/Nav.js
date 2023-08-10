@@ -6,7 +6,7 @@ import variables from "../styles/variables";
 
 import { Icon } from '@iconify/react';
 
-class LeftMenu extends React.Component {
+class Nav extends React.Component {
 
   constructor() {
     super();
@@ -46,7 +46,7 @@ class LeftMenu extends React.Component {
             <ul>
               <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><Icon icon="ph:calculator-fill" />Calculator</NavLink></li>
               <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><Icon icon="ph:clock-fill" /> Clock</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><Icon icon="ph:shapes-fill" /> Positions</NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><Icon icon="ph:shapes-fill" /> Positions <span className="new" aria-hidden="true">new</span></NavLink></li>
             </ul>
           </ToolNav>
           <SiteNav>
@@ -149,6 +149,7 @@ const baseNavStyles = css`
         color: ${variables.black};
         border-radius: ${variables.brsmall};
         font-size: 0.875rem;
+        position: relative;
         svg {
           width: 1.25rem;
           height: 1.25rem;
@@ -159,6 +160,19 @@ const baseNavStyles = css`
         &.active {
           background: ${variables.white};
           box-shadow: ${variables.boxshadow};
+        }
+        .new {
+          font-size: 0.625rem;
+          text-transform: uppercase;
+          font-weight: 600;
+          color: ${variables.white};
+          background: ${variables.primary900};
+          padding: 0.125rem 0.25rem;
+          border-radius: 2px;
+          position: absolute;
+          right: 0.75rem;
+          &::after {
+          }
         }
       }
     }
@@ -173,4 +187,4 @@ const SiteNav = styled.nav`
   ${baseNavStyles}
 `;
 
-export default LeftMenu;
+export default Nav;

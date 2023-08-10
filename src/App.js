@@ -1,6 +1,6 @@
 import './App.css';
 
-import LeftMenu from './components/Header';
+import Nav from './components/Nav';
 import Home from './components/Home';
 import Calculator from './components/calculator';
 import Clock from './components/clock';
@@ -16,7 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <MainLayout>
-          <LeftMenu className="leftmenu"/>
+          <Nav className="leftmenu"/>
           <main className='mainbox'>
             <Route path="/" exact component={Home} />
             <Route path="/calculator" component={Calculator} />
