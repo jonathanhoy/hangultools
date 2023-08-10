@@ -4,7 +4,7 @@ import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import ComponentContainer from '../styles/ComponentContainer';
-import { Card, ReferenceCard } from '../styles/Card';
+import { ReferenceCard } from '../styles/Card';
 import { ClockList } from '../styles/List';
 import { ClockContainer, ClockField } from '../styles/clock';
 import Keydown from './util/keydown';

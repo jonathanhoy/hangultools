@@ -20,7 +20,6 @@ const ReferenceCard = styled(Card)`
     width: 100%;
     display: flex;
     gap: 2.5rem;
-    /* justify-content: space-between; */
   }
 `;
 

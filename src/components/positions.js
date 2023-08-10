@@ -3,7 +3,7 @@ import { positionsMapping, idolsMapping } from './util/positionsMapping';
 import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
-import { Card, ReferenceCard } from '../styles/Card';
+import { ReferenceCard } from '../styles/Card';
 import { CharacterList, PositionsList } from '../styles/List';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { PositionsContainer, PositionsField } from '../styles/positions';

@@ -5,11 +5,13 @@ const Settings = styled.section`
   background: ${variables.grey100};
   border-left: 0.5px solid ${variables.grey400};
   height: 100dvh;
+  h2 {
+    font-size: 1rem;
+    color: ${variables.grey900};
+  }
   .settings-container {
     margin-top: 2rem;
     .settings-heading {
-      font-size: 1rem;
-      color: ${variables.grey900};
     }
     .settings-list {
       display: flex;

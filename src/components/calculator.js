@@ -3,7 +3,7 @@ import numToWordsMap from './util/mapping';
 import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
-import { Card, ReferenceCard } from '../styles/Card';
+import { ReferenceCard } from '../styles/Card';
 import { CalculatorList } from '../styles/List';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { CalculatorContainer, Mathfield } from '../styles/calculator';
