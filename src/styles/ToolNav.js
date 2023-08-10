@@ -2,15 +2,9 @@ import styled from "styled-components"
 import variables from './variables';
 
 const StyledToolNav = styled.nav`
-  background: ${variables.grey100};
-  > div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 0;
-  }
+  /* background: ${variables.grey100}; */
   ul {
-    display: flex;
+    /* display: flex; */
     gap: 0.5rem;
     overflow: scroll;
     padding: 0.5rem 0;

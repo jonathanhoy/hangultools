@@ -76,6 +76,7 @@ const PositionsField = styled.div`
     }
     img.avatar-2 {
       top: 50%;
+      left: 5%;
       transform: translateY(-50%);
     }
     img.avatar-3 {
@@ -100,6 +101,7 @@ const PositionsField = styled.div`
   &.between {
     img.avatar-1 {
       top: 50%;
+      left: 5%;
       transform: translateY(-50%);
     }
     img.avatar-2 {
@@ -108,8 +110,8 @@ const PositionsField = styled.div`
       transform: translate(-50%, -50%);
     }
     img.avatar-3 {
-      right: 0;
       top: 50%;
+      right: 5%;
       transform: translateY(-50%);
     }
   }

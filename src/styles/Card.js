@@ -11,26 +11,17 @@ const Card = styled.div`
   }
 `;
 
-const CardHeading = styled.h2`
-  text-transform: uppercase;
-  font-style: italic;
-  font-size: 0.75rem;
-  color: ${variables.grey900};
-  margin: 0 0 0.5rem 0;
-  @media (max-width: ${variables.sm}) {
-    margin: 0;
-  }
-`;
-
 const ReferenceCard = styled(Card)`
   display: ${props => props.isVisible ? 'flex' : 'none'};
   flex-wrap: wrap;
   flex-direction: column;
+  border: none;
   > div {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    gap: 2.5rem;
+    /* justify-content: space-between; */
   }
 `;
 
-export { Card, CardHeading, ReferenceCard };
+export { Card, ReferenceCard };

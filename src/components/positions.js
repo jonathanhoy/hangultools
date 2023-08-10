@@ -3,7 +3,7 @@ import { positionsMapping, idolsMapping } from './util/positionsMapping';
 import Settings from '../styles/Settings';
 import { Button, ButtonGroup } from '../styles/Button';
 import ComponentContainer from '../styles/ComponentContainer';
-import { Card, CardHeading, ReferenceCard } from '../styles/Card';
+import { Card, ReferenceCard } from '../styles/Card';
 import { CharacterList, PositionsList } from '../styles/List';
 import { Wrapper, ComponentWrapper } from '../styles/Wrapper';
 import { PositionsContainer, PositionsField } from '../styles/positions';
@@ -12,6 +12,7 @@ import Keydown from './util/keydown';
 import dahyun from '../assets/idols/dahyun.png';
 import jihyo from '../assets/idols/jihyo.png';
 import sana from '../assets/idols/sana.png';
+import { ComponentLayout } from "../styles/Layout";
  
 class Positions extends React.Component {
   constructor() {
@@ -164,112 +165,114 @@ class Positions extends React.Component {
 
   render() {
     return (
-      <Wrapper>
+      <>
         <Keydown onKeyDown={this.handleKeyDown} />
         <ComponentContainer>
-          <Settings className="settings">
-            <Card>
-              <div className="settings-container">
-                <CardHeading className="settings-heading">Reference</CardHeading>
-                <ul className="settings-list number">
-                  <li className="settings-item number">
-                    <button className="settings-button" id="charactersToggle" onClick={this.handleClick} data-active={this.state.charactersToggle}>Characters</button>
-                  </li>
-                  <li className="settings-item number">
-                    <button className="settings-button" id="positionsToggle" onClick={this.handleClick} data-active={this.state.positionsToggle}>Positions</button>
-                  </li>
-                </ul>
-              </div>
-            </Card>
-          </Settings>
+          <ComponentLayout>
           <PositionsContainer className={`component ${this.state.charactersToggle === true ? 'refActive' : ''} ${this.state.positionsToggle === true ? 'refActive' : ''}`}>
-              <ComponentWrapper>
-                <PositionsField className={this.state.class}>
-                  <div className="image-container">
+                <ComponentWrapper>
+                  <PositionsField className={this.state.class}>
+                    <div className="image-container">
+                      {
+                        this.state.idolsArr.map((idol, i) => {
+                          return (
+                            <img src={idol.src} alt={idol.name} class={`avatar avatar-${i + 1}`}/>
+                          )
+                        })
+                      }
+                    </div>
+                  </PositionsField>
+                  <p className="helper-text">
                     {
-                      this.state.idolsArr.map((idol, i) => {
-                        return (
-                          <img src={idol.src} alt={idol.name} class={`avatar avatar-${i + 1}`}/>
-                        )
-                      })
+                      this.state.answer !== '사이'
+                      ?
+                      `${this.state.idolOne} _에 ${this.state.idolTwo}`
+                      :
+                      `${this.state.idolOne}와 ${this.state.idolThree} _에 ${this.state.idolTwo}`
                     }
+                    <span>있습니다.</span>
+                  </p>
+                </ComponentWrapper>
+                <form action="" onSubmit={this.submitValidate}>
+                  <MultipleChoice>
+                    <div className="container">
+                      {
+                        this.state.multipleChoiceArr.map((item, i) => {
+                          return (
+                            <>
+                              <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
+                              <label htmlFor={item} className={`multiple-choice-${(i + 1)}`}>
+                                {item}
+                              </label>
+                            </>
+                          )
+                        })
+                      }
+                    </div>
+                    <ComponentWrapper margin="auto">
+                      <ButtonGroup>
+                        <Button type="submit" theme="purple">Check</Button>
+                        <Button type="button" onClick={this.generateProblem} className="next">Next</Button>
+                      </ButtonGroup>
+                      {this.state.response === '' && <p>&nbsp;</p>}
+                      {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
+                      {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
+                    </ComponentWrapper>
+                  </MultipleChoice>
+                </form>
+            </PositionsContainer>
+            <Settings className="settings">
+              <Wrapper>
+                <div className="settings-container">
+                  <h2 className="settings-heading">Reference</h2>
+                  <ul className="settings-list number">
+                    <li className="settings-item number">
+                      <button className="settings-button" id="charactersToggle" onClick={this.handleClick} data-active={this.state.charactersToggle}>Characters</button>
+                    </li>
+                    <li className="settings-item number">
+                      <button className="settings-button" id="positionsToggle" onClick={this.handleClick} data-active={this.state.positionsToggle}>Positions</button>
+                    </li>
+                  </ul>
+                </div>
+              </Wrapper>
+              <section className={`reference ${this.state.charactersToggle === true ? 'refActive' : ''} ${this.state.positionsToggle === true ? 'refActive' : ''}`}>
+                <ReferenceCard isVisible={this.state.charactersToggle} >
+                  <h2>Characters</h2>
+                  <div>
+                    <CharacterList>
+                      <li>
+                        <img src={sana} alt="sana" class="avatar"/>
+                        <p>저는 사나입니다.</p>
+                      </li>
+                      <li>
+                        <img src={jihyo} alt="jihyo" class="avatar"/>
+                        <p>저는 지효입니다.</p>
+                      </li>
+                      <li>
+                        <img src={dahyun} alt="dahyun" class="avatar"/>
+                        <p>저는 다현입니다.</p>
+                      </li>
+                    </CharacterList>
                   </div>
-                </PositionsField>
-                <p className="helper-text">
-                  {
-                    this.state.answer !== '사이'
-                    ?
-                    `${this.state.idolOne} _에 ${this.state.idolTwo}`
-                    :
-                    `${this.state.idolOne}와 ${this.state.idolThree} _에 ${this.state.idolTwo}`
-                  }
-                  <span>있습니다.</span>
-                </p>
-              </ComponentWrapper>
-              <form action="" onSubmit={this.submitValidate}>
-                <MultipleChoice>
-                  <div className="container">
-                    {
-                      this.state.multipleChoiceArr.map((item, i) => {
-                        return (
-                          <>
-                            <input aria-label={`Input for ${item}`} key={item} type="radio" name="multipleChoice" id={item} onClick={this.handleMultipleChoice} value={item} checked={this.state.checkedRadio === item} />
-                            <label htmlFor={item} className={`multiple-choice-${(i + 1)}`}>
-                              {item}
-                            </label>
-                          </>
-                        )
-                      })
-                    }
+                </ReferenceCard>
+                <ReferenceCard isVisible={this.state.positionsToggle} >
+                  <h2>Positions</h2>
+                  <div>
+                    <PositionsList>
+                      <li><span>Above</span><span>위</span></li>
+                      <li><span>Beside</span><span>옆</span></li>
+                      <li><span>Under</span><span>밑</span></li>
+                      <li><span>Between</span><span>사이</span></li>
+                      <li><span>Front</span><span>앞</span></li>
+                      <li><span>Behind</span><span>뒤</span></li>
+                    </PositionsList>
                   </div>
-                  <ComponentWrapper margin="auto">
-                    <ButtonGroup>
-                      <Button type="submit" theme="purple">Check</Button>
-                      <Button type="button" onClick={this.generateProblem} className="next">Next</Button>
-                    </ButtonGroup>
-                    {this.state.response === '' && <p>&nbsp;</p>}
-                    {this.state.response === 'correct' && <p>맞아요! <span role="img" aria-label="A celebration emoji">🎉</span></p>}
-                    {this.state.response === 'wrong' && <p><span role="img" aria-label="An exclamation mark emoji">❗</span>{this.state.answer}<span role="img" aria-label="An exclamation mark emoji">❗</span></p>}
-                  </ComponentWrapper>
-                </MultipleChoice>
-              </form>
-          </PositionsContainer>
-          <section className={`reference ${this.state.charactersToggle === true ? 'refActive' : ''} ${this.state.positionsToggle === true ? 'refActive' : ''}`}>
-            <ReferenceCard isVisible={this.state.charactersToggle} >
-              <CardHeading>Characters</CardHeading>
-              <div>
-                <CharacterList>
-                  <li>
-                    <img src={sana} alt="sana" class="avatar"/>
-                    <p>저는 사나입니다.</p>
-                  </li>
-                  <li>
-                    <img src={jihyo} alt="jihyo" class="avatar"/>
-                    <p>저는 지효입니다.</p>
-                  </li>
-                  <li>
-                    <img src={dahyun} alt="dahyun" class="avatar"/>
-                    <p>저는 다현입니다.</p>
-                  </li>
-                </CharacterList>
-              </div>
-            </ReferenceCard>
-            <ReferenceCard isVisible={this.state.positionsToggle} >
-              <CardHeading>Positions</CardHeading>
-              <div>
-                <PositionsList>
-                  <li><span>Above</span><span>위</span></li>
-                  <li><span>Beside</span><span>옆</span></li>
-                  <li><span>Under</span><span>밑</span></li>
-                  <li><span>Between</span><span>사이</span></li>
-                  <li><span>Front</span><span>앞</span></li>
-                  <li><span>Behind</span><span>뒤</span></li>
-                </PositionsList>
-              </div>
-            </ReferenceCard>
-          </section>
+                </ReferenceCard>
+              </section>
+            </Settings>
+          </ComponentLayout>
         </ComponentContainer>
-      </Wrapper>
+      </>
     )
   }
 };

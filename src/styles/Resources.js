@@ -2,11 +2,10 @@ import styled from 'styled-components';
 import variables from './variables';
 
 const ResourcesOuterContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  align-items: flex-start;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 3fr; */
+  /* align-items: flex-start; */
   grid-gap: 5rem;
-  padding-bottom: 5rem;
   @media (max-width: ${variables.sm}) {
     grid-gap: 0;
     grid-template-columns: 1fr;
@@ -14,16 +13,19 @@ const ResourcesOuterContainer = styled.div`
 `;
 
 const ResourcesFixed = styled.div`
-  position: fixed;
+  /* position: fixed; */
   @media (max-width: ${variables.sm}) {
     position: static;
   }
 `;
 
 const ResourcesScroll = styled.div`
-  grid-column: 2 / 3;
+  /* grid-column: 2 / 3; */
+  outline: 1px solid red;
+  height: 100dvh;
+  overflow: scroll;
   @media (max-width: ${variables.sm}) {
-    grid-column: 1 / 2;
+    /* grid-column: 1 / 2; */
   }
 `;
 
@@ -56,11 +58,11 @@ const TableOfContents = styled.li`
 `;
 
 const ResourcesSection = styled.section`
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  /* margin-top: 4rem; */
+  /* display: grid; */
+  /* grid-template-columns: 1fr 2fr; */
   &.numbers-sino {
-    margin-top: 5.375rem;
+    /* margin-top: 5.375rem; */
   }
   table {
     width: 100%;

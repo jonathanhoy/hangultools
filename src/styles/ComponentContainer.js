@@ -2,18 +2,27 @@ import styled from 'styled-components';
 import variables from './variables';
 
 const ComponentContainer = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  height: 100dvh;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 2fr 1fr; */
   align-items: start;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   grid-gap: 3rem;
   /* Settings */
   .settings {
-    grid-column: 1 / 2;
+    /* grid-column: 1 / 2; */
   }
   /* Main Component */
   .component {
-    grid-column: 2 / 3;
+    /* grid-column: 2 / 3; */
+  }
+  .reference {
+    margin-top: 2rem;
+    border-top: 0.5px solid ${variables.grey400};
+    h2 {
+      font-size: 1rem;
+      color: ${variables.grey900};
+    }
   }
   @media (max-width: ${variables.md}) {
     grid-gap: 0;
