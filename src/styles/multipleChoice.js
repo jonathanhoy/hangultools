@@ -22,7 +22,7 @@ const MultipleChoice = styled.div`
   label {
     display: inline-block;
     padding: 0.5rem;
-    border: 2px solid #000;
+    border: 1.5px solid ${variables.black};
     border-radius: 0.25rem;
     margin-top: 0;
     font-size: 1.25rem;

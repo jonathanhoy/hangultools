@@ -23,12 +23,12 @@ const Resources = () => (
       <Wrapper>
         <ResourcesScroll>
           <PageHeading>Resources</PageHeading>
-            <Route path="/resources" exact component={ResourceHome} />
-            <Route path="/resources/numbers-sino" exact component={ResourceNumberSino} />
-            <Route path="/resources/numbers-pure" exact component={ResourceNumbersPure} />
-            <Route path="/resources/positions" exact component={ResourcePositions} />
-            <Route path="/resources/months" exact component={ResourceMonths} />
-            <Route path="/resources/days" exact component={ResourceDays} />
+          <Route path="/resources" exact component={ResourceHome} />
+          <Route path="/resources/numbers-sino" exact component={ResourceNumberSino} />
+          <Route path="/resources/numbers-pure" exact component={ResourceNumbersPure} />
+          <Route path="/resources/positions" exact component={ResourcePositions} />
+          <Route path="/resources/months" exact component={ResourceMonths} />
+          <Route path="/resources/days" exact component={ResourceDays} />
         </ResourcesScroll>
       </Wrapper>
 

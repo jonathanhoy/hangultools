@@ -87,7 +87,7 @@ const TileItem = styled.li`
       grid-gap: 2.5rem;
       justify-items: center;
       align-items: center;
-      border: 2px solid ${variables.black};
+      border: 1.5px solid ${variables.black};
       svg {
         font-size: 6rem;
       }

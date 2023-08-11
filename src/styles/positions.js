@@ -49,6 +49,7 @@ const PositionsField = styled.div`
   height: 200px;
   position: relative;
   background: ${variables.grey100};
+  border: 0.5px solid ${variables.grey400};
   border-radius: 1rem;
   img {
     width: 75px;

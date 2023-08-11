@@ -45,7 +45,7 @@ class Nav extends React.Component {
             <ul>
               <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><Icon icon="ph:calculator-fill" />Calculator</NavLink></li>
               <li><NavLink onClick={this.handleClose} to="/clock" exact activeClassName="active"><Icon icon="ph:clock-fill" /> Clock</NavLink></li>
-              <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><Icon icon="ph:shapes-fill" /> Positions <span className="new" aria-hidden="true">new</span></NavLink></li>
+              <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><Icon icon="ph:shapes-fill" /> Positions {/* <span className="new" aria-hidden="true">new</span>*/}</NavLink></li>
             </ul>
           </ToolNav>
           <SiteNav>

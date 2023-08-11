@@ -1,19 +1,12 @@
 import styled from 'styled-components';
 import variables from './variables';
 
-const ResourcesFixed = styled.div`
-  /* position: fixed; */
-  @media (max-width: ${variables.sm}) {
-    position: static;
-  }
-`;
-
 const ResourcesScroll = styled.div`
-  /* grid-column: 2 / 3; */
   max-height: 100dvh;
   overflow: scroll;
-  @media (max-width: ${variables.sm}) {
-    /* grid-column: 1 / 2; */
+  padding-bottom: 3rem;
+  h2 {
+    padding-bottom: 3rem;
   }
 `;
 
@@ -70,6 +63,7 @@ const ResourcesTable = styled.table`
     color: ${variables.white};
     margin: 0;
     text-align: left;
+    width: 50%;
   }
   th, td {
     font-size: 1rem;
@@ -85,8 +79,7 @@ const ResourcesTableContainer = styled.div`
   align-items: flex-start;
 `;
 
-export { 
-  ResourcesFixed, 
+export {
   ResourcesScroll, 
   TableOfContents, 
   ResourcesSection, 
