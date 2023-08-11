@@ -5,6 +5,7 @@ const Settings = styled.section`
   background: ${variables.grey100};
   border-left: 0.5px solid ${variables.grey400};
   height: 100dvh;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px -2px 4px 0px inset;
   h2 {
     font-size: 1rem;
     color: ${variables.grey900};

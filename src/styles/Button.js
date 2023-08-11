@@ -31,7 +31,7 @@ const Button = styled.button`
 
 const ButtonGroup = styled.div`
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 2fr 1fr;
   grid-gap: 0.5rem;
   &:after {
     content: '';

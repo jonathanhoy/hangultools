@@ -70,6 +70,7 @@ const NavStyles = styled.div`
   background: ${variables.grey100};
   border-right: 0.5px solid ${variables.grey400};
   height: 100dvh;
+  box-shadow: rgba(0, 0, 0, 0.06) 0px -2px 4px 0px inset;
 
   h1 {
     font-size: 2rem;
@@ -170,6 +171,8 @@ const baseNavStyles = css`
           border-radius: 2px;
           position: absolute;
           right: 0.75rem;
+          top: 50%;
+          transform: translateY(-50%);
           &::after {
           }
         }
