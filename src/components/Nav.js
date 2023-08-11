@@ -3,7 +3,6 @@ import styled, { css } from "styled-components";
 import { NavLink } from 'react-router-dom';
 import { Wrapper } from '../styles/Wrapper';
 import variables from "../styles/variables";
-
 import { Icon } from '@iconify/react';
 
 class Nav extends React.Component {

@@ -22,12 +22,14 @@ const TableOfContents = styled.li`
   list-style-position: inside;
   margin-bottom: 0.25rem;
   a {
-    display: block;
+    display: flex;
+    align-items: center;
     padding: 0.5rem 0.75rem;
     font-size: 0.875rem;
     color: ${variables.black};
     text-decoration: none;
     border-radius: 0.25rem;
+    height: 2.25rem;
     &:hover {
       background-color: ${variables.grey200};
     }
