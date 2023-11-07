@@ -6,7 +6,7 @@ import {
 
 const ResourceHome = () => (
   <ResourcesSection id="home">
-    <PageSubHeading>Choose a resource to learn more about it.</PageSubHeading>    
+    <PageSubHeading>Choose a topic to learn more about it.</PageSubHeading>    
   </ResourcesSection>
 );
 
