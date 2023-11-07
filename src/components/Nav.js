@@ -84,6 +84,7 @@ const NavStyles = styled.div`
   }
 
   @media (max-width: ${variables.sm}) {
+    background: ${variables.white};
     height: auto;
     grid-column: 1 / 3;
     box-shadow: none;
@@ -99,7 +100,7 @@ const NavStyles = styled.div`
     }
     nav {
       position: absolute;
-      background: ${variables.grey100};
+      background: ${variables.white};
       width: 100%;
       left: 0;
       z-index: 50;
@@ -180,7 +181,7 @@ const baseNavStyles = css`
     ul {
       li {
         a {
-          background: ${variables.white};
+          background: ${variables.grey100};
           &.active {
             background: ${variables.primary900};
             color: ${variables.white};

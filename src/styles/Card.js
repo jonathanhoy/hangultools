@@ -8,6 +8,7 @@ const Card = styled.div`
   padding: 1rem;
   @media (max-width: ${variables.sm}) {
     padding: 0.5rem 0.75rem;
+    background: ${variables.white};
   }
 `;
 
