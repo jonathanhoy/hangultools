@@ -10,7 +10,7 @@ import { Icon } from '@iconify/react';
 class Home extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className='home-wrapper'>
         <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
         <TileList>
           <TileItem className="calculator">

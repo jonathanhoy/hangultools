@@ -25,6 +25,9 @@ const MainLayout = styled.div`
       width: 95%;
       margin-left: auto;
       margin-right: auto;
+      .home-wrapper {
+        width: 100%;
+      }
     }
   }
 `;
@@ -43,6 +46,11 @@ const ComponentLayout = styled.div`
     grid-gap: 1rem;
     .settings {
       grid-column: 1 / 7;
+    }
+    .resources {
+      grid-column: 1 / 7;
+      grid-row: 2 / 3;
+      width: 100%;
     }
   }
 `;

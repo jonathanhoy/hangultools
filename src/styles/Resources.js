@@ -8,6 +8,11 @@ const ResourcesScroll = styled.div`
   h2 {
     padding-bottom: 3rem;
   }
+  @media (max-width: ${variables.sm}) {
+    h2 {
+      padding-bottom: 0;
+    }
+  }
 `;
 
 const TableOfContents = styled.li`
@@ -32,6 +37,13 @@ const TableOfContents = styled.li`
     }
   }
   @media (max-width: ${variables.sm}) {
+    a {
+      background: ${variables.grey100};
+      &.active {
+        background: ${variables.primary900};
+        color: ${variables.white};
+      }
+    }
     &:first-of-type {
       margin-top: 0.5rem;
     }

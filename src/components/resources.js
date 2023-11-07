@@ -20,7 +20,7 @@ import ResourceDays from './resources/days';
 const Resources = () => (
   <Router>
     <ComponentLayout>
-      <Wrapper>
+      <Wrapper className='resources'>
         <ResourcesScroll>
           <PageHeading>Resources</PageHeading>
           <Route path="/resources" exact component={ResourceHome} />
@@ -32,7 +32,7 @@ const Resources = () => (
         </ResourcesScroll>
       </Wrapper>
 
-      <Settings className='settings'>
+      <Settings className='settings resources-settings'>
         <Wrapper>
           <h2>Table of Contents</h2>
           <ul>
