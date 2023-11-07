@@ -38,7 +38,7 @@ class Nav extends React.Component {
   render() {
     return (
       <NavStyles mobileNavHidden={this.state.mobileNavHidden} >
-        <Wrapper>
+        <Wrapper className="nav-wrapper">
           <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
           <ToolNav>
             <h2>Tools</h2>
@@ -48,7 +48,7 @@ class Nav extends React.Component {
               <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><Icon icon="ph:shapes-fill" /> Positions {/* <span className="new" aria-hidden="true">new</span>*/}</NavLink></li>
             </ul>
           </ToolNav>
-          <SiteNav>
+          <SiteNav mobileNavHidden={this.state.mobileNavHidden}>
             <h2>Pages</h2>
             <ul>
               <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active"><Icon icon="ph:house-fill" /> Home</NavLink></li>
@@ -84,30 +84,26 @@ const NavStyles = styled.div`
   }
 
   @media (max-width: ${variables.sm}) {
+    height: auto;
+    grid-column: 1 / 3;
+    box-shadow: none;
+    border-right: none;
+    h1 {
+      margin: 0.5rem 0;
+    }
+    .nav-wrapper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
     nav {
-      display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
       position: absolute;
       background: ${variables.grey100};
       width: 100%;
       left: 0;
       z-index: 50;
-      top: 65px;
-      padding: 1.5rem 0;
       border-bottom: 1px solid ${variables.grey400};
   
-      ul {
-        width: 95%;
-        margin: 0 auto;
-        flex-direction: column;
-        align-items: flex-end;
-  
-        li {
-          margin: 1rem 0;
-          a {
-            color: ${variables.black};
-          }
-        }
-      }
     }
     button {
       display: block;
@@ -117,7 +113,7 @@ const NavStyles = styled.div`
       padding: 0;
       font-size: 1.5rem;
       i {
-        color: ${variables.white};
+        color: ${variables.black};
       }
       .fa-bars {
         display: ${props => props.mobileNavHidden ? 'block' : 'none'};
@@ -183,10 +179,43 @@ const baseNavStyles = css`
 
 const ToolNav = styled.nav`
   ${baseNavStyles}
+  @media (max-width: ${variables.sm}) {
+    /* outline: 1px solid red; */
+    margin-top: 0;
+    padding: 0;
+    top: 54px;
+    h2 {
+      display: none;
+    }
+    ul {
+      width: 90%;
+      margin: 0 auto;
+      align-items: flex-start;
+      flex-direction: row;
+      li {
+        margin: 0.25rem 0;
+        a {
+          color: ${variables.black};
+        }
+      }
+    }
+  }
 `;
 
 const SiteNav = styled.nav`
   ${baseNavStyles}
+  @media (max-width: ${variables.sm}) {
+    display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
+    /* outline: 1px solid red; */
+    top: 98px;
+    padding: 0.5rem 0;
+    margin-top: 0;
+    h2, ul {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
 `;
 
 export default Nav;

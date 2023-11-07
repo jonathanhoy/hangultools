@@ -15,6 +15,10 @@ const MainLayout = styled.div`
   @media (max-width: ${variables.md}) {
     grid-template-columns: 25vw 1fr;
   }
+
+  @media (max-width: ${variables.sm}) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const ComponentLayout = styled.div`
