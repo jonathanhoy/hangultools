@@ -5,17 +5,18 @@ import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
 import { Tag, TagContainer } from '../styles/Tag';
 import variables from '../styles/variables';
+import { Icon } from '@iconify/react';
 
 class Home extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className='home-wrapper'>
         <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
         <TileList>
           <TileItem className="calculator">
             <Link to="/calculator">
               <div className="top-container">
-                <i className="fas fa-calculator"></i>
+                <Icon icon="ph:calculator-fill" />
                 <h3>Calculator</h3>
               </div>
             </Link>
@@ -28,7 +29,7 @@ class Home extends React.Component {
           <TileItem className="clock">
             <Link to="/clock">
               <div className="top-container">
-                <i className="fas fa-clock"></i>
+                <Icon icon="ph:clock-fill" />
                 <h3>Clock</h3>
               </div>
             </Link>
@@ -40,7 +41,7 @@ class Home extends React.Component {
           <TileItem className="positions">
             <Link to="/positions">
               <div className="top-container">
-                <i className="fas fa-shapes"></i>
+                <Icon icon="ph:shapes-fill" />
                 <h3>Positions</h3>
               </div>
             </Link>
@@ -86,8 +87,8 @@ const TileItem = styled.li`
       grid-gap: 2.5rem;
       justify-items: center;
       align-items: center;
-      border: 2px solid ${variables.black};
-      i {
+      border: 1.5px solid ${variables.black};
+      svg {
         font-size: 6rem;
       }
       h3 {
@@ -99,7 +100,6 @@ const TileItem = styled.li`
     &:hover {
       border-color: ${variables.primary900};
       .top-container {
-        background-color: ${variables.primary100};
         border-color: ${variables.primary900};
       }
     }
@@ -109,7 +109,7 @@ const TileItem = styled.li`
     a {
       .top-container {
         padding: 2rem 0 1rem 0;
-        i {
+        svg {
           font-size: 5rem;
         }      
       }

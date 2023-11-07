@@ -1,29 +1,17 @@
 import styled from 'styled-components';
 import variables from './variables';
 
-const ResourcesOuterContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  align-items: flex-start;
-  grid-gap: 5rem;
-  padding-bottom: 5rem;
-  @media (max-width: ${variables.sm}) {
-    grid-gap: 0;
-    grid-template-columns: 1fr;
-  }
-`;
-
-const ResourcesFixed = styled.div`
-  position: fixed;
-  @media (max-width: ${variables.sm}) {
-    position: static;
-  }
-`;
-
 const ResourcesScroll = styled.div`
-  grid-column: 2 / 3;
+  max-height: 100dvh;
+  overflow: scroll;
+  padding-bottom: 3rem;
+  h2 {
+    padding-bottom: 3rem;
+  }
   @media (max-width: ${variables.sm}) {
-    grid-column: 1 / 2;
+    h2 {
+      padding-bottom: 0;
+    }
   }
 `;
 
@@ -32,23 +20,30 @@ const TableOfContents = styled.li`
   list-style-position: inside;
   margin-bottom: 0.25rem;
   a {
-    display: block;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
     color: ${variables.black};
     text-decoration: none;
     border-radius: 0.25rem;
-    border: 1px solid transparent;
-    &:visited {
-      color: ${variables.black};
-    }
+    height: 2.25rem;
     &:hover {
-      color: ${variables.primary900};
-      background-color: ${variables.primary100};
-      border-color: ${variables.primary900};
+      background-color: ${variables.grey200};
+    }
+    &.active {
+      background: ${variables.white};
+      box-shadow: ${variables.boxshadow};
     }
   }
   @media (max-width: ${variables.sm}) {
+    a {
+      background: ${variables.grey100};
+      &.active {
+        background: ${variables.primary900};
+        color: ${variables.white};
+      }
+    }
     &:first-of-type {
       margin-top: 0.5rem;
     }
@@ -56,12 +51,6 @@ const TableOfContents = styled.li`
 `;
 
 const ResourcesSection = styled.section`
-  margin-top: 4rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  &.numbers-sino {
-    margin-top: 5.375rem;
-  }
   table {
     width: 100%;
   }
@@ -71,9 +60,6 @@ const ResourcesSection = styled.section`
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
     margin-top: 2rem;
-    &.numbers-sino {
-      margin-top: 2rem;
-    }
   }
 `;
 
@@ -89,6 +75,7 @@ const ResourcesTable = styled.table`
     color: ${variables.white};
     margin: 0;
     text-align: left;
+    width: 50%;
   }
   th, td {
     font-size: 1rem;
@@ -104,9 +91,7 @@ const ResourcesTableContainer = styled.div`
   align-items: flex-start;
 `;
 
-export { 
-  ResourcesOuterContainer,
-  ResourcesFixed, 
+export {
   ResourcesScroll, 
   TableOfContents, 
   ResourcesSection, 

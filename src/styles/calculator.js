@@ -12,7 +12,7 @@ const CalculatorContainer = styled.section`
   }
   input[type="text"] {
     width: 100%;
-    border: 2px solid ${variables.black};
+    border: 1.5px solid ${variables.black};
     border-radius: 0.25rem;
     padding: 0.5rem 0.25rem;
     margin: 1rem 0;

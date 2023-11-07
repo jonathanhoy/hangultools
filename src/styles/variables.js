@@ -3,7 +3,8 @@ const variables = {
   // COLORS
   primary900: '#5e3399',
   primary100: '#e4d9f2',
-  grey100: '#dcdcdc', // 100
+  grey100: '#ebebeb', // 100
+  grey200: '#E0E0E0', // 200
   grey400: '#c0c0c0', // 400
   grey900: '#696969', // 900
   black: '#181818',
@@ -16,8 +17,12 @@ const variables = {
   lg: '64rem',
 
   // SHADOW
-  boxshadow: '0px 3px 5px 0px rgba(0,0,0,0.65);',
+  boxshadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;',
   buttonBoxShadow: '0px 4px 0px 0px #c0c0c0;',
+
+  // BORDER RADIUS
+  brsmall: '0.25rem',
+  brstandard: '0.75rem',
 };
 
 export default variables;

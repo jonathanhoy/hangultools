@@ -10,7 +10,7 @@ const currentYear = new Date().getFullYear();
 class About extends React.Component {
   render() {
     return (
-      <Wrapper>
+      <Wrapper className='about-wrapper'>
         <AboutStyles>
           <PageHeading>한글도구들로 한국어를 배우다</PageHeading>
           <PageSubHeading>Learn Korean with Hangul Tools</PageSubHeading>

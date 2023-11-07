@@ -14,28 +14,29 @@ const ClockContainer = styled.section`
       justify-content: space-between;
       width: 100%;
       margin-bottom: 1rem;
+      gap: 1rem;
     }
     .inputGroup {
-      display: flex;
+      display: grid;
+      grid-template-columns: 1fr auto;
       align-items: center;
       label {
         font-weight: 600;
         margin-left: 0.25rem;
         margin-top: 0.25rem;
-        font-size: 24px;
+        font-size: 1.5rem;
       }
       input {
-        border: 2px solid ${variables.black};
+        border: 1.5px solid ${variables.black};
         border-radius: 0.25rem;
         padding: 0.25rem;
         margin: 0.5rem 0 0 0;
         text-align: center;
-        font-size: 18px;
-        width: 74px;
-      }th: 74px;
+        font-size: 1.125rem;
+        width: 100%;
       }
       input.disabled {
-        border: 2px solid lightgrey;
+        border: 1.5px solid lightgrey;
       }
       label.disabled {
         color: lightgrey;
@@ -86,7 +87,7 @@ const ClockContainer = styled.section`
 `;
 
 const ClockField = styled.div`
-  border: 2px solid ${variables.black};
+  border: 1.5px solid ${variables.black};
   border-radius: 0.25rem;
   p {
     margin: 0;
