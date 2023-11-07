@@ -3,7 +3,7 @@ import variables from "./variables";
 
 const MainLayout = styled.div`
   display: grid;
-  grid-template-columns: 16.7vw 1fr;
+  grid-template-columns: 14.5rem 1fr;
   .leftmenu {
     grid-column: 1 / 2;
   }
@@ -13,7 +13,7 @@ const MainLayout = styled.div`
     overflow: scroll;
   }
   @media (max-width: ${variables.md}) {
-    grid-template-columns: 25vw 1fr;
+    grid-template-columns: 12.5rem 1fr;
   }
 
   @media (max-width: ${variables.sm}) {
@@ -34,12 +34,12 @@ const MainLayout = styled.div`
 
 const ComponentLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr 16.7vw;
+  grid-template-columns: 1fr 14.5rem;
   .settings {
     grid-column: 2 / 3;
   }
   @media (max-width: ${variables.md}) {
-    grid-template-columns: 1fr 25vw;
+    grid-template-columns: 1fr 12.5rem;
   }
   @media (max-width: ${variables.sm}) {
     grid-template-columns: repeat(6, 1fr);
