@@ -265,7 +265,7 @@ class Calculator extends React.Component {
                   </ul>
                 </div>
               </Wrapper>
-              <section className={`reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
+              <section className={`reference desktop-reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
                 <ReferenceCard isVisible={this.state.sinoToggle} >
                   <h2>Sino Korean Numbers</h2>
                   <div>
@@ -324,6 +324,64 @@ class Calculator extends React.Component {
                 </ReferenceCard>
               </section>
             </Settings>
+            <section className={`reference mobile-reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
+              <ReferenceCard isVisible={this.state.sinoToggle} >
+                <h2>Sino Korean Numbers</h2>
+                <div>
+                  <CalculatorList digits="single">
+                    <li><span>1</span><span>일</span></li>
+                    <li><span>2</span><span>이</span></li>
+                    <li><span>3</span><span>삼</span></li>
+                    <li><span>4</span><span>사</span></li>
+                    <li><span>5</span><span>오</span></li>
+                    <li><span>6</span><span>육</span></li>
+                    <li><span>7</span><span>칠</span></li>
+                    <li><span>8</span><span>팔</span></li>
+                    <li><span>9</span><span>구</span></li>
+                  </CalculatorList>
+                  <CalculatorList>
+                    <li><span>10</span><span>십</span></li>
+                    <li><span>20</span><span>이십</span></li>
+                    <li><span>30</span><span>삼십</span></li>
+                    <li><span>40</span><span>사십</span></li>
+                    <li><span>50</span><span>오십</span></li>
+                    <li><span>60</span><span>육십</span></li>
+                    <li><span>70</span><span>칠십</span></li>
+                    <li><span>80</span><span>팔십</span></li>
+                    <li><span>90</span><span>구십</span></li>
+                    <li><span>100</span><span>백</span></li>
+                  </CalculatorList>
+                </div>
+              </ReferenceCard>
+              <ReferenceCard isVisible={this.state.pureToggle} >
+                <h2>Pure Korean Numbers</h2>
+                <div>
+                  <CalculatorList digits="single">
+                    <li><span>1</span><span>하나</span></li>
+                    <li><span>2</span><span>둘</span></li>
+                    <li><span>3</span><span>셋</span></li>
+                    <li><span>4</span><span>넷</span></li>
+                    <li><span>5</span><span>다섯</span></li>
+                    <li><span>6</span><span>여섯</span></li>
+                    <li><span>7</span><span>일곱</span></li>
+                    <li><span>8</span><span>여덟</span></li>
+                    <li><span>9</span><span>아홉</span></li>
+                  </CalculatorList>
+                  <CalculatorList>
+                    <li><span>10</span><span>열</span></li>
+                    <li><span>20</span><span>스물</span></li>
+                    <li><span>30</span><span>서른</span></li>
+                    <li><span>40</span><span>마흔</span></li>
+                    <li><span>50</span><span>쉰</span></li>
+                    <li><span>60</span><span>예순</span></li>
+                    <li><span>70</span><span>일흔</span></li>
+                    <li><span>80</span><span>여든</span></li>
+                    <li><span>90</span><span>아흔</span></li>
+                    <li><span>100</span><span>백</span></li>
+                  </CalculatorList>
+                </div>
+              </ReferenceCard>
+            </section>
           </ComponentLayout>
         </ComponentContainer>
       </>

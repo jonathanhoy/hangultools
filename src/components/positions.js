@@ -235,7 +235,7 @@ class Positions extends React.Component {
                   </ul>
                 </div>
               </Wrapper>
-              <section className={`reference ${this.state.charactersToggle === true ? 'refActive' : ''} ${this.state.positionsToggle === true ? 'refActive' : ''}`}>
+              <section className={`reference desktop-reference ${this.state.charactersToggle === true ? 'refActive' : ''} ${this.state.positionsToggle === true ? 'refActive' : ''}`}>
                 <ReferenceCard isVisible={this.state.charactersToggle} >
                   <h2>Characters</h2>
                   <div>
@@ -270,6 +270,40 @@ class Positions extends React.Component {
                 </ReferenceCard>
               </section>
             </Settings>
+            <section className={`reference mobile-reference ${this.state.charactersToggle === true ? 'refActive' : ''} ${this.state.positionsToggle === true ? 'refActive' : ''}`}>
+              <ReferenceCard isVisible={this.state.charactersToggle} >
+                <h2>Characters</h2>
+                <div>
+                  <CharacterList>
+                    <li>
+                      <img src={sana} alt="sana" class="avatar"/>
+                      <p>저는 사나입니다.</p>
+                    </li>
+                    <li>
+                      <img src={jihyo} alt="jihyo" class="avatar"/>
+                      <p>저는 지효입니다.</p>
+                    </li>
+                    <li>
+                      <img src={dahyun} alt="dahyun" class="avatar"/>
+                      <p>저는 다현입니다.</p>
+                    </li>
+                  </CharacterList>
+                </div>
+              </ReferenceCard>
+              <ReferenceCard isVisible={this.state.positionsToggle} >
+                <h2>Positions</h2>
+                <div>
+                  <PositionsList>
+                    <li><span>Above</span><span>위</span></li>
+                    <li><span>Beside</span><span>옆</span></li>
+                    <li><span>Under</span><span>밑</span></li>
+                    <li><span>Between</span><span>사이</span></li>
+                    <li><span>Front</span><span>앞</span></li>
+                    <li><span>Behind</span><span>뒤</span></li>
+                  </PositionsList>
+                </div>
+              </ReferenceCard>
+            </section>
           </ComponentLayout>
         </ComponentContainer>
       </>

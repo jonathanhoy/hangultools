@@ -190,7 +190,7 @@ class ClockComponent extends React.Component {
                   </ul>
                 </div>
               </Wrapper>
-              <section className={`reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
+              <section className={`reference desktop-reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
                 <ReferenceCard isVisible={this.state.sinoToggle} >
                   <h2>Sino Korean Numbers</h2>
                   <div>
@@ -249,6 +249,64 @@ class ClockComponent extends React.Component {
                 </ReferenceCard>
               </section>
             </Settings>
+            <section className={`reference mobile-reference ${this.state.sinoToggle === true ? 'refActive' : ''} ${this.state.pureToggle === true ? 'refActive' : ''}`}>
+              <ReferenceCard isVisible={this.state.sinoToggle} >
+                <h2>Sino Korean Numbers</h2>
+                <div>
+                  <ClockList>
+                    <li><span>1</span><span>일</span></li>
+                    <li><span>2</span><span>이</span></li>
+                    <li><span>3</span><span>삼</span></li>
+                    <li><span>4</span><span>사</span></li>
+                    <li><span>5</span><span>오</span></li>
+                    <li><span>6</span><span>육</span></li>
+                    <li><span>7</span><span>칠</span></li>
+                    <li><span>8</span><span>팔</span></li>
+                    <li><span>9</span><span>구</span></li>
+                  </ClockList>
+                  <ClockList>
+                    <li><span>10</span><span>십</span></li>
+                    <li><span>20</span><span>이십</span></li>
+                    <li><span>30</span><span>삼십</span></li>
+                    <li><span>40</span><span>사십</span></li>
+                    <li><span>50</span><span>오십</span></li>
+                  </ClockList>
+                </div>
+              </ReferenceCard>
+              <ReferenceCard isVisible={this.state.pureToggle} >
+                <h2>Pure Korean Numbers</h2>
+                <div>
+                  <ClockList>
+                    <li><span>1</span><span>한</span></li>
+                    <li><span>2</span><span>두</span></li>
+                    <li><span>3</span><span>세</span></li>
+                    <li><span>4</span><span>네</span></li>
+                    <li><span>5</span><span>다섯</span></li>
+                    <li><span>6</span><span>여섯</span></li>
+                    <li><span>7</span><span>일곱</span></li>
+                    <li><span>8</span><span>여덟</span></li>
+                    <li><span>9</span><span>아홉</span></li>
+                    <li><span>10</span><span>열</span></li>
+                    <li><span>11</span><span>열한</span></li>
+                    <li><span>12</span><span>열두</span></li>
+                  </ClockList>
+                  <ClockList>
+                    <li><span>13</span><span>열세</span></li>
+                    <li><span>14</span><span>열네</span></li>
+                    <li><span>15</span><span>열다섯</span></li>
+                    <li><span>16</span><span>열여섯</span></li>
+                    <li><span>17</span><span>열일곱</span></li>
+                    <li><span>18</span><span>열여덟</span></li>
+                    <li><span>19</span><span>열아홉</span></li>
+                    <li><span>20</span><span>스무</span></li>
+                    <li><span>21</span><span>스물한</span></li>
+                    <li><span>22</span><span>스물두</span></li>
+                    <li><span>23</span><span>스물세</span></li>
+                    <li><span>24</span><span>스물네</span></li>
+                  </ClockList>
+                </div>
+              </ReferenceCard>
+            </section>
           </ComponentLayout>
         </ComponentContainer>
       </>

@@ -18,6 +18,14 @@ const MainLayout = styled.div`
 
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
+    .mainbox {
+      margin-top: 44px;
+      grid-column: 1 / 2;
+      height: auto;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+    }
   }
 `;
 
@@ -29,6 +37,13 @@ const ComponentLayout = styled.div`
   }
   @media (max-width: ${variables.md}) {
     grid-template-columns: 1fr 25vw;
+  }
+  @media (max-width: ${variables.sm}) {
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 1rem;
+    .settings {
+      grid-column: 1 / 7;
+    }
   }
 `;
 

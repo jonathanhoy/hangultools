@@ -48,10 +48,19 @@ const Settings = styled.section`
     }
   }
   @media (max-width: ${variables.sm}) {
-    display: flex;
-    padding: 0;
+    height: auto;
+    background: none;
+    border-left: none;
+    box-shadow: none;
     > div {
       display: flex;
+      background: ${variables.white};
+      border-radius: 0.25rem;
+      width: 100%;
+      gap: 1rem;
+    }
+    h2 {
+      margin-top: 0.25rem;
     }
     div {
       flex: 1 0 0;
@@ -62,11 +71,14 @@ const Settings = styled.section`
         margin: 0;
       }
       .settings-container:first-of-type:not(:last-of-type) {
-        margin-right: 0.25rem;
+        /* margin-right: 0.25rem; */
       }
       .settings-container:last-of-type:not(:first-of-type) {
-        margin-left: 0.25rem;
+        /* margin-left: 0.25rem; */
       }
+    }
+    .reference {
+      border-top: none;
     }
   }
 `;

@@ -7,7 +7,7 @@ const Card = styled.div`
   border: 1px solid ${variables.grey400};
   padding: 1rem;
   @media (max-width: ${variables.sm}) {
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
   }
 `;
 

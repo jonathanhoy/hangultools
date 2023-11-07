@@ -95,6 +95,7 @@ const NavStyles = styled.div`
       display: flex;
       justify-content: space-between;
       align-items: center;
+      width: 95%;
     }
     nav {
       position: absolute;
@@ -188,7 +189,7 @@ const ToolNav = styled.nav`
       display: none;
     }
     ul {
-      width: 90%;
+      width: 95%;
       margin: 0 auto;
       align-items: flex-start;
       flex-direction: row;
@@ -206,12 +207,11 @@ const SiteNav = styled.nav`
   ${baseNavStyles}
   @media (max-width: ${variables.sm}) {
     display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
-    /* outline: 1px solid red; */
     top: 98px;
     padding: 0.5rem 0;
     margin-top: 0;
     h2, ul {
-      width: 90%;
+      width: 95%;
       margin-left: auto;
       margin-right: auto;
     }
