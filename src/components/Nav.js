@@ -176,6 +176,19 @@ const baseNavStyles = css`
       }
     }
   }
+  @media (max-width: ${variables.sm}) {
+    ul {
+      li {
+        a {
+          background: ${variables.white};
+          &.active {
+            background: ${variables.primary900};
+            color: ${variables.white};
+          }
+        }
+      }
+    }
+  }
 `;
 
 const ToolNav = styled.nav`

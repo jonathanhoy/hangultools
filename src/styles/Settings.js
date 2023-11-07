@@ -76,6 +76,15 @@ const Settings = styled.section`
       .settings-container:last-of-type:not(:first-of-type) {
         /* margin-left: 0.25rem; */
       }
+      .settings-container {
+        .settings-list {
+          .settings-item {
+            .settings-button {
+              background: ${variables.grey100};
+            }
+          }
+        }
+      }
     }
     .reference {
       border-top: none;
@@ -84,7 +93,6 @@ const Settings = styled.section`
     &.resources-settings {
       margin-top: 1rem;
       > div {
-        /* background: red; */
         gap: 0;
         flex-direction: column;
         ul {

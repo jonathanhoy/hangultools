@@ -25,7 +25,7 @@ const MainLayout = styled.div`
       width: 95%;
       margin-left: auto;
       margin-right: auto;
-      .home-wrapper {
+      .home-wrapper, .about-wrapper {
         width: 100%;
       }
     }
