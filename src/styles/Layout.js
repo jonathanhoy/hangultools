@@ -55,7 +55,17 @@ const ComponentLayout = styled.div`
   }
 `;
 
+const LayoutFix = styled.div`
+  overflow: scroll;
+  max-height: 100dvh;
+  @media (max-width: ${variables.sm}) {
+    grid-column: 1 / 7;
+    max-height: auto;
+  }
+`;
+
 export {
   MainLayout,
-  ComponentLayout
+  ComponentLayout,
+  LayoutFix
 }

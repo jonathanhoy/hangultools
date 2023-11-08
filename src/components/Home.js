@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Wrapper } from '../styles/Wrapper';
 import { PageHeading, PageBody } from '../styles/PageHeading';
+import { ComponentLayout, LayoutFix } from '../styles/Layout';
+import Settings from '../styles/Settings';
 import { Tag, TagContainer } from '../styles/Tag';
 import variables from '../styles/variables';
 import { Icon } from '@iconify/react';
@@ -10,51 +12,58 @@ import { Icon } from '@iconify/react';
 class Home extends React.Component {
   render() {
     return (
-      <Wrapper className='home-wrapper'>
-        <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
-        <TileList>
-          <TileItem className="calculator">
-            <Link to="/calculator">
-              <div className="top-container">
-                <Icon icon="ph:calculator-fill" />
-                <h3>Calculator</h3>
-              </div>
-            </Link>
-            <TagContainer>
-              <Tag>한 Keyboard</Tag>
-              <Tag>Multiple Choice</Tag>
-            </TagContainer>
-          </TileItem>
+      <ComponentLayout>
+        <LayoutFix>
+          <Wrapper className='home-wrapper'>
+            <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
+            <TileList>
+              <TileItem className="calculator">
+                <Link to="/calculator">
+                  <div className="top-container">
+                    <Icon icon="ph:calculator-fill" />
+                    <h3>Calculator</h3>
+                  </div>
+                </Link>
+                <TagContainer>
+                  <Tag>한 Keyboard</Tag>
+                  <Tag>Multiple Choice</Tag>
+                </TagContainer>
+              </TileItem>
 
-          <TileItem className="clock">
-            <Link to="/clock">
-              <div className="top-container">
-                <Icon icon="ph:clock-fill" />
-                <h3>Clock</h3>
-              </div>
-            </Link>
-            <TagContainer>
-              <Tag>한 Keyboard</Tag>
-            </TagContainer>
-          </TileItem>
+              <TileItem className="clock">
+                <Link to="/clock">
+                  <div className="top-container">
+                    <Icon icon="ph:clock-fill" />
+                    <h3>Clock</h3>
+                  </div>
+                </Link>
+                <TagContainer>
+                  <Tag>한 Keyboard</Tag>
+                </TagContainer>
+              </TileItem>
 
-          <TileItem className="positions">
-            <Link to="/positions">
-              <div className="top-container">
-                <Icon icon="ph:shapes-fill" />
-                <h3>Positions</h3>
-              </div>
-            </Link>
-            <TagContainer>
-              <Tag>Multiple Choice</Tag>
-            </TagContainer>
-          </TileItem>
+              <TileItem className="positions">
+                <Link to="/positions">
+                  <div className="top-container">
+                    <Icon icon="ph:shapes-fill" />
+                    <h3>Positions</h3>
+                  </div>
+                </Link>
+                <TagContainer>
+                  <Tag>Multiple Choice</Tag>
+                </TagContainer>
+              </TileItem>
 
 
-        </TileList>
+            </TileList>
 
-        <PageBody>More tools coming soon!</PageBody>
-      </Wrapper>
+            <PageBody>More tools coming soon!</PageBody>
+          </Wrapper>
+        </LayoutFix>
+
+        <Settings className='settings'>
+        </Settings>
+      </ComponentLayout>
     )
   }
 };
