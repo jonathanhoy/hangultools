@@ -57,6 +57,7 @@ class About extends React.Component {
 
 const AboutStyles = styled.div`
   margin-bottom: 15rem;
+  max-width: 32rem;
   margin-left: auto;
   margin-right: auto;
   overflow: scroll;

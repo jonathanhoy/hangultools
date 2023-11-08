@@ -69,7 +69,7 @@ const ResourcesTable = styled.table`
     background: ${variables.primary900};
   }
   tbody tr:nth-child(2n) {
-    background: ${variables.primary100};
+    background: ${variables.white};
   }
   th {
     color: ${variables.white};
