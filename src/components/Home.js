@@ -20,9 +20,11 @@ class Home extends React.Component {
               <TileItem className="calculator">
                 <Link to="/calculator">
                   <div className="container">
-                    <Icon icon="ph:calculator-fill" />
-                    <h3>Calculator</h3>
-                    <p>Practice <strong>numbers</strong> from 1 - 100 in both <em>Sino</em> and <em>Pure</em> systems.</p>
+                    <div className='top'>
+                      <Icon icon="ph:calculator-fill" />
+                      <h3>Calculator</h3>
+                      <p>Practice <strong>numbers</strong> from 1 - 100 in both <em>Sino</em> and <em>Pure</em> systems.</p>
+                    </div>
                     <TagContainer>
                       <Tag>한 Keyboard</Tag>
                       <Tag>Multiple Choice</Tag>
@@ -34,9 +36,11 @@ class Home extends React.Component {
               <TileItem className="clock">
                 <Link to="/clock">
                   <div className="container">
-                    <Icon icon="ph:clock-fill" />
-                    <h3>Clock</h3>
-                    <p>Practice <strong>numbers</strong> in the context of time. 12h and 24h clocks available.</p>
+                    <div className='top'>
+                      <Icon icon="ph:clock-fill" />
+                      <h3>Clock</h3>
+                      <p>Practice <strong>numbers</strong> in the context of time. 12h and 24h clocks available.</p>
+                    </div>
                     <TagContainer>
                       <Tag>한 Keyboard</Tag>
                     </TagContainer>
@@ -47,9 +51,11 @@ class Home extends React.Component {
               <TileItem className="positions">
                 <Link to="/positions">
                   <div className="container">
-                    <Icon icon="ph:shapes-fill" />
-                    <h3>Positions</h3>
-                    <p>Practice <strong>relative positions</strong> featuring members of TWICE.</p>
+                    <div className='top'>
+                      <Icon icon="ph:shapes-fill" />
+                      <h3>Positions</h3>
+                      <p>Practice <strong>relative positions</strong> featuring members of TWICE.</p>
+                    </div>
                     <TagContainer>
                       <Tag>Multiple Choice</Tag>
                     </TagContainer>
@@ -87,10 +93,16 @@ const TileItem = styled.li`
   a {
     text-decoration: none;
     color: ${variables.black};
+    height: 100%;
+    display: block;
+    background: ${variables.white};
+    border-radius: 0.5rem;
     .container {
-      background: ${variables.white};
-      border-radius: 0.5rem;
-      padding: 1.5rem;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
       svg {
         font-size: 3rem;
         margin-bottom: 2rem;
@@ -105,9 +117,7 @@ const TileItem = styled.li`
       }
     }
     &:hover {
-      .container {
-        background: ${variables.grey100};
-      }
+      background: ${variables.grey100};
     }
   }
   
