@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Wrapper } from '../styles/Wrapper';
-import { PageHeading, PageBody } from '../styles/PageHeading';
+import { PageHeading } from '../styles/PageHeading';
 import { ComponentLayout, LayoutFix } from '../styles/Layout';
 import Settings from '../styles/Settings';
 import { Tag, TagContainer } from '../styles/Tag';
