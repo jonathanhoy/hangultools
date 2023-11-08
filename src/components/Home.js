@@ -15,7 +15,7 @@ class Home extends React.Component {
       <ComponentLayout>
         <LayoutFix>
           <Wrapper className='home-wrapper'>
-            <PageHeading>안녕하세요! Please choose a tool from the list.</PageHeading>
+            <PageHeading>안녕하세요! Please choose a tool to begin learning.</PageHeading>
             <TileList>
               <TileItem className="calculator">
                 <Link to="/calculator">
