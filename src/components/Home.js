@@ -32,7 +32,6 @@ class Home extends React.Component {
                   </div>
                 </Link>
               </TileItem>
-
               <TileItem className="clock">
                 <Link to="/clock">
                   <div className="container">
@@ -47,7 +46,6 @@ class Home extends React.Component {
                   </div>
                 </Link>
               </TileItem>
-
               <TileItem className="positions">
                 <Link to="/positions">
                   <div className="container">
@@ -62,11 +60,7 @@ class Home extends React.Component {
                   </div>
                 </Link>
               </TileItem>
-
-
             </TileList>
-
-            <PageBody>More tools coming soon!</PageBody>
           </Wrapper>
         </LayoutFix>
 
