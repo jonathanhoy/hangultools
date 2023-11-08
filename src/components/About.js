@@ -38,7 +38,7 @@ class About extends React.Component {
           <PageSubSectionHeading>Positions</PageSubSectionHeading>
           <PageBody>Featuring members of TWICE, this tool asks you to help locate the position of a member relative to where other members are. Reference cards are available for a quick introduction and each position.</PageBody>
    
-          <PageBody className='ending'>Good luck in your studies!</PageBody>
+          <PageBody className='ending'>Good luck in your studies! 화이팅!</PageBody>
           <PageBody>&copy; <a href="https://jonathanhoy.com" aria-label="Go to Jonathan Hoy's personal portfolio, opens in a new window" target="_blank" rel="noreferrer">Jonathan Hoy</a> {currentYear}</PageBody>
         </AboutStyles>
       </Wrapper>
