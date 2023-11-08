@@ -124,10 +124,10 @@ const TileItem = styled.li`
   @media (max-width: ${variables.sm}) {
     a {
       .container {
-        padding: 2rem 0 1rem 0;
+        padding: 1rem;
         svg {
-          font-size: 5rem;
-        }      
+          margin-bottom: 1.5rem;
+        }
       }
     }
   }
