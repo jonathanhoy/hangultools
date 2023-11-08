@@ -6,7 +6,6 @@ import { ComponentLayout, LayoutFix } from '../styles/Layout';
 import Settings from '../styles/Settings';
 import { Tag } from '../styles/Tag';
 import keysImage from '../assets/keys/all-keys.png';
-import variables from '../styles/variables';
 
 const currentYear = new Date().getFullYear();
  
