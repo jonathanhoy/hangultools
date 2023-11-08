@@ -6,7 +6,7 @@ const Tag = styled.p`
   color: ${variables.primary900};
   background: ${variables.primary100};
   padding: 0.25rem 0.75rem;
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   font-weight: 500;
   font-size: 0.875rem;
   margin: 0;
@@ -15,13 +15,9 @@ const Tag = styled.p`
 `;
 
 const TagContainer = styled.div`
-  padding: 0.5rem 0;
-  display: grid;
+  display: flex;
   grid-gap: 0.5rem;
-  grid-template-columns: 1fr 1fr;
-  @media (max-width: ${variables.md}) {
-    grid-template-columns: 1fr;
-  }
+  margin-top: 1.5rem;
 `;
 
 export { Tag, TagContainer };

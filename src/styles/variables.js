@@ -15,6 +15,7 @@ const variables = {
   sm: '47.9375rem',
   md: '63.9375rem',
   lg: '64rem',
+  xl: '75.5rem',
 
   // SHADOW
   boxshadow: 'rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;',

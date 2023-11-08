@@ -19,39 +19,42 @@ class Home extends React.Component {
             <TileList>
               <TileItem className="calculator">
                 <Link to="/calculator">
-                  <div className="top-container">
+                  <div className="container">
                     <Icon icon="ph:calculator-fill" />
                     <h3>Calculator</h3>
+                    <p>Practice <strong>numbers</strong> from 1 - 100 in both <em>Sino</em> and <em>Pure</em> systems.</p>
+                    <TagContainer>
+                      <Tag>한 Keyboard</Tag>
+                      <Tag>Multiple Choice</Tag>
+                    </TagContainer>
                   </div>
                 </Link>
-                <TagContainer>
-                  <Tag>한 Keyboard</Tag>
-                  <Tag>Multiple Choice</Tag>
-                </TagContainer>
               </TileItem>
 
               <TileItem className="clock">
                 <Link to="/clock">
-                  <div className="top-container">
+                  <div className="container">
                     <Icon icon="ph:clock-fill" />
                     <h3>Clock</h3>
+                    <p>Practice <strong>numbers</strong> in the context of time. 12h and 24h clocks available.</p>
+                    <TagContainer>
+                      <Tag>한 Keyboard</Tag>
+                    </TagContainer>
                   </div>
                 </Link>
-                <TagContainer>
-                  <Tag>한 Keyboard</Tag>
-                </TagContainer>
               </TileItem>
 
               <TileItem className="positions">
                 <Link to="/positions">
-                  <div className="top-container">
+                  <div className="container">
                     <Icon icon="ph:shapes-fill" />
                     <h3>Positions</h3>
+                    <p>Practice <strong>relative positions</strong> featuring members of TWICE.</p>
+                    <TagContainer>
+                      <Tag>Multiple Choice</Tag>
+                    </TagContainer>
                   </div>
                 </Link>
-                <TagContainer>
-                  <Tag>Multiple Choice</Tag>
-                </TagContainer>
               </TileItem>
 
 
@@ -71,11 +74,11 @@ class Home extends React.Component {
 
 const TileList = styled.ul`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 2rem;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1.5rem;
   margin-bottom: 1rem;
-  @media (max-width: ${variables.sm}) {
-    grid-template-columns: 1fr 1fr;
+  @media (max-width: ${variables.xl}) {
+    grid-template-columns: 1fr;
     grid-gap: 1rem;
   }
 `;
@@ -84,39 +87,33 @@ const TileItem = styled.li`
   a {
     text-decoration: none;
     color: ${variables.black};
-    &:active, &:hover {
-      color: ${variables.primary900};
-    }
-    .top-container {
+    .container {
+      background: ${variables.white};
       border-radius: 0.5rem;
-      padding: 3rem 0 2rem 0;
-      width: 100%;
-      display: grid;
-      grid-template-columns: 1fr;
-      grid-gap: 2.5rem;
-      justify-items: center;
-      align-items: center;
-      border: 1.5px solid ${variables.black};
+      padding: 1.5rem;
       svg {
-        font-size: 6rem;
+        font-size: 3rem;
+        margin-bottom: 2rem;
       }
       h3 {
         font-weight: 500;
-        font-size: 1.5rem;
+        font-size: 1.75rem;
         margin: 0;
+      }
+      p {
+        font-size: 0.875rem;
       }
     }
     &:hover {
-      border-color: ${variables.primary900};
-      .top-container {
-        border-color: ${variables.primary900};
+      .container {
+        background: ${variables.grey100};
       }
     }
   }
   
   @media (max-width: ${variables.sm}) {
     a {
-      .top-container {
+      .container {
         padding: 2rem 0 1rem 0;
         svg {
           font-size: 5rem;
