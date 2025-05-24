@@ -7,10 +7,11 @@ import {
   ResourcesTable, 
   ResourcesTableContainer
 } from '../../styles/Resources';
-
+import ResourcesTableOfContents from './tableofcontents';
 
 const ResourcePositions = () => (
   <ResourcesSection id="positions">
+    <ResourcesTableOfContents/>
     <PageSubHeading>Positions</PageSubHeading>
     <ResourcesTableContainer>
       <ResourcesTable>

@@ -7,10 +7,11 @@ import {
   ResourcesTable, 
   ResourcesTableContainer
 } from '../../styles/Resources';
-
+import ResourcesTableOfContents from './tableofcontents';
 
 const ResourceNumberSino = () => (
   <ResourcesSection id="numbers-sino" className="numbers-sino" >
+    <ResourcesTableOfContents/>
     <PageSubHeading>Numbers (Sino)</PageSubHeading>
     <ResourcesTableContainer>
       <ResourcesTable>

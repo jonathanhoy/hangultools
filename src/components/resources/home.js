@@ -3,10 +3,13 @@ import { PageSubHeading } from '../../styles/PageHeading';
 import { 
   ResourcesSection
 } from '../../styles/Resources';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import ResourcesTableOfContents from './tableofcontents';
 
 const ResourceHome = () => (
   <ResourcesSection id="home">
-    <PageSubHeading>Choose a topic to learn more about it.</PageSubHeading>    
+    <ResourcesTableOfContents/>
   </ResourcesSection>
 );
 
