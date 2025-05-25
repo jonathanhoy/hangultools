@@ -39,8 +39,8 @@ class Nav extends React.Component {
     return (
       <NavStyles mobileNavHidden={this.state.mobileNavHidden} >
         <Wrapper className="nav-wrapper">
-          <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1>
-          <ToolNav>
+          {/* <h1><NavLink onClick={this.handleClose} to="/" exact activeClassName="active">Hangul Tools</NavLink></h1> */}
+          <ToolNav className="tool-nav">
             <h2>Tools</h2>
             <ul>
               <li><NavLink onClick={this.handleClose} to="/calculator" exact activeClassName="active"><Icon icon="ph:calculator-fill" />Calculator</NavLink></li>
@@ -48,7 +48,7 @@ class Nav extends React.Component {
               <li><NavLink onClick={this.handleClose} to="/positions" exact activeClassName="active"><Icon icon="ph:shapes-fill" /> Positions {/* <span className="new" aria-hidden="true">new</span>*/}</NavLink></li>
             </ul>
           </ToolNav>
-          <SiteNav mobileNavHidden={this.state.mobileNavHidden}>
+          <SiteNav className="site-nav" mobileNavHidden={this.state.mobileNavHidden}>
             <h2>Pages</h2>
             <ul>
               <li><NavLink onClick={this.handleClose} to="/" exact activeClassName="active"><Icon icon="ph:house-fill" /> Home</NavLink></li>
@@ -67,11 +67,15 @@ class Nav extends React.Component {
 };
 
 const NavStyles = styled.div`
-  background: ${variables.grey100};
-  border-right: 0.5px solid ${variables.grey400};
-  height: 100dvh;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px -2px 4px 0px inset;
-
+  height: calc(100dvh - 2rem);
+  margin-top: 1rem;
+  margin-left: 1rem;
+  background: rgba(217, 217, 217, 0.58);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  border: 1px solid rgba(217, 217, 217, 1);
   h1 {
     font-size: 2rem;
     a {
@@ -84,28 +88,33 @@ const NavStyles = styled.div`
   }
 
   @media (max-width: ${variables.sm}) {
-    background: ${variables.white};
     height: auto;
     grid-column: 1 / 3;
     box-shadow: none;
     border-right: none;
+    margin: 0;
+    margin-top: 1.25rem;
+    border: none;
+    background: none;
     h1 {
       margin: 0.5rem 0;
     }
     .nav-wrapper {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
       width: 95%;
+      .site-nav {
+        width: calc(100dvw - 1rem);
+        background: white;
+      }
     }
     nav {
       position: absolute;
-      background: ${variables.white};
-      width: 100%;
+      width: calc(100% - 3.5rem);
+      margin-left: 0.5rem;
       left: 0;
       z-index: 50;
-      border-bottom: 1px solid ${variables.grey400};
-  
     }
     button {
       display: block;
@@ -195,10 +204,18 @@ const baseNavStyles = css`
 const ToolNav = styled.nav`
   ${baseNavStyles}
   @media (max-width: ${variables.sm}) {
-    /* outline: 1px solid red; */
     margin-top: 0;
     padding: 0;
-    top: 54px;
+    top: -12px;
+    background: none;
+    left: 0;
+    /* From https://css.glass */
+    background: rgba(217, 217, 217, 0.58);
+    border-radius: 8px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(11.6px);
+    -webkit-backdrop-filter: blur(11.6px);
+    border: 1px solid rgba(217, 217, 217, 1);
     h2 {
       display: none;
     }
@@ -207,6 +224,14 @@ const ToolNav = styled.nav`
       margin: 0 auto;
       align-items: flex-start;
       flex-direction: row;
+      padding: 0;
+      margin: 0 0.25rem;
+      overflow: auto;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      &::-webkit-scrollbar {
+        display: none;
+      }
       li {
         margin: 0.25rem 0;
         a {
@@ -221,13 +246,23 @@ const SiteNav = styled.nav`
   ${baseNavStyles}
   @media (max-width: ${variables.sm}) {
     display: ${props => props.mobileNavHidden === true ? 'none' : 'block'};
-    top: 98px;
+    top: 40px;
     padding: 0.5rem 0;
     margin-top: 0;
+    margin-left: 0;
+    h2 {
+      display: none;
+    }
     h2, ul {
       width: 95%;
       margin-left: auto;
       margin-right: auto;
+    }
+    ul {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin: 0;
+      width: 100%;
     }
   }
 `;

@@ -13,7 +13,7 @@ const ComponentContainer = styled.section`
   }
   .reference {
     margin-top: 2rem;
-    border-top: 0.5px solid ${variables.grey400};
+    border-top: 0.5px solid rgba(217, 217, 217, 1);
     h2 {
       font-size: 1rem;
       color: ${variables.grey900};
@@ -26,7 +26,11 @@ const ComponentContainer = styled.section`
     grid-gap: 0;
   }
   @media (max-width: ${variables.sm}) {
-    height: auto;
+    height: calc(100dvh - 6rem);
+    display: flex;
+    align-items: flex-end;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     .desktop-reference {
       display: none;
     }
@@ -34,28 +38,23 @@ const ComponentContainer = styled.section`
       display: block;
       border-top: none;
     }
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    grid-column-gap: 0.5rem;
-    grid-row-gap: 1rem;
     .settings {
       grid-column: 1 / 7;
-      grid-row: 1 / 2;
+      grid-row: 2 / 3;
     }
     .component {
-      grid-row: 2 / 3;
+      grid-row: 1 / 2;
       grid-column: 1 / 7;
       align-items: center;
       transition: all 0.2s;
       &.refActive {
         grid-column: 4 / 7;
-        /* width: 50%; */
         align-self: flex-start;
       }
     }
     .reference {
       grid-column: 1 / 2;
-      grid-row: 2 / 3;
+      grid-row: 1 / 2;
       &.refActive {
         grid-column: 1 / 4;
         margin-top: 0;

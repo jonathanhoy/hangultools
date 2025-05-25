@@ -3,7 +3,7 @@ import variables from "./variables";
 
 const MainLayout = styled.div`
   display: grid;
-  grid-template-columns: 14.5rem 1fr;
+  grid-template-columns: 15rem 1fr;
   .leftmenu {
     grid-column: 1 / 2;
   }
@@ -15,16 +15,16 @@ const MainLayout = styled.div`
   @media (max-width: ${variables.md}) {
     grid-template-columns: 12.5rem 1fr;
   }
-
   @media (max-width: ${variables.sm}) {
     grid-template-columns: 1fr;
     .mainbox {
-      margin-top: 44px;
+      margin-top: 0.5rem;
       grid-column: 1 / 2;
       height: auto;
       width: 95%;
       margin-left: auto;
       margin-right: auto;
+      height: calc(100dvh - 4rem);
       .home-wrapper, .about-wrapper {
         width: 100%;
       }
@@ -34,7 +34,7 @@ const MainLayout = styled.div`
 
 const ComponentLayout = styled.div`
   display: grid;
-  grid-template-columns: 1fr 14.5rem;
+  grid-template-columns: 1fr 15rem;
   .settings {
     grid-column: 2 / 3;
   }
@@ -44,6 +44,7 @@ const ComponentLayout = styled.div`
   @media (max-width: ${variables.sm}) {
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 1rem;
+    width: 100%;
     .settings {
       grid-column: 1 / 7;
     }

@@ -2,10 +2,15 @@ import styled from 'styled-components';
 import variables from './variables';
 
 const Settings = styled.section`
-  background: ${variables.grey100};
-  border-left: 0.5px solid ${variables.grey400};
-  height: 100dvh;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px -2px 4px 0px inset;
+  height: calc(100dvh - 2rem);
+  margin-top: 1rem;
+  margin-right: 1rem;
+  background: rgba(217, 217, 217, 0.58);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.6px);
+  -webkit-backdrop-filter: blur(11.6px);
+  border: 1px solid rgba(217, 217, 217, 1);
   h2 {
     font-size: 1rem;
     color: ${variables.grey900};
@@ -34,6 +39,7 @@ const Settings = styled.section`
           span {
             position: relative;
             z-index: -1;
+            outline: 1px solid red;
           }
           &:hover {
             background: ${variables.grey200};
@@ -50,14 +56,17 @@ const Settings = styled.section`
   @media (max-width: ${variables.sm}) {
     height: auto;
     background: none;
-    border-left: none;
     box-shadow: none;
+    margin: 0;
+    border-radius: 0.5rem;
+    border: 1px solid rgba(217, 217, 217, 1);
     > div {
+      /* outline: 1px solid red; */
       display: flex;
       background: ${variables.white};
-      border-radius: 0.25rem;
+      border-radius: 0.5rem;
       width: 100%;
-      gap: 1rem;
+      gap: 0.5rem;
     }
     h2 {
       margin-top: 0.25rem;
